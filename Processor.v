@@ -93,6 +93,13 @@ assign clk = CLOCK_50;
 reg rst;
 assign rst = KEY[0];
 
+//system memory variables
+reg sys_wren;
+reg sys_rden;
+reg [15:0]sys_addr;
+reg [7:0]sys_data_in;
+reg [7:0]sys_data_out;
+
 //registers
 reg [31:0]x0;
 reg [31:0]x1;
@@ -131,26 +138,123 @@ reg [31:0]pc;
 //hardwiring zero register
 assign x0 = 32'd0;
 
-//fsm state variables
-parameter FSM_SIZE = 'd8;
-reg [FSM_SIZE-1:0]S, NS;
+//state variables
+reg [31:0]S, NS;
 
-//possible fsm states
-parameter START = 8'd0;
+//count variables
+parameter WAIT_TIME = 32'd20;
+reg [31:0] wait_count;
+
+//fsm states
+parameter 
+ERROR = 32'd0,
+START = 32'd1,
+WAIT_START = 32'd2,
+FETCH = 32'd3,
+WAIT_FETCH = 32'd4,
+DECODE = 32'd5,
+WAIT_DECODE = 32'd6,
+EXECUTE = 32'd7,
+WAIT_EXECUTE = 32'd8,
+WRITEBACK = 32'd9,
+WAIT_WRITEBACK = 32'd10;
+
 
 always @ (posedge clk or negedge rst) begin
-
+	if (rst == 1'b0) begin
+	
+		//specifying initial state
+		S <= START;
+	
+		//zeroing registers
+		x1 <= 32'd0;
+		x2 <= 32'd0;
+		x3 <= 32'd0;
+		x4 <= 32'd0;
+		x5 <= 32'd0;
+		x6 <= 32'd0;
+		x7 <= 32'd0;
+		x8 <= 32'd0;
+		x9 <= 32'd0;
+		x10 <= 32'd0;
+		x11 <= 32'd0;
+		x12 <= 32'd0;
+		x13 <= 32'd0;
+		x14 <= 32'd0;
+		x15 <= 32'd0;
+		x16 <= 32'd0;
+		x17 <= 32'd0;
+		x18 <= 32'd0;
+		x19 <= 32'd0;
+		x20 <= 32'd0;
+		x21 <= 32'd0;
+		x22 <= 32'd0;
+		x23 <= 32'd0;
+		x24 <= 32'd0;
+		x25 <= 32'd0;
+		x26 <= 32'd0;
+		x27 <= 32'd0;
+		x28 <= 32'd0;
+		x29 <= 32'd0;
+		x30 <= 32'd0;
+		x31 <= 32'd0;
+		pc <= 32'd0;
+	end
+	else begin
+		S <= NS;
+	end
 end
+
 
 always @ (*) begin
-
+	//determining NS
+	case (S)	
+		//start
+		START: NS = WAIT_START;
+		WAIT_START: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_START;
+		
+		//fetch
+		FETCH: NS = WAIT_FETCH;
+		WAIT_FETCH: NS = (wait_count < WAIT_TIME)?DECODE:WAIT_FETCH;
+		
+		//decode
+		DECODE: NS = WAIT_DECODE;
+		WAIT_DECODE: NS = (wait_count < WAIT_TIME)?EXECUTE:WAIT_DECODE;
+		
+		//execute
+		EXECUTE: NS = WAIT_EXECUTE;
+		WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WRITEBACK:WAIT_EXECUTE;
+		
+		//writeback
+		WRITEBACK: NS = WAIT_WRITEBACK
+		WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_WRITEBACK;
+		
+		//error
+		default: NS = ERROR;
+	endcase
 end
 	
 always @ (posedge clk or negedge rst) begin
-
+	case (S)
+	
+		//incrementing wait counts
+		WAIT_START: wait_count <= (NS = WAIT_START)?(wait_count + 32'd1):32'd0;
+		WAIT_FETCH:	wait_count <= (NS = WAIT_FETCH)?(wait_count + 32'd1):32'd0;
+		WAIT_DECODE: wait_count <= (NS = WAIT_DECODE)?(wait_count + 32'd1):32'd0;
+		WAIT_EXECUTE: wait_count <= (NS = WAIT_EXECUTE)?(wait_count + 32'd1):32'd0;
+		WAIT_WRITEBACK: wait_count <= (NS = WAIT_WRITEBACK)?(wait_count + 32'd1):32'd0;
+	endcase
 end
 	
 	
 
+system_ram ram (
+	.clock(clk),
+	.wren(sys_wren),
+	.rden(sys_rden),
+	.data(sys_data_in),
+	.q(sys_data_out),
+	.address(sys_address)
+);
 
 endmodule

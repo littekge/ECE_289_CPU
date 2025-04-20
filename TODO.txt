@@ -1,0 +1,8 @@
+most recent change:
+	1. Added basic FSM states, created memory
+
+todo:
+	1. add functionality to fetch step
+
+testing needed:
+	1. test that state transitions and delay works properly
