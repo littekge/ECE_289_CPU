@@ -248,7 +248,7 @@ end
 	
 	
 
-system_ram ram (
+system_ram system_ram1 (
 	.clock(clk),
 	.wren(sys_wren),
 	.rden(sys_rden),
@@ -256,5 +256,15 @@ system_ram ram (
 	.q(sys_data_out),
 	.address(sys_address)
 );
+
+
+// --------------- DEBUG CODE ---------------
+
+debug debug1 (
+
+
+);
+
+
 
 endmodule

@@ -1,8 +1,12 @@
-most recent change:
-	1. Added basic FSM states, created memory
+changelog:
+	1. Added basic FSM states, created memory (4/20/25)
+	2. Started work on debugging modules, implemented FSM to start writing registers to ascii master buffer. (4/23/2025)
 
 todo:
-	1. add functionality to fetch step
+	1. finish FSM for debug module
+	2. add decoding to determine the current register based on vertical state of debug module
+	3. add decoding to determine the current address of the master buffer to be written to based on both horizontal and vertical states
 
 testing needed:
 	1. test that state transitions and delay works properly
+	2. test debug functionality

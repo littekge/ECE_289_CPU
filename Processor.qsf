@@ -54,10 +54,30 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name VERILOG_FILE Processor.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_buffer_1/ascii_buffer_1_bb.v
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_buffer_1/ascii_buffer_1.v
+set_global_assignment -name QIP_FILE vga_controller/ascii_buffer_1/ascii_buffer_1.qip
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_buffer_2/ascii_buffer_2_bb.v
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_buffer_2/ascii_buffer_2.v
+set_global_assignment -name QIP_FILE vga_controller/ascii_buffer_2/ascii_buffer_2.qip
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_master/ascii_master_bb.v
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_master/ascii_master.v
+set_global_assignment -name QIP_FILE vga_controller/ascii_master/ascii_master.qip
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_rom/Char_ROM_bb.v
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_rom/Char_ROM.v
+set_global_assignment -name QIP_FILE vga_controller/ascii_rom/Char_ROM.qip
+set_global_assignment -name VERILOG_FILE vga_controller/vga_driver.v
+set_global_assignment -name VERILOG_FILE vga_controller/vga_controller.v
+set_global_assignment -name VERILOG_FILE vga_controller/double_buffer.v
+set_global_assignment -name VERILOG_FILE vga_controller/clock_divider.v
+set_global_assignment -name VERILOG_FILE vga_controller/ascii_master_controller.v
+set_global_assignment -name VERILOG_FILE Processor.v
 set_global_assignment -name QIP_FILE memory/system_ram.qip
 set_global_assignment -name MIF_FILE memory/program.mif
+set_global_assignment -name VERILOG_FILE debug.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
