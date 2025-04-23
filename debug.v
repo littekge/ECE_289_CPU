@@ -36,7 +36,7 @@ module debug (
 	input wire [31:0]x29,
 	input wire [31:0]x30,
 	input wire [31:0]x31,
-	input wire [31:0]pc
+	input wire [31:0]pc,
 	
 	//vga output data
 	output wire vga_blank,
@@ -51,10 +51,31 @@ module debug (
 );
 
 //state variables
-reg [31:0]S, NS;
+reg [31:0]HS, HNS, VS, VNS;
 
-//fsm states
+//count variables
+reg [31:0]h_count, h_wait, v_count;
 
+//other variables
+wire [3:0]current_digit;
+wire [7:0]encoded_digit;
+wire [31:0]current_reg;
+wire [12:0]vga_write_address;
+wire [31:0]vga_write_data;
+wire vga_write_en;
+
+//fsm state parameters
+parameter H_START = 32'd1,
+		H_DISP = 32'd2,
+		H_WAIT = 32'd3,
+		H_RESET = 32'd4,
+		V_START = 32'd5,
+		V_DISP = 32'd6,
+		V_RESET = 32'd7,
+		ERROR = 32'd0;
+
+//other parameters
+parameter WAIT_TIME = 5;
 
 //fsm for displaying registers
 /*
@@ -75,8 +96,10 @@ end
 always @ (*) begin
 	case (HS)
 		H_START: HNS = H_DISP;
-		H_DISP: HNS = (h_count = 32'd9)?(H_WAIT):(H_RESET);
-		H_WAIT: HNS = (h_wait < WAIT_TIME)?(H_WAIT):(H_DISP);
+		H_COMPARE: HNS = HNS = (h_count < 32'd33)?(H_DISP):(H_RESET);
+		H_DISP: HNS = 
+		H_WAIT: HNS = 
+		H_INC: HNS = 
 		H_RESET: HNS = H_DISP;
 	endcase
 	case (VS)
@@ -86,12 +109,11 @@ always @ (*) begin
 	endcase
 end
 
-
 always @ (posedge clk or negedge rst) begin 
 	case (HS)
-		H_DISP: h_count = h_count + 32'd1;
-		H_WAIT: h_wait = (HNS == H_WAIT)?(h_wait + 32'd1):32'd0;
-		H_RESET: h_count = 32'd0;
+		H_DISP: h_count <= h_count + 32'd1;
+		H_WAIT: h_wait <= (HNS == H_WAIT)?(h_wait + 32'd1):32'd0;
+		H_RESET: h_count <= 32'd0;
 	endcase
 	case (VS)
 		V_DISP: v_count = v_count + 32'd1;
@@ -99,22 +121,65 @@ always @ (posedge clk or negedge rst) begin
 	endcase
 end
 
-
-
-//combinational decoding
+//combinational decoding (IN ORDER OF WIRING)
 always @ (*) begin
+	//setting vga write address
+	vga_write_address = (13'd80 * v_count) + h_count;
+
+	//selecting register based on vertical count
+	case (v_count) 
+		32'd0: current_reg = x0;
+		32'd1: current_reg = x1;
+		32'd2: current_reg = x2;
+		32'd3: current_reg = x3;
+		32'd4: current_reg = x4;
+		32'd5: current_reg = x5;
+		32'd6: current_reg = x6;
+		32'd7: current_reg = x7;
+		32'd8: current_reg = x8;
+		32'd9: current_reg = x9;
+		32'd10: current_reg = x10;
+		32'd11: current_reg = x11;
+		32'd12: current_reg = x12;
+		32'd13: current_reg = x13;
+		32'd14: current_reg = x14;
+		32'd15: current_reg = x15;
+		32'd16: current_reg = x16;
+		32'd17: current_reg = x17;
+		32'd18: current_reg = x18;
+		32'd19: current_reg = x19;
+		32'd20: current_reg = x20;
+		32'd21: current_reg = x21;
+		32'd22: current_reg = x22;
+		32'd23: current_reg = x23;
+		32'd24: current_reg = x24;
+		32'd25: current_reg = x25;
+		32'd26: current_reg = x26;
+		32'd27: current_reg = x27;
+		32'd28: current_reg = x28;
+		32'd29: current_reg = x29;
+		32'd30: current_reg = x30;
+		32'd31: current_reg = x31;
+		32'd32: current_reg = pc;
+	endcase
+
+	//two's complement conversion
+	is_negative = current_reg[31];
+	two_comp = (is_negative == 1'b1)?((~current_reg) + 1'b1):current_reg;
+	
 	//seperating out each digit from words
 	case (h_count)
-		4'd0: current_digit = current_reg % 10;
-		4'd1: current_digit = (current_reg / 10) % 10;
-		4'd2: current_digit = (current_reg / 100) % 10;
-		4'd3: current_digit = (current_reg / 1000) % 10;
-		4'd4: current_digit = (current_reg / 10000) % 10;
-		4'd5: current_digit = (current_reg / 100000) % 10;
-		4'd6: current_digit = (current_reg / 1000000) % 10;
-		4'd7: current_digit = (current_reg / 10000000) % 10;
-		4'd8: current_digit = (current_reg / 100000000) % 10;
-		4'd9: current_digit = (current_reg / 1000000000) % 10;
+		32'd10: current_digit = two_comp % 10;
+		32'd9: current_digit = (two_comp / 10) % 10;
+		32'd8: current_digit = (two_comp / 100) % 10;
+		32'd7: current_digit = (two_comp / 1000) % 10;
+		32'd6: current_digit = (two_comp / 10000) % 10;
+		32'd5: current_digit = (two_comp / 100000) % 10;
+		32'd4: current_digit = (two_comp / 1000000) % 10;
+		32'd3: current_digit = (two_comp / 10000000) % 10;
+		32'd2: current_digit = (two_comp / 100000000) % 10;
+		32'd1: current_digit = (two_comp / 1000000000) % 10;
+		32'd0: current_digit = (is_negative)?(4'd10):(4'd11);
 	endcase
 	
 	//decoding from decimal to ascii
@@ -129,7 +194,15 @@ always @ (*) begin
 		4'd7: encoded_digit = 8'h37;
 		4'd8: encoded_digit = 8'h38;
 		4'd9: encoded_digit = 8'h39;
+		4'd10: encoded_digit = 8'h2D;
+		4'd11: encoded_digit = 8'h2B;
 	endcase
+
+	//setting vga write data
+	vga_write_data = {encoded_digit, 24'b111111111111111111111111};
+
+	//setting write enable to 1
+	vga_write_en = 1'b1;
 end
 
 //ascii controller
@@ -137,9 +210,9 @@ ascii_master_controller ascii_master_controller1 (
 	.clk(clk),
 	.rst(rst),
 	
-	.ascii_write_en(),
-	.ascii_input(),
-	.ascii_write_address(),
+	.ascii_write_en(vga_write_en),
+	.ascii_input(vga_write_data),
+	.ascii_write_address(vga_write_address),
 	
 	.vga_blank(vga_blank),
 	.vga_b(vga_b),
