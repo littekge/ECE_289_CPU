@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Processor
-Fri Apr 11 09:38:11 2025
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Thu Apr 24 11:50:23 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -10,14 +10,16 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis IP Cores Summary
+  6. Analysis & Synthesis Messages
+  7. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,8 +39,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Apr 11 09:38:11 2025              ;
-; Quartus Prime Version       ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Analysis & Synthesis Status ; Failed - Thu Apr 24 11:50:23 2025              ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name               ; Processor                                      ;
 ; Top-level Entity Name       ; Processor                                      ;
 ; Family                      ; Cyclone V                                      ;
@@ -144,8 +146,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 28          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -155,24 +157,322 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                   ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+---------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                   ; IP Include File     ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+---------------------+
+; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |Processor|system_ram:system_ram1 ; memory/system_ram.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------+---------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Apr 11 09:38:03 2025
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Thu Apr 24 11:50:18 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10170): Verilog HDL syntax error at Processor.v(136) near text: "reg";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Gabe/Desktop/ece_289_project/ECE_289_CPU/Processor.v Line: 136
-Error (10170): Verilog HDL syntax error at Processor.v(139) near text: "'d";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Gabe/Desktop/ece_289_project/ECE_289_CPU/Processor.v Line: 139
-Error (10112): Ignored design unit "Processor" at Processor.v(1) due to previous errors File: C:/Users/Gabe/Desktop/ece_289_project/ECE_289_CPU/Processor.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file processor.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4782 megabytes
-    Error: Processing ended: Fri Apr 11 09:38:11 2025
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:19
+Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/ascii_buffer_1/ascii_buffer_1.v
+    Info (12023): Found entity 1: ascii_buffer_1 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_buffer_1/ascii_buffer_1.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/ascii_buffer_2/ascii_buffer_2.v
+    Info (12023): Found entity 1: ascii_buffer_2 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_buffer_2/ascii_buffer_2.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/ascii_master/ascii_master.v
+    Info (12023): Found entity 1: ascii_master File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_master/ascii_master.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/ascii_rom/char_rom.v
+    Info (12023): Found entity 1: Char_ROM File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_rom/Char_ROM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/vga_driver.v
+    Info (12023): Found entity 1: vga_driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/vga_driver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/vga_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/double_buffer.v
+    Info (12023): Found entity 1: double_buffer File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/double_buffer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/clock_divider.v
+    Info (12023): Found entity 1: clock_divider File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/clock_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller/ascii_master_controller.v
+    Info (12023): Found entity 1: ascii_master_controller File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_master_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file processor.v
+    Info (12023): Found entity 1: Processor File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory/system_ram.v
+    Info (12023): Found entity 1: system_ram File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file debug.v
+    Info (12023): Found entity 1: debug File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Processor.v(257): created implicit net for "sys_address" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 257
+Info (12127): Elaborating entity "Processor" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(104): object "x0" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 104
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(105): object "x1" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 105
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(106): object "x2" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 106
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(107): object "x3" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 107
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(108): object "x4" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 108
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(109): object "x5" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 109
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(110): object "x6" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 110
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(111): object "x7" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 111
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(112): object "x8" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 112
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(113): object "x9" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 113
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(114): object "x10" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 114
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(115): object "x11" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 115
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(116): object "x12" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 116
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(117): object "x13" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 117
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(118): object "x14" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 118
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(119): object "x15" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 119
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(120): object "x16" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 120
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(121): object "x17" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 121
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(122): object "x18" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 122
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(123): object "x19" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 123
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(124): object "x20" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 124
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(125): object "x21" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 125
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(126): object "x22" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 126
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(127): object "x23" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 127
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(128): object "x24" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 128
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(129): object "x25" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 129
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(130): object "x26" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 130
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(131): object "x27" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 131
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(132): object "x28" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 132
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(133): object "x29" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 133
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(134): object "x30" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 134
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(135): object "x31" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 135
+Warning (10036): Verilog HDL or VHDL warning at Processor.v(136): object "pc" assigned a value but never read File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 136
+Warning (10762): Verilog HDL Case Statement warning at Processor.v(211): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 211
+Warning (10762): Verilog HDL Case Statement warning at Processor.v(238): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 238
+Warning (10270): Verilog HDL Case Statement warning at Processor.v(238): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 238
+Warning (10240): Verilog HDL Always Construct warning at Processor.v(237): inferring latch(es) for variable "NS", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 237
+Warning (10240): Verilog HDL Always Construct warning at Processor.v(237): inferring latch(es) for variable "wait_count", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 237
+Warning (10034): Output port "HEX0" at Processor.v(41) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
+Warning (10034): Output port "HEX1" at Processor.v(42) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
+Warning (10034): Output port "HEX2" at Processor.v(43) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
+Warning (10034): Output port "HEX3" at Processor.v(44) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
+Warning (10034): Output port "HEX4" at Processor.v(45) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
+Warning (10034): Output port "HEX5" at Processor.v(46) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
+Warning (10034): Output port "LEDR" at Processor.v(56) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
+Warning (10034): Output port "VGA_B" at Processor.v(76) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 76
+Warning (10034): Output port "VGA_G" at Processor.v(78) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 78
+Warning (10034): Output port "VGA_R" at Processor.v(80) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 80
+Warning (10034): Output port "VGA_BLANK_N" at Processor.v(75) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 75
+Warning (10034): Output port "VGA_CLK" at Processor.v(77) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 77
+Warning (10034): Output port "VGA_HS" at Processor.v(79) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 79
+Warning (10034): Output port "VGA_SYNC_N" at Processor.v(81) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 81
+Warning (10034): Output port "VGA_VS" at Processor.v(89) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 89
+Info (12128): Elaborating entity "system_ram" for hierarchy "system_ram:system_ram1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 258
+Info (12128): Elaborating entity "altsyncram" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 89
+Info (12130): Elaborated megafunction instantiation "system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 89
+Info (12133): Instantiated megafunction "system_ram:system_ram1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 89
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "./memory/program.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2ao1.tdf
+    Info (12023): Found entity 1: altsyncram_2ao1 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_2ao1.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_2ao1" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_2ao1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
+    Info (12023): Found entity 1: decode_dla File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/decode_dla.tdf Line: 23
+Info (12128): Elaborating entity "decode_dla" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_2ao1:auto_generated|decode_dla:decode3" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_2ao1.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_tfb.tdf
+    Info (12023): Found entity 1: mux_tfb File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/mux_tfb.tdf Line: 23
+Info (12128): Elaborating entity "mux_tfb" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_2ao1:auto_generated|mux_tfb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_2ao1.tdf Line: 46
+Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 266
+Warning (10240): Verilog HDL Always Construct warning at debug.v(99): inferring latch(es) for variable "h_wait", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Warning (10240): Verilog HDL Always Construct warning at debug.v(99): inferring latch(es) for variable "h_count", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Warning (10270): Verilog HDL Case Statement warning at debug.v(112): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 112
+Info (10264): Verilog HDL Case Statement information at debug.v(112): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 112
+Warning (10270): Verilog HDL Case Statement warning at debug.v(116): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 116
+Warning (10240): Verilog HDL Always Construct warning at debug.v(111): inferring latch(es) for variable "h_wait", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at debug.v(111): inferring latch(es) for variable "h_count", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at debug.v(111): inferring latch(es) for variable "v_count", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Warning (10230): Verilog HDL assignment warning at debug.v(124): truncated value with size 32 to match size of target (13) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Warning (10762): Verilog HDL Case Statement warning at debug.v(127): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 127
+Warning (10270): Verilog HDL Case Statement warning at debug.v(127): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 127
+Warning (10230): Verilog HDL assignment warning at debug.v(169): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 169
+Warning (10230): Verilog HDL assignment warning at debug.v(170): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 170
+Warning (10230): Verilog HDL assignment warning at debug.v(171): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 171
+Warning (10230): Verilog HDL assignment warning at debug.v(172): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 172
+Warning (10230): Verilog HDL assignment warning at debug.v(173): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 173
+Warning (10230): Verilog HDL assignment warning at debug.v(174): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 174
+Warning (10230): Verilog HDL assignment warning at debug.v(175): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 175
+Warning (10230): Verilog HDL assignment warning at debug.v(176): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 176
+Warning (10230): Verilog HDL assignment warning at debug.v(177): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 177
+Warning (10230): Verilog HDL assignment warning at debug.v(178): truncated value with size 32 to match size of target (4) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 178
+Warning (10762): Verilog HDL Case Statement warning at debug.v(168): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 168
+Warning (10270): Verilog HDL Case Statement warning at debug.v(168): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 168
+Warning (10270): Verilog HDL Case Statement warning at debug.v(183): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 183
+Warning (10240): Verilog HDL Always Construct warning at debug.v(124): inferring latch(es) for variable "current_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Warning (10240): Verilog HDL Always Construct warning at debug.v(124): inferring latch(es) for variable "current_digit", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Warning (10240): Verilog HDL Always Construct warning at debug.v(124): inferring latch(es) for variable "encoded_digit", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_digit[0]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_digit[1]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_digit[2]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_digit[3]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[0]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[1]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[2]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[3]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[4]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[5]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[6]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[7]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[8]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[9]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[10]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[11]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[12]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[13]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[14]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[15]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[16]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[17]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[18]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[19]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[20]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[21]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[22]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[23]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[24]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[25]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[26]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[27]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[28]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[29]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "current_reg[30]" at debug.v(124) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 124
+Info (10041): Inferred latch for "v_count[0]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[1]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[2]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[3]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[4]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[5]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[6]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[7]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[8]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[9]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[10]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[11]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[12]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[13]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[14]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[15]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[16]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[17]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[18]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[19]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[20]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[21]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[22]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[23]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[24]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[25]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[26]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[27]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[28]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[29]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[30]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "v_count[31]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[0]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[1]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[2]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[3]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[4]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[5]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[6]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[7]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[8]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[9]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[10]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[11]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[12]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[13]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[14]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[15]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[16]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[17]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[18]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[19]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[20]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[21]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[22]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[23]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[24]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[25]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[26]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[27]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[28]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[29]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[30]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[31]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Info (10041): Inferred latch for "h_count[0]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[1]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[2]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[3]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[4]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[5]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[6]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[7]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[8]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[9]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[10]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[11]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[12]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[13]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[14]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[15]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[16]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[17]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[18]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[19]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[20]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[21]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[22]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[23]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[24]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[25]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[26]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[27]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[28]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[29]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[30]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Info (10041): Inferred latch for "h_count[31]" at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Error (10028): Can't resolve multiple constant drivers for net "h_count[31]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10029): Constant driver at debug.v(99) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 99
+Error (10028): Can't resolve multiple constant drivers for net "h_count[30]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[29]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[28]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[27]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[26]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[25]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[24]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[23]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[22]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[21]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[20]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[19]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[18]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[17]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[16]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[15]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (10028): Can't resolve multiple constant drivers for net "h_count[14]" at debug.v(111) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 111
+Error (12152): Can't elaborate user hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 266
+Info (144001): Generated suppressed messages file C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/output_files/Processor.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 81 warnings
+    Error: Peak virtual memory: 4799 megabytes
+    Error: Processing ended: Thu Apr 24 11:50:23 2025
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/output_files/Processor.map.smsg.
 
 

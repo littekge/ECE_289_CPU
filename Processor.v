@@ -88,9 +88,9 @@ module Processor (
 	// inout 		    [35:0]		GPIO_1
 );
 //clk and rst
-reg clk;
+wire clk;
 assign clk = CLOCK_50;
-reg rst;
+wire rst;
 assign rst = KEY[0];
 
 //system memory variables
@@ -98,10 +98,10 @@ reg sys_wren;
 reg sys_rden;
 reg [15:0]sys_addr;
 reg [7:0]sys_data_in;
-reg [7:0]sys_data_out;
+wire [7:0]sys_data_out;
 
 //registers
-reg [31:0]x0;
+wire [31:0]x0;
 reg [31:0]x1;
 reg [31:0]x2;
 reg [31:0]x3;
@@ -226,7 +226,7 @@ always @ (*) begin
 		WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WRITEBACK:WAIT_EXECUTE;
 		
 		//writeback
-		WRITEBACK: NS = WAIT_WRITEBACK
+		WRITEBACK: NS = WAIT_WRITEBACK;
 		WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_WRITEBACK;
 		
 		//error

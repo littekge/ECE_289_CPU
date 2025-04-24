@@ -51,31 +51,35 @@ module debug (
 );
 
 //state variables
-reg [31:0]HS, HNS, VS, VNS;
+reg [31:0]S, NS;
 
 //count variables
 reg [31:0]h_count, h_wait, v_count;
 
 //other variables
-wire [3:0]current_digit;
-wire [7:0]encoded_digit;
-wire [31:0]current_reg;
-wire [12:0]vga_write_address;
-wire [31:0]vga_write_data;
-wire vga_write_en;
+reg [3:0]current_digit;
+reg [7:0]encoded_digit;
+reg [31:0]current_reg;
+reg [12:0]vga_write_address;
+reg [31:0]vga_write_data;
+reg vga_write_en;
+reg is_negative;
+reg [31:0]two_comp;
 
 //fsm state parameters
-parameter H_START = 32'd1,
-		H_DISP = 32'd2,
-		H_WAIT = 32'd3,
-		H_RESET = 32'd4,
-		V_START = 32'd5,
-		V_DISP = 32'd6,
-		V_RESET = 32'd7,
+parameter START = 32'd1,
+		H_WAIT = 32'd2,
+		H_INC = 32'd3,
+		V_START = 32'd4,
+		V_WAIT = 32'd5,
+		V_INC = 32'd6,
 		ERROR = 32'd0;
 
 //other parameters
-parameter WAIT_TIME = 5;
+parameter H_WAIT_TIME = 5;
+parameter V_MAX = 32'd32;
+parameter H_MAX = 32'd10;
+
 
 //fsm for displaying registers
 /*
@@ -84,40 +88,25 @@ vertical states display each register line by line
 */
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-		HS <= H_START;
-		VS <= V_START;
+		S <= START;
 	end
 	else begin
-		HS <= HNS;
-		VS <= VNS;
+		S <= NS;
 	end	
 end
 
 always @ (*) begin
-	case (HS)
-		H_START: HNS = H_DISP;
-		H_COMPARE: HNS = HNS = (h_count < 32'd33)?(H_DISP):(H_RESET);
-		H_DISP: HNS = 
-		H_WAIT: HNS = 
-		H_INC: HNS = 
-		H_RESET: HNS = H_DISP;
-	endcase
-	case (VS)
-		V_START: VNS = V_DISP;
-		V_DISP: VNS = (v_count = 32'd32)?(V_DISP):(V_RESET);
-		V_RESET: VNS = V_DISP;
+	case (S)
+		H_START: NS = V_COND;
+		V_COND: NS = (v_count == V_MAX)?(V_RESET):(H_COND);
+		H_COND: NS = 
+		
 	endcase
 end
 
 always @ (posedge clk or negedge rst) begin 
-	case (HS)
-		H_DISP: h_count <= h_count + 32'd1;
-		H_WAIT: h_wait <= (HNS == H_WAIT)?(h_wait + 32'd1):32'd0;
-		H_RESET: h_count <= 32'd0;
-	endcase
-	case (VS)
-		V_DISP: v_count = v_count + 32'd1;
-		V_RESET: v_count = 32'd0;
+	case (S)
+		
 	endcase
 end
 
