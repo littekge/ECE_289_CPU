@@ -51,12 +51,13 @@ module debug (
 );
 
 //state variables
-reg [31:0]S, NS;
+reg [2:0]S, NS;
 
 //count variables
-reg [31:0]h_count, h_wait, v_count;
+reg [31:0]h_count, v_count;
 
 //other variables
+reg [31:0]X_coord, Y_coord;
 reg [3:0]current_digit;
 reg [7:0]encoded_digit;
 reg [31:0]current_reg;
@@ -67,25 +68,20 @@ reg is_negative;
 reg [31:0]two_comp;
 
 //fsm state parameters
-parameter START = 32'd1,
-		H_WAIT = 32'd2,
-		H_INC = 32'd3,
-		V_START = 32'd4,
-		V_WAIT = 32'd5,
-		V_INC = 32'd6,
-		ERROR = 32'd0;
+parameter START = 3'd0,
+		H_EXEC = 3'd1,
+		H_COND = 3'd2,
+		H_INC = 3'd3,
+		H_RESET = 3'd4,
+		V_COND = 3'd5,
+		V_INC = 3'd6,
+		V_RESET = 3'd7;
 
 //other parameters
-parameter H_WAIT_TIME = 5;
-parameter V_MAX = 32'd32;
-parameter H_MAX = 32'd10;
-
+parameter V_MAX = 32'd32,
+		H_MAX = 32'd10;
 
 //fsm for displaying registers
-/*
-horizontal states display each digit horizontally
-vertical states display each register line by line
-*/
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		S <= START;
@@ -97,26 +93,37 @@ end
 
 always @ (*) begin
 	case (S)
-		H_START: NS = V_COND;
-		V_COND: NS = (v_count == V_MAX)?(V_RESET):(H_COND);
-		H_COND: NS = 
-		
+		START: NS = H_EXEC;
+		H_EXEC: NS = H_COND;
+		H_COND: NS = (h_count == H_MAX)?(H_RESET):(H_INC);
+		H_INC: NS = H_EXEC;
+		H_RESET: NS = V_COND;
+		V_COND: NS = (v_count == V_MAX)?(V_RESET):(V_INC);
+		V_RESET: NS = H_EXEC;
+		V_INC: NS = H_EXEC;
 	endcase
 end
 
 always @ (posedge clk or negedge rst) begin 
 	case (S)
-		
+		V_RESET: v_count <= 32'd0;
+		V_INC: v_count <= v_count + 32'd1;
+		H_EXEC: begin
+			X_coord <= h_count;
+			Y_coord <= v_count;
+		end
+		H_RESET: h_count <= 32'd0;
+		H_INC: h_count <= h_count + 32'd1;
 	endcase
 end
 
 //combinational decoding (IN ORDER OF WIRING)
 always @ (*) begin
 	//setting vga write address
-	vga_write_address = (13'd80 * v_count) + h_count;
+	vga_write_address = (13'd80 * Y_coord) + X_coord;
 
 	//selecting register based on vertical count
-	case (v_count) 
+	case (Y_coord) 
 		32'd0: current_reg = x0;
 		32'd1: current_reg = x1;
 		32'd2: current_reg = x2;
@@ -157,18 +164,18 @@ always @ (*) begin
 	two_comp = (is_negative == 1'b1)?((~current_reg) + 1'b1):current_reg;
 	
 	//seperating out each digit from words
-	case (h_count)
-		32'd10: current_digit = two_comp % 10;
-		32'd9: current_digit = (two_comp / 10) % 10;
-		32'd8: current_digit = (two_comp / 100) % 10;
-		32'd7: current_digit = (two_comp / 1000) % 10;
-		32'd6: current_digit = (two_comp / 10000) % 10;
-		32'd5: current_digit = (two_comp / 100000) % 10;
-		32'd4: current_digit = (two_comp / 1000000) % 10;
-		32'd3: current_digit = (two_comp / 10000000) % 10;
-		32'd2: current_digit = (two_comp / 100000000) % 10;
-		32'd1: current_digit = (two_comp / 1000000000) % 10;
+	case (X_coord)
 		32'd0: current_digit = (is_negative)?(4'd10):(4'd11);
+		32'd1: current_digit = (two_comp / 1000000000) % 10;
+		32'd2: current_digit = (two_comp / 100000000) % 10;
+		32'd3: current_digit = (two_comp / 10000000) % 10;
+		32'd4: current_digit = (two_comp / 1000000) % 10;
+		32'd5: current_digit = (two_comp / 100000) % 10;
+		32'd6: current_digit = (two_comp / 10000) % 10;
+		32'd7: current_digit = (two_comp / 1000) % 10;
+		32'd8: current_digit = (two_comp / 100) % 10;
+		32'd9: current_digit = (two_comp / 10) % 10;
+		32'd10: current_digit = two_comp % 10;
 	endcase
 	
 	//decoding from decimal to ascii
