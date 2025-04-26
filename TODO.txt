@@ -3,13 +3,15 @@ changelog:
 	2. Started work on debugging modules, implemented FSM to start writing registers to ascii master buffer. (4/23/2025)
 	3. continued work on debug module. Multiple FSM revamps (4/24/25)
 	4. finished debug module FSM, awaiting testing (4/24/25)
+	5. finished debug module (4/26/25)
 
 todo:
 	1. simplify and revamp ascii controller (remove double buffer) to save on RAM and processing power. (IF TIME ALLOWS)
-	2. add debug toggle switch that allows use of one button for single cycle or another button for single instruction.
-	3. decide how memory works (8 bit vs 32 bit, if using 8 bit, one memory vs four memories)
-	4. make debug display output more functional (add labels to registers, add current instruction display, etc.) (IF TIME ALLOWS)
+	2. make debug display output more functional (add labels to registers, add current instruction display, etc.) (IF TIME ALLOWS)
+	3. add debug toggle switch that allows use of one button for single cycle or another button for single instruction.
+	4. recreate memory to use 32 bit words instead of 8 bit.
+	5. implement fetch stage of processing.
+	
 
 testing needed:
 	1. test that state transitions and delay works properly
-	2. test debug FSM

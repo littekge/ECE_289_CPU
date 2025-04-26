@@ -162,43 +162,8 @@ WAIT_WRITEBACK = 32'd10;
 
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-	
 		//specifying initial state
 		S <= START;
-	
-		//zeroing registers
-		x1 <= 32'd0;
-		x2 <= 32'd0;
-		x3 <= 32'd0;
-		x4 <= 32'd0;
-		x5 <= 32'd0;
-		x6 <= 32'd0;
-		x7 <= 32'd0;
-		x8 <= 32'd0;
-		x9 <= 32'd0;
-		x10 <= 32'd0;
-		x11 <= 32'd0;
-		x12 <= 32'd0;
-		x13 <= 32'd0;
-		x14 <= 32'd0;
-		x15 <= 32'd0;
-		x16 <= 32'd0;
-		x17 <= 32'd0;
-		x18 <= 32'd0;
-		x19 <= 32'd0;
-		x20 <= 32'd0;
-		x21 <= 32'd0;
-		x22 <= 32'd0;
-		x23 <= 32'd0;
-		x24 <= 32'd0;
-		x25 <= 32'd0;
-		x26 <= 32'd0;
-		x27 <= 32'd0;
-		x28 <= 32'd0;
-		x29 <= 32'd0;
-		x30 <= 32'd0;
-		x31 <= 32'd0;
-		pc <= 32'd0;
 	end
 	else begin
 		S <= NS;
@@ -235,15 +200,52 @@ always @ (*) begin
 end
 	
 always @ (posedge clk or negedge rst) begin
-	case (S)
-	
-		//incrementing wait counts
-		WAIT_START: wait_count <= (NS = WAIT_START)?(wait_count + 32'd1):32'd0;
-		WAIT_FETCH:	wait_count <= (NS = WAIT_FETCH)?(wait_count + 32'd1):32'd0;
-		WAIT_DECODE: wait_count <= (NS = WAIT_DECODE)?(wait_count + 32'd1):32'd0;
-		WAIT_EXECUTE: wait_count <= (NS = WAIT_EXECUTE)?(wait_count + 32'd1):32'd0;
-		WAIT_WRITEBACK: wait_count <= (NS = WAIT_WRITEBACK)?(wait_count + 32'd1):32'd0;
-	endcase
+	if (rst == 1'b0) begin
+		//zeroing registers
+		x1 <= 32'd0;
+		x2 <= 32'd0;
+		x3 <= 32'd0;
+		x4 <= 32'd0;
+		x5 <= 32'd0;
+		x6 <= 32'd0;
+		x7 <= 32'd0;
+		x8 <= 32'd0;
+		x9 <= 32'd0;
+		x10 <= 32'd0;
+		x11 <= 32'd0;
+		x12 <= 32'd0;
+		x13 <= 32'd0;
+		x14 <= 32'd0;
+		x15 <= 32'd0;
+		x16 <= 32'd0;
+		x17 <= 32'd0;
+		x18 <= 32'd0;
+		x19 <= 32'd0;
+		x20 <= 32'd0;
+		x21 <= 32'd0;
+		x22 <= 32'd0;
+		x23 <= 32'd0;
+		x24 <= 32'd0;
+		x25 <= 32'd0;
+		x26 <= 32'd0;
+		x27 <= 32'd0;
+		x28 <= 32'd0;
+		x29 <= 32'd0;
+		x30 <= 32'd0;
+		x31 <= 32'd0;
+		pc <= 32'd0;
+	end
+	else begin
+		case (S)
+		
+			//incrementing wait counts
+			WAIT_START: wait_count <= (NS == WAIT_START)?(wait_count + 32'd1):32'd0;
+			WAIT_FETCH:	wait_count <= (NS == WAIT_FETCH)?(wait_count + 32'd1):32'd0;
+			WAIT_DECODE: wait_count <= (NS == WAIT_DECODE)?(wait_count + 32'd1):32'd0;
+			WAIT_EXECUTE: wait_count <= (NS == WAIT_EXECUTE)?(wait_count + 32'd1):32'd0;
+			WAIT_WRITEBACK: wait_count <= (NS == WAIT_WRITEBACK)?(wait_count + 32'd1):32'd0;
+		endcase
+	end
 end
 	
 	
@@ -261,7 +263,54 @@ system_ram system_ram1 (
 // --------------- DEBUG CODE ---------------
 
 debug debug1 (
-
+//clk and rst
+	.clk(clk),
+	.rst(rst),
+	
+	//registers
+	.x0(x0),
+	.x1(x1),
+	.x2(x2),
+	.x3(x3),
+	.x4(x4),
+	.x5(x5),
+	.x6(x6),
+	.x7(x7),
+	.x8(x8),
+	.x9(x9),
+	.x10(x10),
+	.x11(x11),
+	.x12(x12),
+	.x13(x13),
+	.x14(x14),
+	.x15(x15),
+	.x16(x16),
+	.x17(x17),
+	.x18(x18),
+	.x19(x19),
+	.x20(x20),
+	.x21(x21),
+	.x22(x22),
+	.x23(x23),
+	.x24(x24),
+	.x25(x25),
+	.x26(x26),
+	.x27(x27),
+	.x28(x28),
+	.x29(x29),
+	.x30(x30),
+	.x31(x31),
+	.pc(pc),
+	
+	//vga output data
+	.vga_blank(VGA_BLANK_N),
+	.vga_b(VGA_B),
+	.vga_r(VGA_R),
+	.vga_g(VGA_G),
+	.vga_clk(VGA_CLK),
+	.vga_hs(VGA_HS),
+	.vga_vs(VGA_VS),
+	.vga_sync(VGA_SYNC_N)
 
 );
 

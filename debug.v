@@ -105,16 +105,22 @@ always @ (*) begin
 end
 
 always @ (posedge clk or negedge rst) begin 
-	case (S)
-		V_RESET: v_count <= 32'd0;
-		V_INC: v_count <= v_count + 32'd1;
-		H_EXEC: begin
-			X_coord <= h_count;
-			Y_coord <= v_count;
-		end
-		H_RESET: h_count <= 32'd0;
-		H_INC: h_count <= h_count + 32'd1;
-	endcase
+	if (rst == 1'b0) begin
+		h_count <= 32'd0;
+		v_count <= 32'd0;
+	end
+	else begin
+		case (S)
+			V_RESET: v_count <= 32'd0;
+			V_INC: v_count <= v_count + 32'd1;
+			H_EXEC: begin
+				X_coord <= h_count;
+				Y_coord <= v_count;
+			end
+			H_RESET: h_count <= 32'd0;
+			H_INC: h_count <= h_count + 32'd1;
+		endcase
+	end
 end
 
 //combinational decoding (IN ORDER OF WIRING)
