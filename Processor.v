@@ -18,7 +18,7 @@ module Processor (
 	// input 		          		CLOCK2_50,
 	// input 		          		CLOCK3_50,
 	// input 		          		CLOCK4_50,
-	input 		          		CLOCK_50,
+	input 		          			CLOCK_50,
 
 	//////////// SDRAM //////////
 	// output		    [12:0]		DRAM_ADDR,
@@ -96,6 +96,7 @@ assign rst = KEY[0];
 //system memory variables
 reg sys_wren;
 reg sys_rden;
+reg [3:0]sys_byte_en;
 reg [15:0]sys_addr;
 reg [7:0]sys_data_in;
 wire [7:0]sys_data_out;
@@ -173,30 +174,35 @@ end
 
 always @ (*) begin
 	//determining NS
-	case (S)	
-		//start
-		START: NS = WAIT_START;
-		WAIT_START: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_START;
-		
-		//fetch
-		FETCH: NS = WAIT_FETCH;
-		WAIT_FETCH: NS = (wait_count < WAIT_TIME)?DECODE:WAIT_FETCH;
-		
-		//decode
-		DECODE: NS = WAIT_DECODE;
-		WAIT_DECODE: NS = (wait_count < WAIT_TIME)?EXECUTE:WAIT_DECODE;
-		
-		//execute
-		EXECUTE: NS = WAIT_EXECUTE;
-		WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WRITEBACK:WAIT_EXECUTE;
-		
-		//writeback
-		WRITEBACK: NS = WAIT_WRITEBACK;
-		WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_WRITEBACK;
-		
-		//error
-		default: NS = ERROR;
-	endcase
+	if (exception_thrown == 1'b1) begin
+		NS = ERROR;
+	end 
+	else begin
+		case (S)	
+			//start
+			START: NS = WAIT_START;
+			WAIT_START: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_START;
+			
+			//fetch
+			FETCH: NS = WAIT_FETCH;
+			WAIT_FETCH: NS = (wait_count < WAIT_TIME)?DECODE:WAIT_FETCH;
+			
+			//decode
+			DECODE: NS = WAIT_DECODE;
+			WAIT_DECODE: NS = (wait_count < WAIT_TIME)?EXECUTE:WAIT_DECODE;
+			
+			//execute
+			EXECUTE: NS = WAIT_EXECUTE;
+			WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WRITEBACK:WAIT_EXECUTE;
+			
+			//writeback
+			WRITEBACK: NS = WAIT_WRITEBACK;
+			WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?FETCH:WAIT_WRITEBACK;
+			
+			//error
+			default: NS = ERROR;
+		endcase
+	end
 end
 	
 always @ (posedge clk or negedge rst) begin
@@ -237,6 +243,21 @@ always @ (posedge clk or negedge rst) begin
 	end
 	else begin
 		case (S)
+			FETCH: begin
+				sys_addr <= pc[15:0];
+			end
+
+			DECODE: begin
+
+			end
+
+			EXECUTE: begin
+
+			end
+
+			WRITEBACK: begin
+
+			end
 		
 			//incrementing wait counts
 			WAIT_START: wait_count <= (NS == WAIT_START)?(wait_count + 32'd1):32'd0;
@@ -248,11 +269,17 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 	
-	
+//Instruction Decoding
+always @ (*) begin
+	case (instuction_type) 
+
+	endcase
+end
 
 system_ram system_ram1 (
 	.clock(clk),
 	.wren(sys_wren),
+	.byteena(sys_byte_en),
 	.rden(sys_rden),
 	.data(sys_data_in),
 	.q(sys_data_out),
