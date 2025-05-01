@@ -136,6 +136,15 @@ reg [31:0]x30;
 reg [31:0]x31;
 reg [31:0]pc;
 
+//decoding variables
+reg [31:0]current_instruction;
+wire [4:0]rd_addr;
+wire [4:0]rs1_addr;
+wire [4:0]rs2_addr;
+wire [31:0]rd_data;
+wire [31:0]rs1_data;
+wire [31:0]rs2_data;
+
 //hardwiring zero register
 assign x0 = 32'd0;
 
@@ -243,25 +252,29 @@ always @ (posedge clk or negedge rst) begin
 	end
 	else begin
 		case (S)
+			
 			FETCH: begin
+				//getting instruction from value of pc
 				sys_addr <= pc[15:0];
+				sys_byte_en <= 4'b1111;
 			end
-
+			
 			DECODE: begin
-
+				//setting instruction to decode
+				current_instruction <= sys_data_out;
 			end
-
+			
 			EXECUTE: begin
 
 			end
-
+			
 			WRITEBACK: begin
 
 			end
-		
-			//incrementing wait counts
+
+			//delay in between steps for memory timing reasons
 			WAIT_START: wait_count <= (NS == WAIT_START)?(wait_count + 32'd1):32'd0;
-			WAIT_FETCH:	wait_count <= (NS == WAIT_FETCH)?(wait_count + 32'd1):32'd0;
+			WAIT_FETCH: wait_count <= (NS == WAIT_FETCH)?(wait_count + 32'd1):32'd0;
 			WAIT_DECODE: wait_count <= (NS == WAIT_DECODE)?(wait_count + 32'd1):32'd0;
 			WAIT_EXECUTE: wait_count <= (NS == WAIT_EXECUTE)?(wait_count + 32'd1):32'd0;
 			WAIT_WRITEBACK: wait_count <= (NS == WAIT_WRITEBACK)?(wait_count + 32'd1):32'd0;
@@ -271,8 +284,131 @@ end
 	
 //Instruction Decoding
 always @ (*) begin
-	case (instuction_type) 
 
+	//instruction type decoding
+	opcode = current_instruction[6:0];
+	case (opcode)
+		OP_IMM: begin
+			immediate[11:0] = current_instruction[31:20];
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			rd_addr = current_instruction[11:7];
+		end
+		LUI: begin
+			immediate[31:12] = current_instruction[31:12];
+			rd_addr = current_instruction[11:7];
+		end
+		AUIPC: begin
+			immediate[31:12] = current_instruction[31:12];
+			rd_addr = current_instruction[11:7];
+		end
+	endcase
+
+	//reg instruction decoding
+	case (rs1_addr)
+		5'd0: rs1_data = x0;
+		5'd1: rs1_data = x1;
+		5'd2: rs1_data = x2;
+		5'd3: rs1_data = x3;
+		5'd4: rs1_data = x4;
+		5'd5: rs1_data = x5;
+		5'd6: rs1_data = x6;
+		5'd7: rs1_data = x7;
+		5'd8: rs1_data = x8;
+		5'd9: rs1_data = x9;
+		5'd10: rs1_data = x10;
+		5'd11: rs1_data = x11;
+		5'd12: rs1_data = x12;
+		5'd13: rs1_data = x13;
+		5'd14: rs1_data = x14;
+		5'd15: rs1_data = x15;
+		5'd16: rs1_data = x16;
+		5'd17: rs1_data = x17;
+		5'd18: rs1_data = x18;
+		5'd19: rs1_data = x19;
+		5'd20: rs1_data = x20;
+		5'd21: rs1_data = x21;
+		5'd22: rs1_data = x22;
+		5'd23: rs1_data = x23;
+		5'd24: rs1_data = x24;
+		5'd25: rs1_data = x25;
+		5'd26: rs1_data = x26;
+		5'd27: rs1_data = x27;
+		5'd28: rs1_data = x28;
+		5'd29: rs1_data = x29;
+		5'd30: rs1_data = x30;
+		5'd31: rs1_data = x31;
+		default: rs1_data = 32'd1001;
+	endcase
+	case (rs2_addr)
+		5'd0: rs2_data = x0;
+		5'd1: rs2_data = x1;
+		5'd2: rs2_data = x2;
+		5'd3: rs2_data = x3;
+		5'd4: rs2_data = x4;
+		5'd5: rs2_data = x5;
+		5'd6: rs2_data = x6;
+		5'd7: rs2_data = x7;
+		5'd8: rs2_data = x8;
+		5'd9: rs2_data = x9;
+		5'd10: rs2_data = x10;
+		5'd11: rs2_data = x11;
+		5'd12: rs2_data = x12;
+		5'd13: rs2_data = x13;
+		5'd14: rs2_data = x14;
+		5'd15: rs2_data = x15;
+		5'd16: rs2_data = x16;
+		5'd17: rs2_data = x17;
+		5'd18: rs2_data = x18;
+		5'd19: rs2_data = x19;
+		5'd20: rs2_data = x20;
+		5'd21: rs2_data = x21;
+		5'd22: rs2_data = x22;
+		5'd23: rs2_data = x23;
+		5'd24: rs2_data = x24;
+		5'd25: rs2_data = x25;
+		5'd26: rs2_data = x26;
+		5'd27: rs2_data = x27;
+		5'd28: rs2_data = x28;
+		5'd29: rs2_data = x29;
+		5'd30: rs2_data = x30;
+		5'd31: rs2_data = x31;
+		default: rs2_data = 32'd1001;
+	endcase
+	case (rd_addr)
+		5'd0: rd_data = x0;
+		5'd1: rd_data = x1;
+		5'd2: rd_data = x2;
+		5'd3: rd_data = x3;
+		5'd4: rd_data = x4;
+		5'd5: rd_data = x5;
+		5'd6: rd_data = x6;
+		5'd7: rd_data = x7;
+		5'd8: rd_data = x8;
+		5'd9: rd_data = x9;
+		5'd10: rd_data = x10;
+		5'd11: rd_data = x11;
+		5'd12: rd_data = x12;
+		5'd13: rd_data = x13;
+		5'd14: rd_data = x14;
+		5'd15: rd_data = x15;
+		5'd16: rd_data = x16;
+		5'd17: rd_data = x17;
+		5'd18: rd_data = x18;
+		5'd19: rd_data = x19;
+		5'd20: rd_data = x20;
+		5'd21: rd_data = x21;
+		5'd22: rd_data = x22;
+		5'd23: rd_data = x23;
+		5'd24: rd_data = x24;
+		5'd25: rd_data = x25;
+		5'd26: rd_data = x26;
+		5'd27: rd_data = x27;
+		5'd28: rd_data = x28;
+		5'd29: rd_data = x29;
+		5'd30: rd_data = x30;
+		5'd31: rd_data = x31;
+		default: rd_data = 32'd1001;
 	endcase
 end
 
