@@ -8,6 +8,7 @@ changelog:
 	7. worked on register-immediate instruction decoding (5/1/25)
 	8. worked on register-immediate instruction decoding, created and worked on alu module (5/5/25)
 	9. implemented register-register instruction decoding (5/6/25)
+	10. implemented register-immediate instruction decoding (5/6/25)
 
 todo:
 	1. simplify and revamp ascii controller (remove double buffer) to save on RAM and processing power. (IF TIME ALLOWS)
@@ -15,7 +16,9 @@ todo:
 	3. add debug toggle switch that allows use of one button for single cycle or another button for single instruction.
 	4. implement decoding
 		a. continue to implement alu
-		b. implement integer register immediate instruction decoding
+		b. implement decode errors
+		c. implement jal instructions
+	5. implement error states in fsm for debugging
 
 testing needed:
 	1. test that state transitions and delay works properly

@@ -144,6 +144,9 @@ wire [4:0]rs2_addr;
 wire [31:0]rd_data;
 wire [31:0]rs1_data;
 wire [31:0]rs2_data;
+wire [31:0]immediate;
+wire [6:0]funct7;
+wire [2:0]funct3;
 
 //hardwiring zero register
 assign x0 = 32'd0;
@@ -156,18 +159,17 @@ parameter WAIT_TIME = 32'd20;
 reg [31:0] wait_count;
 
 //fsm states
-parameter 
-ERROR = 32'd0,
-START = 32'd1,
-WAIT_START = 32'd2,
-FETCH = 32'd3,
-WAIT_FETCH = 32'd4,
-DECODE = 32'd5,
-WAIT_DECODE = 32'd6,
-EXECUTE = 32'd7,
-WAIT_EXECUTE = 32'd8,
-WRITEBACK = 32'd9,
-WAIT_WRITEBACK = 32'd10;
+parameter ERROR = 32'd0,
+			START = 32'd1,
+			WAIT_START = 32'd2,
+			FETCH = 32'd3,
+			WAIT_FETCH = 32'd4,
+			DECODE = 32'd5,
+			WAIT_DECODE = 32'd6,
+			EXECUTE = 32'd7,
+			WAIT_EXECUTE = 32'd8,
+			WRITEBACK = 32'd9,
+			WAIT_WRITEBACK = 32'd10;
 
 
 always @ (posedge clk or negedge rst) begin
@@ -270,6 +272,10 @@ always @ (posedge clk or negedge rst) begin
 						alu_in_1 <= rs1_data;
 						alu_in_2 <= rs2_data;
 					end
+					OP_IMM: begin
+						alu_in_1 <= rs1_data;
+						alu_in_2 <= immediate;
+					end
 				endcase
 			end
 			
@@ -318,48 +324,71 @@ always @ (*) begin
 			case (funct7)
 				7'h00: begin
 					case (funct3)
-						3'h0: alu_op = ADD; //ADD
-						3'h1:	alu_op = SLL; //Shift Left Logical
-						3'h2:	alu_op = SLT; //Set Less Than
-						3'h3: alu_op = SLTU; //Set Less Than Unsigned
-						3'h4: alu_op = XOR; //XOR
-						3'h5: alu_op = SRL; //Shift Right Logical
-						3'h6: alu_op = OR; //OR
-						3'h7: alu_op = AND; //AND
+						3'h0: alu_op = ADD; //add
+						3'h1:	alu_op = SLL; //sll
+						3'h2:	alu_op = SLT; //slt
+						3'h3: alu_op = SLTU; //sltu
+						3'h4: alu_op = XOR; //xor
+						3'h5: alu_op = SRL; //srl
+						3'h6: alu_op = OR; //or
+						3'h7: alu_op = AND; //and
 					endcase
 				end
 				7'h20: begin
 					case (funct3)
-						3'd0: alu_op = SUB; //SUB
-						3'd5: alu_op = SRA; //Shift Right Arithmetic
+						3'd0: alu_op = SUB; //sub
+						3'd5: alu_op = SRA; //sra
 					endcase
 				end
 			endcase
 		end
 		
+		//integer register-immediate instructions
 		OP_IMM: begin
+			//sign extending immediate
 			immediate[11:0] = current_instruction[31:20];
+			immediate[31:12] = current_instruction[31];
+			//decode instruction
 			rs1_addr = current_instruction[19:15];
 			funct3 = current_instruction[14:12];
 			rd_addr = current_instruction[11:7];
+			case (immediate[11:5])
+				7'h20: begin
+					case (funct3)
+						3'h5: alu_op = SRA; //srai
+					endcase
+				end
+				7'h00: begin
+					case (funct3)
+						3'h1: alu_op = SLL; //slli
+						3'h5: alu_op = SRL; //srli
+					endcase
+				end
+				default: begin
+					case (funct3)
+						3'h0: alu_op = ADD; //addi
+						3'h2:	alu_op = SLT; //slti
+						3'h3: alu_op = SLTU; //sltui
+						3'h4: alu_op = XOR; //xori
+						3'h6: alu_op = OR; //ori
+						3'h7: alu_op = AND; //andi
+					endcase
+				end
+			endcase
 		end
 		
-		LUI: begin
-			immediate[31:12] = current_instruction[31:12];
-			rd_addr = current_instruction[11:7];
+		//jump and link instruction
+		JAL: begin
+			
 		end
 		
-		AUIPC: begin
-			immediate[31:12] = current_instruction[31:12];
-			rd_addr = current_instruction[11:7];
-		end
 	
 		default: begin
 		
 		end
 	endcase
 
-	//reg instruction decoding
+	//reg address decoding
 	case (rs1_addr)
 		5'd0: rs1_data = x0;
 		5'd1: rs1_data = x1;

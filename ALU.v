@@ -1,11 +1,11 @@
-module ALU {
+module ALU (
 	
 	input wire [31:0]in_1,
 	input wire [31:0]in_2,
 	input wire [3:0]operation,
 	
 	output wire [31:0]out
-};
+);
 
 wire [31:0]unsigned_in_1;
 wire [31:0]unsigned_in_2;
