@@ -10,6 +10,18 @@ module ALU {
 wire [31:0]unsigned_in_1;
 wire [31:0]unsigned_in_2;
 
+//ALU parameters
+parameter ADD = 4'd0,
+			SUB = 4'd1,
+			XOR = 4'd2,
+			OR = 4'd3,
+			AND = 4'd4,
+			SLL = 4'd5,
+			SRL = 4'd6,
+			SRA = 4'd7,
+			SLT = 4'd8,
+			SLTU = 4'd9;
+			
 always @ (*) begin
 	unsigned_in_1 = (~in_1) + 32'd1;
 	unsigned_in_2 = (~in_2) + 32'd1;

@@ -265,7 +265,12 @@ always @ (posedge clk or negedge rst) begin
 			end
 			
 			EXECUTE: begin
-
+				case (opcode)
+					OP: begin
+						alu_in_1 <= rs1_data;
+						alu_in_2 <= rs2_data;
+					end
+				endcase
 			end
 			
 			WRITEBACK: begin
@@ -281,6 +286,18 @@ always @ (posedge clk or negedge rst) begin
 		endcase
 	end
 end
+
+//ALU parameters
+parameter ADD = 4'd0,
+			SUB = 4'd1,
+			XOR = 4'd2,
+			OR = 4'd3,
+			AND = 4'd4,
+			SLL = 4'd5,
+			SRL = 4'd6,
+			SRA = 4'd7,
+			SLT = 4'd8,
+			SLTU = 4'd9;
 	
 //Instruction Decoding
 always @ (*) begin
@@ -288,20 +305,55 @@ always @ (*) begin
 	//instruction type decoding
 	opcode = current_instruction[6:0];
 	case (opcode)
+	
+		//integer register-register instructions
+		OP: begin
+			//decode instruction
+			funct7 = current_instruction[31:25];
+			rs2_addr = current_instruction[24:20];
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			rd_addr = current_instruction[11:7];
+			//set alu_op
+			case (funct7)
+				7'h00: begin
+					case (funct3)
+						3'h0: alu_op = ADD; //ADD
+						3'h1:	alu_op = SLL; //Shift Left Logical
+						3'h2:	alu_op = SLT; //Set Less Than
+						3'h3: alu_op = SLTU; //Set Less Than Unsigned
+						3'h4: alu_op = XOR; //XOR
+						3'h5: alu_op = SRL; //Shift Right Logical
+						3'h6: alu_op = OR; //OR
+						3'h7: alu_op = AND; //AND
+					endcase
+				end
+				7'h20: begin
+					case (funct3)
+						3'd0: alu_op = SUB; //SUB
+						3'd5: alu_op = SRA; //Shift Right Arithmetic
+					endcase
+				end
+			endcase
+		end
+		
 		OP_IMM: begin
 			immediate[11:0] = current_instruction[31:20];
 			rs1_addr = current_instruction[19:15];
 			funct3 = current_instruction[14:12];
 			rd_addr = current_instruction[11:7];
 		end
+		
 		LUI: begin
 			immediate[31:12] = current_instruction[31:12];
 			rd_addr = current_instruction[11:7];
 		end
+		
 		AUIPC: begin
 			immediate[31:12] = current_instruction[31:12];
 			rd_addr = current_instruction[11:7];
 		end
+	
 		default: begin
 		
 		end
@@ -377,41 +429,6 @@ always @ (*) begin
 		5'd30: rs2_data = x30;
 		5'd31: rs2_data = x31;
 		default: rs2_data = 32'd1001;
-	endcase
-	case (rd_addr)
-		5'd0: rd_data = x0;
-		5'd1: rd_data = x1;
-		5'd2: rd_data = x2;
-		5'd3: rd_data = x3;
-		5'd4: rd_data = x4;
-		5'd5: rd_data = x5;
-		5'd6: rd_data = x6;
-		5'd7: rd_data = x7;
-		5'd8: rd_data = x8;
-		5'd9: rd_data = x9;
-		5'd10: rd_data = x10;
-		5'd11: rd_data = x11;
-		5'd12: rd_data = x12;
-		5'd13: rd_data = x13;
-		5'd14: rd_data = x14;
-		5'd15: rd_data = x15;
-		5'd16: rd_data = x16;
-		5'd17: rd_data = x17;
-		5'd18: rd_data = x18;
-		5'd19: rd_data = x19;
-		5'd20: rd_data = x20;
-		5'd21: rd_data = x21;
-		5'd22: rd_data = x22;
-		5'd23: rd_data = x23;
-		5'd24: rd_data = x24;
-		5'd25: rd_data = x25;
-		5'd26: rd_data = x26;
-		5'd27: rd_data = x27;
-		5'd28: rd_data = x28;
-		5'd29: rd_data = x29;
-		5'd30: rd_data = x30;
-		5'd31: rd_data = x31;
-		default: rd_data = 32'd1001;
 	endcase
 end
 
