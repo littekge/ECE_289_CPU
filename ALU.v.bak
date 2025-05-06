@@ -1,0 +1,27 @@
+module ALU {
+	
+	input wire [31:0]in_1,
+	input wire [31:0]in_2,
+	input wire [3:0]operation,
+	
+	output wire [31:0]out
+};
+
+always @ (*) begin
+	case (operation)
+		ADD: out = in_1 + in_2;
+		SUB: out = in_1 - in_2;
+		XOR: out = in_1 ^ in_2;
+		OR: out = in_1 | in_2;
+		AND: out = in_1 & in_2;
+		SLL: out = in_1 << in_2;
+		SRL: out = in_1 >> in_2;
+		SRA: out = in_1 <<< in_2;
+		SLT: out = (in_1 < in_2)?1'b1:1'b0;
+		SLTU: out = in_1 + in_2;
+	endcase
+end
+
+
+
+endmodule

@@ -5,15 +5,16 @@ changelog:
 	4. finished debug module FSM, awaiting testing (4/24/25)
 	5. finished debug module (4/26/25)
 	6. added byte enable to memory, started work on decoding, implemented fetch step (4/30/25)
-	7. worked on register immediate instruction decoding (5/1/2025)
+	7. worked on register immediate instruction decoding (5/1/25)
+	8. worked on register immediate instruction decoding, created and worked on alu module (5/5/25)
 
 todo:
 	1. simplify and revamp ascii controller (remove double buffer) to save on RAM and processing power. (IF TIME ALLOWS)
 	2. make debug display output more functional (add labels to registers, add current instruction display, etc.) (IF TIME ALLOWS)
 	3. add debug toggle switch that allows use of one button for single cycle or another button for single instruction.
 	4. implement decoding
-		a. implement integer register immediate instruction decoding
-	
+		a. continue to implement alu
+		b. implement integer register immediate instruction decoding
 
 testing needed:
 	1. test that state transitions and delay works properly

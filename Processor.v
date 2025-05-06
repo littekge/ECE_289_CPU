@@ -302,6 +302,9 @@ always @ (*) begin
 			immediate[31:12] = current_instruction[31:12];
 			rd_addr = current_instruction[11:7];
 		end
+		default: begin
+		
+		end
 	endcase
 
 	//reg instruction decoding
