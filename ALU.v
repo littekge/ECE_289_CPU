@@ -4,11 +4,11 @@ module ALU (
 	input wire [31:0]in_2,
 	input wire [3:0]operation,
 	
-	output wire [31:0]out
+	output reg [31:0]out
 );
 
-wire [31:0]unsigned_in_1;
-wire [31:0]unsigned_in_2;
+reg [31:0]unsigned_in_1;
+reg [31:0]unsigned_in_2;
 
 //ALU parameters
 parameter ADD = 4'd0,

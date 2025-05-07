@@ -1,5 +1,5 @@
 Timing Analyzer report for Processor
-Sat Apr 26 13:22:11 2025
+Wed May  7 11:09:23 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -100,26 +100,26 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 28          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 3.73        ;
+; Average used               ; 3.74        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  24.9%      ;
-;     Processor 3            ;  23.0%      ;
-;     Processor 4            ;  22.4%      ;
-;     Processor 5            ;  17.0%      ;
-;     Processor 6            ;  17.0%      ;
-;     Processor 7            ;  17.0%      ;
-;     Processor 8            ;  17.0%      ;
-;     Processor 9            ;  16.9%      ;
-;     Processor 10           ;  16.9%      ;
-;     Processor 11           ;  16.9%      ;
-;     Processor 12           ;  16.8%      ;
-;     Processor 13           ;  16.8%      ;
-;     Processor 14           ;  16.8%      ;
-;     Processor 15           ;  16.8%      ;
-;     Processor 16           ;  16.8%      ;
+;     Processor 2            ;  23.1%      ;
+;     Processor 3            ;  22.6%      ;
+;     Processor 4            ;  21.7%      ;
+;     Processor 5            ;  17.3%      ;
+;     Processor 6            ;  17.3%      ;
+;     Processor 7            ;  17.3%      ;
+;     Processor 8            ;  17.3%      ;
+;     Processor 9            ;  17.3%      ;
+;     Processor 10           ;  17.2%      ;
+;     Processor 11           ;  17.2%      ;
+;     Processor 12           ;  17.1%      ;
+;     Processor 13           ;  17.1%      ;
+;     Processor 14           ;  17.1%      ;
+;     Processor 15           ;  17.0%      ;
+;     Processor 16           ;  17.0%      ;
 +----------------------------+-------------+
 
 
@@ -129,6 +129,7 @@ https://fpgasoftware.intel.com/eula.
 ; Clock Name                                                                                                         ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                                                                                ;
 +--------------------------------------------------------------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------------------------------------------------------------------------------+
 ; CLOCK_50                                                                                                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                                                                                           ;
+; current_instruction[0]                                                                                             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { current_instruction[0] }                                                                                             ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 } ;
 ; debug:debug1|X_coord[0]                                                                                            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debug:debug1|X_coord[0] }                                                                                            ;
 ; debug:debug1|Y_coord[0]                                                                                            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debug:debug1|Y_coord[0] }                                                                                            ;
@@ -140,10 +141,11 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                                         ; Note ;
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
-; 15.45 MHz  ; 15.45 MHz       ; CLOCK_50                                                                                                           ;      ;
-; 100.36 MHz ; 100.36 MHz      ; debug:debug1|X_coord[0]                                                                                            ;      ;
-; 106.66 MHz ; 106.66 MHz      ; debug:debug1|Y_coord[0]                                                                                            ;      ;
-; 262.33 MHz ; 262.33 MHz      ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ;      ;
+; 15.52 MHz  ; 15.52 MHz       ; CLOCK_50                                                                                                           ;      ;
+; 106.81 MHz ; 106.81 MHz      ; debug:debug1|X_coord[0]                                                                                            ;      ;
+; 127.29 MHz ; 127.29 MHz      ; debug:debug1|Y_coord[0]                                                                                            ;      ;
+; 268.24 MHz ; 268.24 MHz      ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ;      ;
+; 306.56 MHz ; 306.56 MHz      ; current_instruction[0]                                                                                             ;      ;
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -159,10 +161,11 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                              ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                                           ; -63.731 ; -13372.216    ;
-; debug:debug1|X_coord[0]                                                                                            ; -61.409 ; -243.764      ;
-; debug:debug1|Y_coord[0]                                                                                            ; -8.331  ; -48.144       ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.812  ; -105.001      ;
+; CLOCK_50                                                                                                           ; -63.413 ; -14420.541    ;
+; debug:debug1|X_coord[0]                                                                                            ; -59.643 ; -237.641      ;
+; debug:debug1|Y_coord[0]                                                                                            ; -8.642  ; -256.940      ;
+; current_instruction[0]                                                                                             ; -5.263  ; -5.263        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.728  ; -99.384       ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -171,10 +174,11 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                                                              ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                                                           ; 0.366 ; 0.000         ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.583 ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 1.113 ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 1.133 ; 0.000         ;
+; CLOCK_50                                                                                                           ; 0.297 ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.599 ; 0.000         ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.763 ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 1.094 ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 1.563 ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -195,10 +199,11 @@ No paths to report.
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                              ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                           ; -2.174 ; -9344.471     ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -0.394 ; -21.792       ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.099  ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.207  ; 0.000         ;
+; CLOCK_50                                                                                                           ; -2.174 ; -9437.312     ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -0.394 ; -21.894       ;
+; debug:debug1|Y_coord[0]                                                                                            ; 0.231  ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.235  ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.452  ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -214,10 +219,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                                         ; Note ;
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
-; 14.96 MHz  ; 14.96 MHz       ; CLOCK_50                                                                                                           ;      ;
-; 102.56 MHz ; 102.56 MHz      ; debug:debug1|X_coord[0]                                                                                            ;      ;
-; 107.32 MHz ; 107.32 MHz      ; debug:debug1|Y_coord[0]                                                                                            ;      ;
-; 259.4 MHz  ; 259.4 MHz       ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ;      ;
+; 15.01 MHz  ; 15.01 MHz       ; CLOCK_50                                                                                                           ;      ;
+; 108.6 MHz  ; 108.6 MHz       ; debug:debug1|X_coord[0]                                                                                            ;      ;
+; 134.16 MHz ; 134.16 MHz      ; debug:debug1|Y_coord[0]                                                                                            ;      ;
+; 269.98 MHz ; 269.98 MHz      ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ;      ;
+; 297.62 MHz ; 297.62 MHz      ; current_instruction[0]                                                                                             ;      ;
 +------------+-----------------+--------------------------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -227,10 +233,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                              ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                                           ; -65.848 ; -13071.959    ;
-; debug:debug1|X_coord[0]                                                                                            ; -63.880 ; -253.686      ;
-; debug:debug1|Y_coord[0]                                                                                            ; -8.252  ; -47.662       ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.855  ; -105.238      ;
+; CLOCK_50                                                                                                           ; -65.633 ; -14053.208    ;
+; debug:debug1|X_coord[0]                                                                                            ; -62.313 ; -248.338      ;
+; debug:debug1|Y_coord[0]                                                                                            ; -8.607  ; -256.324      ;
+; current_instruction[0]                                                                                             ; -5.359  ; -5.359        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.704  ; -98.463       ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -239,10 +246,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                                                              ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                                                           ; 0.329 ; 0.000         ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.593 ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.912 ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 1.048 ; 0.000         ;
+; CLOCK_50                                                                                                           ; 0.187 ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.616 ; 0.000         ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.745 ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 1.023 ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 1.433 ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -263,10 +271,11 @@ No paths to report.
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                              ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                           ; -2.174 ; -9343.586     ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -0.394 ; -21.754       ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.098  ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.186  ; 0.000         ;
+; CLOCK_50                                                                                                           ; -2.174 ; -9437.063     ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -0.394 ; -21.558       ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.236  ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 0.276  ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.442  ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -282,10 +291,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                              ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                                           ; -33.436 ; -7388.137     ;
-; debug:debug1|X_coord[0]                                                                                            ; -31.308 ; -123.944      ;
-; debug:debug1|Y_coord[0]                                                                                            ; -4.510  ; -25.730       ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -1.354  ; -47.740       ;
+; CLOCK_50                                                                                                           ; -32.946 ; -8075.349     ;
+; debug:debug1|X_coord[0]                                                                                            ; -29.778 ; -118.676      ;
+; debug:debug1|Y_coord[0]                                                                                            ; -4.894  ; -141.544      ;
+; current_instruction[0]                                                                                             ; -2.718  ; -2.718        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -1.370  ; -46.179       ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -294,10 +304,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                                                              ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                                                           ; 0.180 ; 0.000         ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.231 ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.593 ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.617 ; 0.000         ;
+; CLOCK_50                                                                                                           ; 0.178 ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.334 ; 0.000         ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.385 ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.772 ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 1.237 ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -318,10 +329,11 @@ No paths to report.
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                              ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                           ; -2.174 ; -9148.088     ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.086  ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.104  ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.297  ; 0.000         ;
+; CLOCK_50                                                                                                           ; -2.174 ; -9207.043     ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.063  ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 0.237  ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.326  ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.474  ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -337,10 +349,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                                              ; Slack   ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                                           ; -31.249 ; -6352.779     ;
-; debug:debug1|X_coord[0]                                                                                            ; -29.637 ; -117.358      ;
-; debug:debug1|Y_coord[0]                                                                                            ; -4.089  ; -23.441       ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -1.180  ; -42.612       ;
+; CLOCK_50                                                                                                           ; -30.937 ; -6963.386     ;
+; debug:debug1|X_coord[0]                                                                                            ; -28.381 ; -113.247      ;
+; debug:debug1|Y_coord[0]                                                                                            ; -4.446  ; -129.093      ;
+; current_instruction[0]                                                                                             ; -2.601  ; -2.601        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -1.208  ; -40.501       ;
 +--------------------------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -349,10 +362,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                                                              ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                                                           ; 0.104 ; 0.000         ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.216 ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.512 ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.536 ; 0.000         ;
+; CLOCK_50                                                                                                           ; 0.088 ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.308 ; 0.000         ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.347 ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.678 ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 1.080 ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -373,10 +387,11 @@ No paths to report.
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                                              ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                                           ; -2.174 ; -9153.183     ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.102  ; 0.000         ;
-; debug:debug1|Y_coord[0]                                                                                            ; 0.167  ; 0.000         ;
-; debug:debug1|X_coord[0]                                                                                            ; 0.312  ; 0.000         ;
+; CLOCK_50                                                                                                           ; -2.174 ; -9212.060     ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 0.086  ; 0.000         ;
+; debug:debug1|Y_coord[0]                                                                                            ; 0.301  ; 0.000         ;
+; debug:debug1|X_coord[0]                                                                                            ; 0.348  ; 0.000         ;
+; current_instruction[0]                                                                                             ; 0.476  ; 0.000         ;
 +--------------------------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -392,16 +407,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------------------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
 ; Clock                                                                                                               ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------------------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                                                                    ; -65.848    ; 0.104 ; N/A      ; N/A     ; -2.174              ;
-;  CLOCK_50                                                                                                           ; -65.848    ; 0.104 ; N/A      ; N/A     ; -2.174              ;
-;  debug:debug1|X_coord[0]                                                                                            ; -63.880    ; 0.536 ; N/A      ; N/A     ; 0.186               ;
-;  debug:debug1|Y_coord[0]                                                                                            ; -8.331     ; 0.512 ; N/A      ; N/A     ; 0.098               ;
-;  debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.855     ; 0.216 ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS                                                                                                     ; -13769.125 ; 0.0   ; 0.0      ; 0.0     ; -9366.263           ;
-;  CLOCK_50                                                                                                           ; -13372.216 ; 0.000 ; N/A      ; N/A     ; -9344.471           ;
-;  debug:debug1|X_coord[0]                                                                                            ; -253.686   ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  debug:debug1|Y_coord[0]                                                                                            ; -48.144    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -105.238   ; 0.000 ; N/A      ; N/A     ; -21.792             ;
+; Worst-case Slack                                                                                                    ; -65.633    ; 0.088 ; N/A      ; N/A     ; -2.174              ;
+;  CLOCK_50                                                                                                           ; -65.633    ; 0.088 ; N/A      ; N/A     ; -2.174              ;
+;  current_instruction[0]                                                                                             ; -5.359     ; 0.308 ; N/A      ; N/A     ; 0.442               ;
+;  debug:debug1|X_coord[0]                                                                                            ; -62.313    ; 0.678 ; N/A      ; N/A     ; 0.235               ;
+;  debug:debug1|Y_coord[0]                                                                                            ; -8.642     ; 1.080 ; N/A      ; N/A     ; 0.231               ;
+;  debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -2.728     ; 0.347 ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                                                                                                     ; -15019.769 ; 0.0   ; 0.0      ; 0.0     ; -9459.206           ;
+;  CLOCK_50                                                                                                           ; -14420.541 ; 0.000 ; N/A      ; N/A     ; -9437.312           ;
+;  current_instruction[0]                                                                                             ; -5.359     ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  debug:debug1|X_coord[0]                                                                                            ; -248.338   ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  debug:debug1|Y_coord[0]                                                                                            ; -256.940   ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; -99.384    ; 0.000 ; N/A      ; N/A     ; -21.894             ;
 +---------------------------------------------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
 
 
@@ -879,15 +896,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; From Clock                                                                                                         ; To Clock                                                                                                           ; RR Paths     ; FR Paths     ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
 ; CLOCK_50                                                                                                           ; CLOCK_50                                                                                                           ; > 2147483647 ; 0            ; 0        ; 0        ;
+; current_instruction[0]                                                                                             ; CLOCK_50                                                                                                           ; 64           ; 656          ; 0        ; 0        ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; CLOCK_50                                                                                                           ; 681          ; 1            ; 0        ; 0        ;
-; debug:debug1|X_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; 3343         ; 3071         ; 0        ; 0        ;
+; debug:debug1|X_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; 3295         ; 3023         ; 0        ; 0        ;
 ; debug:debug1|Y_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; > 2147483647 ; > 2147483647 ; 0        ; 0        ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 1620         ; 0            ; 0        ; 0        ;
+; CLOCK_50                                                                                                           ; current_instruction[0]                                                                                             ; 0            ; 0            ; 6        ; 0        ;
+; current_instruction[0]                                                                                             ; current_instruction[0]                                                                                             ; 0            ; 0            ; 1        ; 1        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 1547         ; 0            ; 0        ; 0        ;
 ; CLOCK_50                                                                                                           ; debug:debug1|X_coord[0]                                                                                            ; > 2147483647 ; 0            ; 0        ; 0        ;
 ; debug:debug1|X_coord[0]                                                                                            ; debug:debug1|X_coord[0]                                                                                            ; 38           ; 38           ; 0        ; 0        ;
 ; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|X_coord[0]                                                                                            ; > 2147483647 ; > 2147483647 ; 0        ; 0        ;
-; CLOCK_50                                                                                                           ; debug:debug1|Y_coord[0]                                                                                            ; 753          ; 0            ; 0        ; 0        ;
-; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|Y_coord[0]                                                                                            ; 17           ; 17           ; 0        ; 0        ;
+; CLOCK_50                                                                                                           ; debug:debug1|Y_coord[0]                                                                                            ; 992          ; 0            ; 0        ; 0        ;
+; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|Y_coord[0]                                                                                            ; 31           ; 31           ; 0        ; 0        ;
 +--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -898,15 +918,18 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                                                                                                         ; To Clock                                                                                                           ; RR Paths     ; FR Paths     ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
 ; CLOCK_50                                                                                                           ; CLOCK_50                                                                                                           ; > 2147483647 ; 0            ; 0        ; 0        ;
+; current_instruction[0]                                                                                             ; CLOCK_50                                                                                                           ; 64           ; 656          ; 0        ; 0        ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; CLOCK_50                                                                                                           ; 681          ; 1            ; 0        ; 0        ;
-; debug:debug1|X_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; 3343         ; 3071         ; 0        ; 0        ;
+; debug:debug1|X_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; 3295         ; 3023         ; 0        ; 0        ;
 ; debug:debug1|Y_coord[0]                                                                                            ; CLOCK_50                                                                                                           ; > 2147483647 ; > 2147483647 ; 0        ; 0        ;
-; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 1620         ; 0            ; 0        ; 0        ;
+; CLOCK_50                                                                                                           ; current_instruction[0]                                                                                             ; 0            ; 0            ; 6        ; 0        ;
+; current_instruction[0]                                                                                             ; current_instruction[0]                                                                                             ; 0            ; 0            ; 1        ; 1        ;
+; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; 1547         ; 0            ; 0        ; 0        ;
 ; CLOCK_50                                                                                                           ; debug:debug1|X_coord[0]                                                                                            ; > 2147483647 ; 0            ; 0        ; 0        ;
 ; debug:debug1|X_coord[0]                                                                                            ; debug:debug1|X_coord[0]                                                                                            ; 38           ; 38           ; 0        ; 0        ;
 ; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|X_coord[0]                                                                                            ; > 2147483647 ; > 2147483647 ; 0        ; 0        ;
-; CLOCK_50                                                                                                           ; debug:debug1|Y_coord[0]                                                                                            ; 753          ; 0            ; 0        ; 0        ;
-; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|Y_coord[0]                                                                                            ; 17           ; 17           ; 0        ; 0        ;
+; CLOCK_50                                                                                                           ; debug:debug1|Y_coord[0]                                                                                            ; 992          ; 0            ; 0        ; 0        ;
+; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|Y_coord[0]                                                                                            ; 31           ; 31           ; 0        ; 0        ;
 +--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -931,7 +954,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 400   ; 400  ;
+; Unconstrained Input Port Paths  ; 475   ; 475  ;
 ; Unconstrained Output Ports      ; 28    ; 28   ;
 ; Unconstrained Output Port Paths ; 149   ; 149  ;
 +---------------------------------+-------+------+
@@ -943,6 +966,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                                                                                                             ; Clock                                                                                                              ; Type ; Status      ;
 +--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------+-------------+
 ; CLOCK_50                                                                                                           ; CLOCK_50                                                                                                           ; Base ; Constrained ;
+; current_instruction[0]                                                                                             ; current_instruction[0]                                                                                             ; Base ; Constrained ;
 ; debug:debug1|X_coord[0]                                                                                            ; debug:debug1|X_coord[0]                                                                                            ; Base ; Constrained ;
 ; debug:debug1|Y_coord[0]                                                                                            ; debug:debug1|Y_coord[0]                                                                                            ; Base ; Constrained ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 ; Base ; Constrained ;
@@ -1045,68 +1069,72 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Apr 26 13:22:05 2025
+    Info: Processing started: Wed May  7 11:09:17 2025
 Info: Command: quartus_sta Processor -c Processor
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 10 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 36 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Processor.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
     Info (332105): create_clock -period 1.000 -name debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25
-    Info (332105): create_clock -period 1.000 -name debug:debug1|X_coord[0] debug:debug1|X_coord[0]
+    Info (332105): create_clock -period 1.000 -name current_instruction[0] current_instruction[0]
     Info (332105): create_clock -period 1.000 -name debug:debug1|Y_coord[0] debug:debug1|Y_coord[0]
+    Info (332105): create_clock -period 1.000 -name debug:debug1|X_coord[0] debug:debug1|X_coord[0]
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 188
     Warning (332126): Node "debug1|Mux0~1|combout"
     Warning (332126): Node "debug1|Mux0~1|dataa"
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 188
     Warning (332126): Node "debug1|Mux3~1|combout"
-    Warning (332126): Node "debug1|Mux3~1|dataa"
+    Warning (332126): Node "debug1|Mux3~1|datad"
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 188
     Warning (332126): Node "debug1|Mux1~1|combout"
-    Warning (332126): Node "debug1|Mux1~1|dataa"
+    Warning (332126): Node "debug1|Mux1~1|datad"
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 188
     Warning (332126): Node "debug1|Mux2~1|combout"
-    Warning (332126): Node "debug1|Mux2~1|dataa"
+    Warning (332126): Node "debug1|Mux2~1|datab"
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 188
     Warning (332126): Node "debug1|Mux4~1|combout"
-    Warning (332126): Node "debug1|Mux4~1|dataa"
+    Warning (332126): Node "debug1|Mux4~1|datab"
 Warning (332125): Found combinational loop of 2 nodes File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 132
-    Warning (332126): Node "debug1|Selector88~1|combout"
-    Warning (332126): Node "debug1|Selector88~1|datab"
+    Warning (332126): Node "debug1|Selector88~0|combout"
+    Warning (332126): Node "debug1|Selector88~0|datac"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -63.731
+Info (332146): Worst-case setup slack is -63.413
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -63.731          -13372.216 CLOCK_50 
-    Info (332119):   -61.409            -243.764 debug:debug1|X_coord[0] 
-    Info (332119):    -8.331             -48.144 debug:debug1|Y_coord[0] 
-    Info (332119):    -2.812            -105.001 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-Info (332146): Worst-case hold slack is 0.366
+    Info (332119):   -63.413          -14420.541 CLOCK_50 
+    Info (332119):   -59.643            -237.641 debug:debug1|X_coord[0] 
+    Info (332119):    -8.642            -256.940 debug:debug1|Y_coord[0] 
+    Info (332119):    -5.263              -5.263 current_instruction[0] 
+    Info (332119):    -2.728             -99.384 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+Info (332146): Worst-case hold slack is 0.297
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.366               0.000 CLOCK_50 
-    Info (332119):     0.583               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     1.113               0.000 debug:debug1|X_coord[0] 
-    Info (332119):     1.133               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.297               0.000 CLOCK_50 
+    Info (332119):     0.599               0.000 current_instruction[0] 
+    Info (332119):     0.763               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     1.094               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     1.563               0.000 debug:debug1|Y_coord[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9344.471 CLOCK_50 
-    Info (332119):    -0.394             -21.792 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.099               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.207               0.000 debug:debug1|X_coord[0] 
+    Info (332119):    -2.174           -9437.312 CLOCK_50 
+    Info (332119):    -0.394             -21.894 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.231               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.235               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.452               0.000 current_instruction[0] 
 Info (332114): Report Metastability: Found 7 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
@@ -1115,29 +1143,32 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -65.848
+Info (332146): Worst-case setup slack is -65.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -65.848          -13071.959 CLOCK_50 
-    Info (332119):   -63.880            -253.686 debug:debug1|X_coord[0] 
-    Info (332119):    -8.252             -47.662 debug:debug1|Y_coord[0] 
-    Info (332119):    -2.855            -105.238 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-Info (332146): Worst-case hold slack is 0.329
+    Info (332119):   -65.633          -14053.208 CLOCK_50 
+    Info (332119):   -62.313            -248.338 debug:debug1|X_coord[0] 
+    Info (332119):    -8.607            -256.324 debug:debug1|Y_coord[0] 
+    Info (332119):    -5.359              -5.359 current_instruction[0] 
+    Info (332119):    -2.704             -98.463 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+Info (332146): Worst-case hold slack is 0.187
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.329               0.000 CLOCK_50 
-    Info (332119):     0.593               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.912               0.000 debug:debug1|X_coord[0] 
-    Info (332119):     1.048               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.187               0.000 CLOCK_50 
+    Info (332119):     0.616               0.000 current_instruction[0] 
+    Info (332119):     0.745               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     1.023               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     1.433               0.000 debug:debug1|Y_coord[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9343.586 CLOCK_50 
-    Info (332119):    -0.394             -21.754 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.098               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.186               0.000 debug:debug1|X_coord[0] 
+    Info (332119):    -2.174           -9437.063 CLOCK_50 
+    Info (332119):    -0.394             -21.558 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.236               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.276               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.442               0.000 current_instruction[0] 
 Info (332114): Report Metastability: Found 7 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
@@ -1146,65 +1177,71 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -33.436
+Info (332146): Worst-case setup slack is -32.946
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -33.436           -7388.137 CLOCK_50 
-    Info (332119):   -31.308            -123.944 debug:debug1|X_coord[0] 
-    Info (332119):    -4.510             -25.730 debug:debug1|Y_coord[0] 
-    Info (332119):    -1.354             -47.740 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-Info (332146): Worst-case hold slack is 0.180
+    Info (332119):   -32.946           -8075.349 CLOCK_50 
+    Info (332119):   -29.778            -118.676 debug:debug1|X_coord[0] 
+    Info (332119):    -4.894            -141.544 debug:debug1|Y_coord[0] 
+    Info (332119):    -2.718              -2.718 current_instruction[0] 
+    Info (332119):    -1.370             -46.179 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+Info (332146): Worst-case hold slack is 0.178
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.180               0.000 CLOCK_50 
-    Info (332119):     0.231               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.593               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.617               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.178               0.000 CLOCK_50 
+    Info (332119):     0.334               0.000 current_instruction[0] 
+    Info (332119):     0.385               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.772               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     1.237               0.000 debug:debug1|Y_coord[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9148.088 CLOCK_50 
-    Info (332119):     0.086               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.104               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.297               0.000 debug:debug1|X_coord[0] 
+    Info (332119):    -2.174           -9207.043 CLOCK_50 
+    Info (332119):     0.063               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.237               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.326               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.474               0.000 current_instruction[0] 
 Info (332114): Report Metastability: Found 7 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -31.249
+Info (332146): Worst-case setup slack is -30.937
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -31.249           -6352.779 CLOCK_50 
-    Info (332119):   -29.637            -117.358 debug:debug1|X_coord[0] 
-    Info (332119):    -4.089             -23.441 debug:debug1|Y_coord[0] 
-    Info (332119):    -1.180             -42.612 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-Info (332146): Worst-case hold slack is 0.104
+    Info (332119):   -30.937           -6963.386 CLOCK_50 
+    Info (332119):   -28.381            -113.247 debug:debug1|X_coord[0] 
+    Info (332119):    -4.446            -129.093 debug:debug1|Y_coord[0] 
+    Info (332119):    -2.601              -2.601 current_instruction[0] 
+    Info (332119):    -1.208             -40.501 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+Info (332146): Worst-case hold slack is 0.088
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.104               0.000 CLOCK_50 
-    Info (332119):     0.216               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.512               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.536               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.088               0.000 CLOCK_50 
+    Info (332119):     0.308               0.000 current_instruction[0] 
+    Info (332119):     0.347               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.678               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     1.080               0.000 debug:debug1|Y_coord[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -9153.183 CLOCK_50 
-    Info (332119):     0.102               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
-    Info (332119):     0.167               0.000 debug:debug1|Y_coord[0] 
-    Info (332119):     0.312               0.000 debug:debug1|X_coord[0] 
+    Info (332119):    -2.174           -9212.060 CLOCK_50 
+    Info (332119):     0.086               0.000 debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25 
+    Info (332119):     0.301               0.000 debug:debug1|Y_coord[0] 
+    Info (332119):     0.348               0.000 debug:debug1|X_coord[0] 
+    Info (332119):     0.476               0.000 current_instruction[0] 
 Info (332114): Report Metastability: Found 7 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 5450 megabytes
-    Info: Processing ended: Sat Apr 26 13:22:11 2025
+    Info: Peak virtual memory: 5433 megabytes
+    Info: Processing ended: Wed May  7 11:09:23 2025
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:10
 

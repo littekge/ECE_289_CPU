@@ -1,12 +1,17 @@
-Analysis & Synthesis Status : Failed - Wed May  7 10:49:31 2025
-Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Analysis & Synthesis Status : Successful - Wed May  7 11:48:18 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : Processor
 Top-level Entity Name : Processor
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total block memory bits : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-Total DLLs : N/A until Partition Merge
+Logic utilization (in ALMs) : N/A
+Total registers : 504
+Total pins : 96
+Total virtual pins : 0
+Total block memory bits : 770,064
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

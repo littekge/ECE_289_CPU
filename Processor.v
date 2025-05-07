@@ -102,57 +102,33 @@ reg [7:0]sys_data_in;
 wire [7:0]sys_data_out;
 
 //registers
-wire [31:0]x0;
-reg [31:0]x1;
-reg [31:0]x2;
-reg [31:0]x3;
-reg [31:0]x4;
-reg [31:0]x5;
-reg [31:0]x6;
-reg [31:0]x7;
-reg [31:0]x8;
-reg [31:0]x9;
-reg [31:0]x10;
-reg [31:0]x11;
-reg [31:0]x12;
-reg [31:0]x13;
-reg [31:0]x14;
-reg [31:0]x15;
-reg [31:0]x16;
-reg [31:0]x17;
-reg [31:0]x18;
-reg [31:0]x19;
-reg [31:0]x20;
-reg [31:0]x21;
-reg [31:0]x22;
-reg [31:0]x23;
-reg [31:0]x24;
-reg [31:0]x25;
-reg [31:0]x26;
-reg [31:0]x27;
-reg [31:0]x28;
-reg [31:0]x29;
-reg [31:0]x30;
-reg [31:0]x31;
+reg [31:0]registers[0:31];
 reg [31:0]pc;
+
+//register control variables
+reg [4:0]rd_addr;
+reg [4:0]rs1_addr;
+reg [4:0]rs2_addr;
+reg [31:0]rd_data;
+reg [31:0]rs1_data;
+reg [31:0]rs2_data;
+reg reg_wren;
 
 //decoding variables
 reg [31:0]current_instruction;
-wire [4:0]rd_addr;
-wire [4:0]rs1_addr;
-wire [4:0]rs2_addr;
-wire [31:0]rd_data;
-wire [31:0]rs1_data;
-wire [31:0]rs2_data;
-wire [31:0]immediate;
-wire [6:0]funct7;
-wire [2:0]funct3;
-wire [6:0]opcode;
+reg [31:0]immediate;
+reg [6:0]funct7;
+reg [2:0]funct3;
+reg [6:0]opcode;
+
+//ALU variables
+reg [31:0]alu_in_1;
+reg [31:0]alu_in_2;
+wire [31:0]alu_out;
+reg [3:0]alu_op;
 
 //debugging variables
-
-//hardwiring zero register
-assign x0 = 32'd0;
+reg exception_thrown;
 
 //state variables
 reg [31:0]S, NS;
@@ -221,44 +197,14 @@ end
 	
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-		//zeroing registers
-		x1 <= 32'd0;
-		x2 <= 32'd0;
-		x3 <= 32'd0;
-		x4 <= 32'd0;
-		x5 <= 32'd0;
-		x6 <= 32'd0;
-		x7 <= 32'd0;
-		x8 <= 32'd0;
-		x9 <= 32'd0;
-		x10 <= 32'd0;
-		x11 <= 32'd0;
-		x12 <= 32'd0;
-		x13 <= 32'd0;
-		x14 <= 32'd0;
-		x15 <= 32'd0;
-		x16 <= 32'd0;
-		x17 <= 32'd0;
-		x18 <= 32'd0;
-		x19 <= 32'd0;
-		x20 <= 32'd0;
-		x21 <= 32'd0;
-		x22 <= 32'd0;
-		x23 <= 32'd0;
-		x24 <= 32'd0;
-		x25 <= 32'd0;
-		x26 <= 32'd0;
-		x27 <= 32'd0;
-		x28 <= 32'd0;
-		x29 <= 32'd0;
-		x30 <= 32'd0;
-		x31 <= 32'd0;
+		//zeroing pc
 		pc <= 32'd0;
 	end
 	else begin
 		case (S)
 			
 			FETCH: begin
+				reg_wren <= 1'b0;
 				//getting instruction from value of pc
 				sys_addr <= pc[15:0];
 				sys_byte_en <= 4'b1111;
@@ -290,12 +236,17 @@ always @ (posedge clk or negedge rst) begin
 				case (opcode)
 					OP: begin
 						pc <= pc + 32'd4;
+						rd_data <= alu_out;
+						reg_wren <= 1'b1;
 					end
 					OP_IMM: begin
 						pc <= pc + 32'd4;
+						rd_data <= alu_out;
+						reg_wren <= 1'b1;
 					end
 					JAL: begin
 						pc <= alu_out;
+						reg_wren <= 1'b0;
 					end
 				
 				endcase
@@ -311,6 +262,11 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 
+//OPCODE parameters
+parameter OP = 7'b0110011,
+			OP_IMM = 7'b0010011,
+			JAL = 7'b1101111;
+			
 //ALU parameters
 parameter ADD = 4'd0,
 			SUB = 4'd1,
@@ -325,7 +281,11 @@ parameter ADD = 4'd0,
 	
 //Instruction Decoding
 always @ (*) begin
-
+	
+	//register decoding
+	rs1_data = registers[rs1_addr];
+	rs2_data = registers[rs2_addr];
+	
 	//instruction type decoding
 	opcode = current_instruction[6:0];
 	case (opcode)
@@ -364,7 +324,7 @@ always @ (*) begin
 		//integer register-immediate instructions
 		OP_IMM: begin
 			//sign extending immediate
-			immediate[11:0] = {{20{current_instruction[31]}}, current_instruction[31:20]};
+			immediate = {{20{current_instruction[31]}}, current_instruction[31:20]};
 			//decode instruction
 			rs1_addr = current_instruction[19:15];
 			funct3 = current_instruction[14:12];
@@ -408,116 +368,49 @@ always @ (*) begin
 		
 		end
 	endcase
-
-	//source reg address decoding
-	case (rs1_addr)
-		5'd0: rs1_data = x0;
-		5'd1: rs1_data = x1;
-		5'd2: rs1_data = x2;
-		5'd3: rs1_data = x3;
-		5'd4: rs1_data = x4;
-		5'd5: rs1_data = x5;
-		5'd6: rs1_data = x6;
-		5'd7: rs1_data = x7;
-		5'd8: rs1_data = x8;
-		5'd9: rs1_data = x9;
-		5'd10: rs1_data = x10;
-		5'd11: rs1_data = x11;
-		5'd12: rs1_data = x12;
-		5'd13: rs1_data = x13;
-		5'd14: rs1_data = x14;
-		5'd15: rs1_data = x15;
-		5'd16: rs1_data = x16;
-		5'd17: rs1_data = x17;
-		5'd18: rs1_data = x18;
-		5'd19: rs1_data = x19;
-		5'd20: rs1_data = x20;
-		5'd21: rs1_data = x21;
-		5'd22: rs1_data = x22;
-		5'd23: rs1_data = x23;
-		5'd24: rs1_data = x24;
-		5'd25: rs1_data = x25;
-		5'd26: rs1_data = x26;
-		5'd27: rs1_data = x27;
-		5'd28: rs1_data = x28;
-		5'd29: rs1_data = x29;
-		5'd30: rs1_data = x30;
-		5'd31: rs1_data = x31;
-	endcase
-	case (rs2_addr)
-		5'd0: rs2_data = x0;
-		5'd1: rs2_data = x1;
-		5'd2: rs2_data = x2;
-		5'd3: rs2_data = x3;
-		5'd4: rs2_data = x4;
-		5'd5: rs2_data = x5;
-		5'd6: rs2_data = x6;
-		5'd7: rs2_data = x7;
-		5'd8: rs2_data = x8;
-		5'd9: rs2_data = x9;
-		5'd10: rs2_data = x10;
-		5'd11: rs2_data = x11;
-		5'd12: rs2_data = x12;
-		5'd13: rs2_data = x13;
-		5'd14: rs2_data = x14;
-		5'd15: rs2_data = x15;
-		5'd16: rs2_data = x16;
-		5'd17: rs2_data = x17;
-		5'd18: rs2_data = x18;
-		5'd19: rs2_data = x19;
-		5'd20: rs2_data = x20;
-		5'd21: rs2_data = x21;
-		5'd22: rs2_data = x22;
-		5'd23: rs2_data = x23;
-		5'd24: rs2_data = x24;
-		5'd25: rs2_data = x25;
-		5'd26: rs2_data = x26;
-		5'd27: rs2_data = x27;
-		5'd28: rs2_data = x28;
-		5'd29: rs2_data = x29;
-		5'd30: rs2_data = x30;
-		5'd31: rs2_data = x31;
-	endcase
-	
-	//destination reg address decoding
-	/*
-	case (rd_addr)
-		5'd0: x0 
-		5'd1: x1
-		5'd2: x2
-		5'd3: x3
-		5'd4: x4
-		5'd5: x5
-		5'd6: x6
-		5'd7: x7
-		5'd8: x8
-		5'd9: x9
-		5'd10: x10
-		5'd11: x11
-		5'd12: x12
-		5'd13: x13
-		5'd14: x14
-		5'd15: x15
-		5'd16: x16
-		5'd17: x17
-		5'd18: x18
-		5'd19: x19
-		5'd20: x20
-		5'd21: x21
-		5'd22: x22
-		5'd23: x23
-		5'd24: x24
-		5'd25: x25
-		5'd26: x26
-		5'd27: x27
-		5'd28: x28
-		5'd29: x29
-		5'd30: x30
-		5'd31: x31
-	endcase
-	*/
 end
 
+//register control
+always @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		//zeroing registers
+		registers[0] <= 32'd0;
+		registers[1] <= 32'd0;
+		registers[2] <= 32'd0;
+		registers[3] <= 32'd0;
+		registers[4] <= 32'd0;
+		registers[5] <= 32'd0;
+		registers[6] <= 32'd0;
+		registers[7] <= 32'd0;
+		registers[8] <= 32'd0;
+		registers[9] <= 32'd0;
+		registers[10] <= 32'd0;
+		registers[11] <= 32'd0;
+		registers[12] <= 32'd0;
+		registers[13] <= 32'd0;
+		registers[14] <= 32'd0;
+		registers[15] <= 32'd0;
+		registers[16] <= 32'd0;
+		registers[17] <= 32'd0;
+		registers[18] <= 32'd0;
+		registers[19] <= 32'd0;
+		registers[20] <= 32'd0;
+		registers[21] <= 32'd0;
+		registers[22] <= 32'd0;
+		registers[23] <= 32'd0;
+		registers[24] <= 32'd0;
+		registers[25] <= 32'd0;
+		registers[26] <= 32'd0;
+		registers[27] <= 32'd0;
+		registers[28] <= 32'd0;
+		registers[29] <= 32'd0;
+		registers[30] <= 32'd0;
+		registers[31] <= 32'd0;
+	end
+	else if (reg_wren == 1'b1 && rd_addr != 5'd0) begin
+		registers[rd_addr] <= rd_data;
+	end
+end
 system_ram system_ram1 (
 	.clock(clk),
 	.wren(sys_wren),
@@ -528,8 +421,82 @@ system_ram system_ram1 (
 	.address(sys_address)
 );
 
+ALU alu1 (
+	.in_1(alu_in_1),
+	.in_2(alu_in_2),
+	.operation(alu_op),
+	.out(alu_out)
+);
+
 
 // --------------- DEBUG CODE ---------------
+reg [31:0]x0;
+reg [31:0]x1;
+reg [31:0]x2;
+reg [31:0]x3;
+reg [31:0]x4;
+reg [31:0]x5;
+reg [31:0]x6;
+reg [31:0]x7;
+reg [31:0]x8;
+reg [31:0]x9;
+reg [31:0]x10;
+reg [31:0]x11;
+reg [31:0]x12;
+reg [31:0]x13;
+reg [31:0]x14;
+reg [31:0]x15;
+reg [31:0]x16;
+reg [31:0]x17;
+reg [31:0]x18;
+reg [31:0]x19;
+reg [31:0]x20;
+reg [31:0]x21;
+reg [31:0]x22;
+reg [31:0]x23;
+reg [31:0]x24;
+reg [31:0]x25;
+reg [31:0]x26;
+reg [31:0]x27;
+reg [31:0]x28;
+reg [31:0]x29;
+reg [31:0]x30;
+reg [31:0]x31;
+
+always @ (*) begin
+	x0 = registers[0];
+	x1 = registers[1];
+	x2 = registers[2];
+	x3 = registers[3];
+	x4 = registers[4];
+	x5 = registers[5];
+	x6 = registers[6];
+	x7 = registers[7];
+	x8 = registers[8];
+	x9 = registers[9];
+	x10 = registers[10];
+	x11 = registers[11];
+	x12 = registers[12];
+	x13 = registers[13];
+	x14 = registers[14];
+	x15 = registers[15];
+	x16 = registers[16];
+	x17 = registers[17];
+	x18 = registers[18];
+	x19 = registers[19];
+	x20 = registers[20];
+	x21 = registers[21];
+	x22 = registers[22];
+	x23 = registers[23];
+	x24 = registers[24];
+	x25 = registers[25];
+	x26 = registers[26];
+	x27 = registers[27];
+	x28 = registers[28];
+	x29 = registers[29];
+	x30 = registers[30];
+	x31 = registers[31];
+end
 
 debug debug1 (
 //clk and rst

@@ -164,7 +164,7 @@ always @ (*) begin
 		32'd31: current_reg = x31;
 		32'd32: current_reg = pc;
 	endcase
-
+	
 	//two's complement conversion
 	is_negative = current_reg[31];
 	two_comp = (is_negative == 1'b1)?((~current_reg) + 1'b1):current_reg;

@@ -1,1 +1,1 @@
-Info (10281): Verilog HDL Declaration information at vga_controller.v(10): object "switch_buffer" differs only in case from object "SWITCH_BUFFER" in the same scope File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/vga_controller/vga_controller.v Line: 10
+Info (10281): Verilog HDL Declaration information at vga_controller.v(10): object "switch_buffer" differs only in case from object "SWITCH_BUFFER" in the same scope File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/vga_controller.v Line: 10

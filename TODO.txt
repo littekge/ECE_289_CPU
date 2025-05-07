@@ -9,6 +9,7 @@ changelog:
 	8. worked on register-immediate instruction decoding, created and worked on alu module (5/5/25)
 	9. implemented register-register instruction decoding (5/6/25)
 	10. implemented register-immediate instruction decoding (5/6/25)
+	11. turned registers into array, implemented jal instruction (5/7/25)
 
 todo:
 	1. simplify and revamp ascii controller (remove double buffer) to save on RAM and processing power. (IF TIME ALLOWS)
@@ -17,9 +18,11 @@ todo:
 	4. implement decoding
 		a. continue to implement alu
 		b. implement decode errors
-		c. implement jal instructions
+		c. implement jalr instruction
 	5. implement error states in fsm for debugging
+	6. check over all code for errors
 
 testing needed:
 	1. test that state transitions and delay works properly
 	2. test that fetch works
+	3. test that debug module still works
