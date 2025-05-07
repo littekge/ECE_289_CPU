@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Tue May  6 13:50:06 2025
+Wed May  7 10:49:31 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue May  6 13:50:06 2025               ;
+; Analysis & Synthesis Status ; Failed - Wed May  7 10:49:31 2025               ;
 ; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name               ; Processor                                       ;
 ; Top-level Entity Name       ; Processor                                       ;
@@ -162,7 +162,7 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue May  6 13:50:01 2025
+    Info: Processing started: Wed May  7 10:49:12 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -190,14 +190,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file memory/
     Info (12023): Found entity 1: system_ram File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/memory/system_ram.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file debug.v
     Info (12023): Found entity 1: debug File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/debug.v Line: 1
-Error (10170): Verilog HDL syntax error at ALU.v(1) near text: "{";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/ALU.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file alu.v
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/ALU.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Processor.v(525): created implicit net for "sys_address" File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 525
+Error (10161): Verilog HDL error at Processor.v(188): object "exception_thrown" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 188
+Error (10161): Verilog HDL error at Processor.v(270): object "opcode" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 270
+Error (10161): Verilog HDL error at Processor.v(271): object "OP" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 271
+Error (10161): Verilog HDL error at Processor.v(272): object "alu_in_1" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 272
+Error (10161): Verilog HDL error at Processor.v(273): object "alu_in_2" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 273
+Error (10161): Verilog HDL error at Processor.v(275): object "OP_IMM" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 275
+Error (10161): Verilog HDL error at Processor.v(276): object "alu_in_1" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 276
+Error (10161): Verilog HDL error at Processor.v(277): object "alu_in_2" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 277
+Error (10161): Verilog HDL error at Processor.v(279): object "JAL" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 279
+Error (10161): Verilog HDL error at Processor.v(280): object "alu_in_1" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 280
+Error (10161): Verilog HDL error at Processor.v(281): object "alu_in_2" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 281
+Error (10161): Verilog HDL error at Processor.v(287): object "opcode" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 287
+Error (10161): Verilog HDL error at Processor.v(288): object "OP" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 288
+Error (10161): Verilog HDL error at Processor.v(291): object "OP_IMM" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 291
+Error (10161): Verilog HDL error at Processor.v(294): object "JAL" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 294
+Error (10161): Verilog HDL error at Processor.v(295): object "alu_out" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 295
+Error (10161): Verilog HDL error at Processor.v(327): object "opcode" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 327
+Error (10161): Verilog HDL error at Processor.v(328): object "opcode" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 328
+Error (10161): Verilog HDL error at Processor.v(331): object "OP" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/Processor.v Line: 331
 Info (144001): Generated suppressed messages file C:/Users/Gabe Litteken/Desktop/git/ECE_289_CPU/output_files/Processor.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 19 errors, 2 warnings
     Error: Peak virtual memory: 4791 megabytes
-    Error: Processing ended: Tue May  6 13:50:06 2025
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:12
+    Error: Processing ended: Wed May  7 10:49:31 2025
+    Error: Elapsed time: 00:00:19
+    Error: Total CPU time (on all processors): 00:00:17
 
 
 +------------------------------------------+

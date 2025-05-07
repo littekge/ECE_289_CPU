@@ -147,6 +147,9 @@ wire [31:0]rs2_data;
 wire [31:0]immediate;
 wire [6:0]funct7;
 wire [2:0]funct3;
+wire [6:0]opcode;
+
+//debugging variables
 
 //hardwiring zero register
 assign x0 = 32'd0;
@@ -276,11 +279,26 @@ always @ (posedge clk or negedge rst) begin
 						alu_in_1 <= rs1_data;
 						alu_in_2 <= immediate;
 					end
+					JAL: begin
+						alu_in_1 <= pc;
+						alu_in_2 <= immediate;
+					end
 				endcase
 			end
 			
 			WRITEBACK: begin
-
+				case (opcode)
+					OP: begin
+						pc <= pc + 32'd4;
+					end
+					OP_IMM: begin
+						pc <= pc + 32'd4;
+					end
+					JAL: begin
+						pc <= alu_out;
+					end
+				
+				endcase
 			end
 
 			//delay in between steps for memory timing reasons
@@ -346,8 +364,7 @@ always @ (*) begin
 		//integer register-immediate instructions
 		OP_IMM: begin
 			//sign extending immediate
-			immediate[11:0] = current_instruction[31:20];
-			immediate[31:12] = current_instruction[31];
+			immediate[11:0] = {{20{current_instruction[31]}}, current_instruction[31:20]};
 			//decode instruction
 			rs1_addr = current_instruction[19:15];
 			funct3 = current_instruction[14:12];
@@ -379,7 +396,11 @@ always @ (*) begin
 		
 		//jump and link instruction
 		JAL: begin
-			
+			//immediate decoding and sign extension
+			immediate = {{11{current_instruction[31]}}, current_instruction[31], current_instruction[19:12], current_instruction[20], current_instruction[30:21], 1'b0};
+			//decode instruction
+			rd_addr = current_instruction[11:7];
+			alu_op = ADD;
 		end
 		
 	
@@ -388,7 +409,7 @@ always @ (*) begin
 		end
 	endcase
 
-	//reg address decoding
+	//source reg address decoding
 	case (rs1_addr)
 		5'd0: rs1_data = x0;
 		5'd1: rs1_data = x1;
@@ -422,7 +443,6 @@ always @ (*) begin
 		5'd29: rs1_data = x29;
 		5'd30: rs1_data = x30;
 		5'd31: rs1_data = x31;
-		default: rs1_data = 32'd1001;
 	endcase
 	case (rs2_addr)
 		5'd0: rs2_data = x0;
@@ -457,8 +477,45 @@ always @ (*) begin
 		5'd29: rs2_data = x29;
 		5'd30: rs2_data = x30;
 		5'd31: rs2_data = x31;
-		default: rs2_data = 32'd1001;
 	endcase
+	
+	//destination reg address decoding
+	/*
+	case (rd_addr)
+		5'd0: x0 
+		5'd1: x1
+		5'd2: x2
+		5'd3: x3
+		5'd4: x4
+		5'd5: x5
+		5'd6: x6
+		5'd7: x7
+		5'd8: x8
+		5'd9: x9
+		5'd10: x10
+		5'd11: x11
+		5'd12: x12
+		5'd13: x13
+		5'd14: x14
+		5'd15: x15
+		5'd16: x16
+		5'd17: x17
+		5'd18: x18
+		5'd19: x19
+		5'd20: x20
+		5'd21: x21
+		5'd22: x22
+		5'd23: x23
+		5'd24: x24
+		5'd25: x25
+		5'd26: x26
+		5'd27: x27
+		5'd28: x28
+		5'd29: x29
+		5'd30: x30
+		5'd31: x31
+	endcase
+	*/
 end
 
 system_ram system_ram1 (

@@ -60,7 +60,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name QIP_FILE vga_controller/ascii_buffer_1/ascii_buffer_1.qip
-set_global_assignment -name VERILOG_FILE vga_controller/ascii_buffer_2/ascii_buffer_2.v
 set_global_assignment -name QIP_FILE vga_controller/ascii_buffer_2/ascii_buffer_2.qip
 set_global_assignment -name QIP_FILE vga_controller/ascii_master/ascii_master.qip
 set_global_assignment -name QIP_FILE vga_controller/ascii_rom/Char_ROM.qip
