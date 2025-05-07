@@ -3,243 +3,435 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -63.413
-TNS   : -14420.541
+Slack : -69.787
+TNS   : -39729.973
 
 Type  : Slow 1100mV 85C Model Setup 'debug:debug1|X_coord[0]'
-Slack : -59.643
-TNS   : -237.641
-
-Type  : Slow 1100mV 85C Model Setup 'debug:debug1|Y_coord[0]'
-Slack : -8.642
-TNS   : -256.940
+Slack : -65.490
+TNS   : -260.783
 
 Type  : Slow 1100mV 85C Model Setup 'current_instruction[0]'
-Slack : -5.263
-TNS   : -5.263
+Slack : -14.809
+TNS   : -404.516
+
+Type  : Slow 1100mV 85C Model Setup 'debug:debug1|Y_coord[0]'
+Slack : -12.380
+TNS   : -364.376
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -12.109
+TNS   : -936.038
+
+Type  : Slow 1100mV 85C Model Setup 'alu_op[1]'
+Slack : -11.690
+TNS   : -334.143
 
 Type  : Slow 1100mV 85C Model Setup 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : -2.728
-TNS   : -99.384
+Slack : -4.355
+TNS   : -126.577
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.297
+Slack : -1.791
+TNS   : -3.882
+
+Type  : Slow 1100mV 85C Model Hold 'debug:debug1|Y_coord[0]'
+Slack : 0.326
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'current_instruction[0]'
-Slack : 0.599
+Type  : Slow 1100mV 85C Model Hold 'alu_op[1]'
+Slack : 0.443
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.763
+Slack : 0.696
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'debug:debug1|X_coord[0]'
-Slack : 1.094
+Slack : 1.023
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'debug:debug1|Y_coord[0]'
-Slack : 1.563
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : 1.148
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'current_instruction[0]'
+Slack : 1.711
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : -7.152
+TNS   : -327.791
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -4.576
+TNS   : -5288.438
+
+Type  : Slow 1100mV 85C Model Recovery 'current_instruction[0]'
+Slack : -2.291
+TNS   : -4.543
+
+Type  : Slow 1100mV 85C Model Removal 'current_instruction[0]'
+Slack : 1.249
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 1.396
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : 4.055
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -9437.312
+TNS   : -36143.493
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
+Slack : -1.835
+TNS   : -177.042
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
 Slack : -0.394
-TNS   : -21.894
+TNS   : -24.841
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
-Slack : 0.231
-TNS   : 0.000
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.385
+TNS   : -16.486
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'debug:debug1|X_coord[0]'
-Slack : 0.235
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'current_instruction[0]'
-Slack : 0.452
+Slack : 0.223
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'alu_op[1]'
+Slack : 0.259
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -65.633
-TNS   : -14053.208
+Slack : -71.484
+TNS   : -37887.540
 
 Type  : Slow 1100mV 0C Model Setup 'debug:debug1|X_coord[0]'
-Slack : -62.313
-TNS   : -248.338
-
-Type  : Slow 1100mV 0C Model Setup 'debug:debug1|Y_coord[0]'
-Slack : -8.607
-TNS   : -256.324
+Slack : -67.579
+TNS   : -269.254
 
 Type  : Slow 1100mV 0C Model Setup 'current_instruction[0]'
-Slack : -5.359
-TNS   : -5.359
+Slack : -14.345
+TNS   : -397.934
+
+Type  : Slow 1100mV 0C Model Setup 'debug:debug1|Y_coord[0]'
+Slack : -12.281
+TNS   : -358.636
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -11.672
+TNS   : -915.774
+
+Type  : Slow 1100mV 0C Model Setup 'alu_op[1]'
+Slack : -11.657
+TNS   : -332.298
 
 Type  : Slow 1100mV 0C Model Setup 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : -2.704
-TNS   : -98.463
+Slack : -4.249
+TNS   : -125.985
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.187
+Slack : -1.883
+TNS   : -4.796
+
+Type  : Slow 1100mV 0C Model Hold 'debug:debug1|Y_coord[0]'
+Slack : 0.335
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'current_instruction[0]'
-Slack : 0.616
+Type  : Slow 1100mV 0C Model Hold 'alu_op[1]'
+Slack : 0.379
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.745
+Slack : 0.686
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'debug:debug1|X_coord[0]'
-Slack : 1.023
+Slack : 0.955
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'debug:debug1|Y_coord[0]'
-Slack : 1.433
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : 1.112
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'current_instruction[0]'
+Slack : 1.684
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : -7.093
+TNS   : -325.167
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -4.365
+TNS   : -5054.088
+
+Type  : Slow 1100mV 0C Model Recovery 'current_instruction[0]'
+Slack : -2.268
+TNS   : -4.494
+
+Type  : Slow 1100mV 0C Model Removal 'current_instruction[0]'
+Slack : 1.185
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 1.317
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : 4.139
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -9437.063
+TNS   : -36121.017
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
+Slack : -1.678
+TNS   : -161.263
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
 Slack : -0.394
-TNS   : -21.558
+TNS   : -24.566
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.349
+TNS   : -15.466
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'debug:debug1|X_coord[0]'
-Slack : 0.236
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
-Slack : 0.276
+Slack : 0.192
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'current_instruction[0]'
-Slack : 0.442
+Slack : 0.230
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'alu_op[1]'
+Slack : 0.237
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -32.946
-TNS   : -8075.349
+Slack : -38.173
+TNS   : -24499.077
 
 Type  : Fast 1100mV 85C Model Setup 'debug:debug1|X_coord[0]'
-Slack : -29.778
-TNS   : -118.676
-
-Type  : Fast 1100mV 85C Model Setup 'debug:debug1|Y_coord[0]'
-Slack : -4.894
-TNS   : -141.544
+Slack : -34.723
+TNS   : -138.031
 
 Type  : Fast 1100mV 85C Model Setup 'current_instruction[0]'
-Slack : -2.718
-TNS   : -2.718
+Slack : -9.566
+TNS   : -250.435
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -7.774
+TNS   : -561.868
+
+Type  : Fast 1100mV 85C Model Setup 'debug:debug1|Y_coord[0]'
+Slack : -7.475
+TNS   : -217.303
+
+Type  : Fast 1100mV 85C Model Setup 'alu_op[1]'
+Slack : -6.313
+TNS   : -182.784
 
 Type  : Fast 1100mV 85C Model Setup 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : -1.370
-TNS   : -46.179
+Slack : -2.822
+TNS   : -57.892
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.178
+Slack : -0.725
+TNS   : -1.450
+
+Type  : Fast 1100mV 85C Model Hold 'debug:debug1|Y_coord[0]'
+Slack : 0.054
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'current_instruction[0]'
-Slack : 0.334
+Type  : Fast 1100mV 85C Model Hold 'alu_op[1]'
+Slack : 0.155
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.385
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : 0.463
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'debug:debug1|X_coord[0]'
-Slack : 0.772
+Slack : 0.605
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'debug:debug1|Y_coord[0]'
-Slack : 1.237
+Type  : Fast 1100mV 85C Model Hold 'current_instruction[0]'
+Slack : 0.979
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : -4.274
+TNS   : -195.894
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -2.893
+TNS   : -3218.382
+
+Type  : Fast 1100mV 85C Model Recovery 'current_instruction[0]'
+Slack : -1.096
+TNS   : -2.169
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.716
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'current_instruction[0]'
+Slack : 0.819
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : 2.165
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -9207.043
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.063
-TNS   : 0.000
+TNS   : -35324.540
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
-Slack : 0.237
+Slack : -1.075
+TNS   : -84.876
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.485
+TNS   : -56.937
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : -0.017
+TNS   : -0.017
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'current_instruction[0]'
+Slack : 0.206
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'debug:debug1|X_coord[0]'
-Slack : 0.326
+Slack : 0.276
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'current_instruction[0]'
-Slack : 0.474
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'alu_op[1]'
+Slack : 0.350
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -30.937
-TNS   : -6963.386
+Slack : -35.198
+TNS   : -20905.132
 
 Type  : Fast 1100mV 0C Model Setup 'debug:debug1|X_coord[0]'
-Slack : -28.381
-TNS   : -113.247
-
-Type  : Fast 1100mV 0C Model Setup 'debug:debug1|Y_coord[0]'
-Slack : -4.446
-TNS   : -129.093
+Slack : -32.396
+TNS   : -128.800
 
 Type  : Fast 1100mV 0C Model Setup 'current_instruction[0]'
-Slack : -2.601
-TNS   : -2.601
+Slack : -8.538
+TNS   : -226.505
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -6.795
+TNS   : -491.321
+
+Type  : Fast 1100mV 0C Model Setup 'debug:debug1|Y_coord[0]'
+Slack : -6.753
+TNS   : -196.983
+
+Type  : Fast 1100mV 0C Model Setup 'alu_op[1]'
+Slack : -5.784
+TNS   : -167.218
 
 Type  : Fast 1100mV 0C Model Setup 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : -1.208
-TNS   : -40.501
+Slack : -2.636
+TNS   : -51.957
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.088
+Slack : -0.777
+TNS   : -1.554
+
+Type  : Fast 1100mV 0C Model Hold 'debug:debug1|Y_coord[0]'
+Slack : 0.080
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'current_instruction[0]'
-Slack : 0.308
+Type  : Fast 1100mV 0C Model Hold 'alu_op[1]'
+Slack : 0.122
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.347
+Slack : 0.326
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : 0.376
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'debug:debug1|X_coord[0]'
-Slack : 0.678
+Slack : 0.562
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'debug:debug1|Y_coord[0]'
-Slack : 1.080
+Type  : Fast 1100mV 0C Model Hold 'current_instruction[0]'
+Slack : 0.900
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : -4.204
+TNS   : -192.765
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -2.697
+TNS   : -3120.525
+
+Type  : Fast 1100mV 0C Model Recovery 'current_instruction[0]'
+Slack : -1.054
+TNS   : -2.090
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.661
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'current_instruction[0]'
+Slack : 0.864
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : 2.141
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -9212.060
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
-Slack : 0.086
-TNS   : 0.000
+TNS   : -35344.072
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debug:debug1|Y_coord[0]'
-Slack : 0.301
-TNS   : 0.000
+Slack : -0.847
+TNS   : -63.491
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debug:debug1|X_coord[0]'
-Slack : 0.348
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.426
+TNS   : -52.112
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|clock_divider:clock|clk_25'
+Slack : 0.019
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'current_instruction[0]'
-Slack : 0.476
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'debug:debug1|X_coord[0]'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'alu_op[1]'
+Slack : 0.371
 TNS   : 0.000
 
 ------------------------------------------------------------

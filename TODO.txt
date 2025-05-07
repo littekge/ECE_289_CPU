@@ -10,6 +10,7 @@ changelog:
 	9. implemented register-register instruction decoding (5/6/25)
 	10. implemented register-immediate instruction decoding (5/6/25)
 	11. turned registers into array, implemented jal instruction (5/7/25)
+	12. debugging for 3 hours (5/7/25)
 
 todo:
 	1. simplify and revamp ascii controller (remove double buffer) to save on RAM and processing power. (IF TIME ALLOWS)
@@ -17,12 +18,9 @@ todo:
 	3. add debug toggle switch that allows use of one button for single cycle or another button for single instruction.
 	4. implement decoding
 		a. continue to implement alu
-		b. implement decode errors
-		c. implement jalr instruction
+		b. implement jalr instruction
 	5. implement error states in fsm for debugging
-	6. check over all code for errors
+	6. fix error state
 
 testing needed:
-	1. test that state transitions and delay works properly
-	2. test that fetch works
-	3. test that debug module still works
+	1. test currently implemented instructions (reg-reg and jal)
