@@ -20,7 +20,8 @@ parameter ADD = 4'd0,
 			SRL = 4'd6,
 			SRA = 4'd7,
 			SLT = 4'd8,
-			SLTU = 4'd9;
+			SLTU = 4'd9,
+			ERR = 4'd10;
 			
 always @ (*) begin
 	unsigned_in_1 = (~in_1) + 32'd1;
@@ -36,6 +37,8 @@ always @ (*) begin
 		SRA: out = in_1 <<< in_2;
 		SLT: out = (in_1 < in_2)?32'd1:32'd0;
 		SLTU: out = (unsigned_in_1 < unsigned_in_2)?32'd1:32'd0;
+		ERR: out = 32'd329010;
+		default: out = 32'd329011;
 	endcase
 end
 

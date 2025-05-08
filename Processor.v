@@ -38,12 +38,12 @@ module Processor (
 	// inout 		          		FPGA_I2C_SDAT,
 
 	//////////// SEG7 //////////
-	output		     [6:0]		HEX0,
-	output		     [6:0]		HEX1,
-	output		     [6:0]		HEX2,
-	output		     [6:0]		HEX3,
-	output		     [6:0]		HEX4,
-	output		     [6:0]		HEX5,
+	//output		     [6:0]		HEX0,
+	//output		     [6:0]		HEX1,
+	//output		     [6:0]		HEX2,
+	//output		     [6:0]		HEX3,
+	//output		     [6:0]		HEX4,
+	//output		     [6:0]		HEX5,
 
 	//////////// IR //////////
 	// input 		          		IRDA_RXD,
@@ -93,13 +93,11 @@ assign clk = CLOCK_50;
 wire rst;
 assign rst = KEY[0];
 
-//system memory variables
-reg sys_wren;
-reg sys_rden;
-reg [3:0]sys_byte_en;
-reg [15:0]sys_addr;
-reg [31:0]sys_data_in;
-wire [31:0]sys_data_out;
+//memory variables
+reg [31:0]mem_addr;
+reg [7:0]mem_op;
+reg [31:0]mem_data_in;
+wire [31:0]mem_data_out;
 
 //registers
 reg [31:0]registers[0:31];
@@ -128,7 +126,6 @@ wire [31:0]alu_out;
 reg [3:0]alu_op;
 
 //debugging variables
-reg [31:0]exception;
 
 //state variables
 reg [31:0]S, NS;
@@ -137,7 +134,7 @@ reg [31:0]S, NS;
 parameter WAIT_TIME = 32'd50000000;
 reg [31:0] wait_count;
 
-//fsm states
+//fsm state parameters
 parameter ERROR = 32'd0,
 			START = 32'd1,
 			WAIT_START = 32'd2,
@@ -150,12 +147,15 @@ parameter ERROR = 32'd0,
 			WRITEBACK = 32'd9,
 			WAIT_WRITEBACK = 32'd10;
 			
-//errors
+//error parameters
 parameter UNKNOWN_ERROR = 32'd0,
 			DECODE_ERROR = 32'd329001,
 			OPCODE_DECODE_ERROR = 32'd329002;
 
+//memory parameters
+parameter MEM_FETCH = 8'd1;
 
+//finite state machine
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		//specifying initial state
@@ -169,35 +169,30 @@ end
 
 always @ (*) begin
 	//determining NS
-	if (exception != 32'd0) begin
-		NS = ERROR;
-	end 
-	else begin
-		case (S)	
-			//start
-			START: NS = WAIT_START;
-			WAIT_START: NS = (wait_count < WAIT_TIME)?WAIT_START:FETCH;
-			
-			//fetch
-			FETCH: NS = WAIT_FETCH;
-			WAIT_FETCH: NS = (wait_count < WAIT_TIME)?WAIT_FETCH:DECODE;
-			
-			//decode
-			DECODE: NS = WAIT_DECODE;
-			WAIT_DECODE: NS = (wait_count < WAIT_TIME)?WAIT_DECODE:EXECUTE;
-			
-			//execute
-			EXECUTE: NS = WAIT_EXECUTE;
-			WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WAIT_EXECUTE:WRITEBACK;
-			
-			//writeback
-			WRITEBACK: NS = WAIT_WRITEBACK;
-			WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?WAIT_WRITEBACK:FETCH;
-			
-			//error
-			default: NS = ERROR;
-		endcase
-	end
+	case (S)	
+		//start
+		START: NS = WAIT_START;
+		WAIT_START: NS = (wait_count < WAIT_TIME)?WAIT_START:FETCH;
+		
+		//fetch
+		FETCH: NS = WAIT_FETCH;
+		WAIT_FETCH: NS = (wait_count < WAIT_TIME)?WAIT_FETCH:DECODE;
+		
+		//decode
+		DECODE: NS = WAIT_DECODE;
+		WAIT_DECODE: NS = (wait_count < WAIT_TIME)?WAIT_DECODE:EXECUTE;
+		
+		//execute
+		EXECUTE: NS = WAIT_EXECUTE;
+		WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WAIT_EXECUTE:WRITEBACK;
+		
+		//writeback
+		WRITEBACK: NS = WAIT_WRITEBACK;
+		WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?WAIT_WRITEBACK:FETCH;
+		
+		//error
+		default: NS = ERROR;
+	endcase
 end
 	
 always @ (posedge clk or negedge rst) begin
@@ -207,18 +202,16 @@ always @ (posedge clk or negedge rst) begin
 	end
 	else begin
 		case (S)
-			
 			FETCH: begin
 				reg_wren <= 1'b0;
 				//getting instruction from value of pc
-				sys_addr <= pc[15:0];
-				sys_byte_en <= 4'b1111;
-				sys_rden <= 1'b1;
+				mem_addr <= pc;
+				mem_op <= MEM_FETCH;
 			end
 			
 			DECODE: begin
 				//setting instruction to decode
-				current_instruction <= sys_data_out;
+				current_instruction <= mem_data_out;
 			end
 			
 			EXECUTE: begin
@@ -256,10 +249,6 @@ always @ (posedge clk or negedge rst) begin
 					end
 				endcase
 			end
-			ERROR: begin
-				reg_wren <= 1'b1;
-				rd_data <= exception;
-			end
 
 			//delay in between steps for memory timing reasons
 			WAIT_START: wait_count <= (NS == WAIT_START)?(wait_count + 32'd1):32'd0;
@@ -274,8 +263,7 @@ end
 //OPCODE parameters
 parameter OP = 7'b0110011,
 			OP_IMM = 7'b0010011,
-			JAL = 7'b1101111,
-			PROG_END = 7'b0000000;
+			JAL = 7'b1101111;
 			
 //ALU parameters
 parameter ADD = 4'd0,
@@ -287,109 +275,115 @@ parameter ADD = 4'd0,
 			SRL = 4'd6,
 			SRA = 4'd7,
 			SLT = 4'd8,
-			SLTU = 4'd9;
-	
+			SLTU = 4'd9,
+			ERR = 4'd10;
+
 //Instruction Decoding
 always @ (*) begin
-	if (rst == 1'b0) begin
-		exception = 32'd0;
-	end
-	else begin
-		//register decoding
-		rs1_data = registers[rs1_addr];
-		rs2_data = registers[rs2_addr];
+	//register decoding
+	rs1_data = registers[rs1_addr];
+	rs2_data = registers[rs2_addr];
+	
+	//instruction type decoding
+	opcode = current_instruction[6:0];
+	case (opcode)
+	
+		//integer register-register instructions
+		OP: begin
+			//decode instruction
+			immediate = 32'd0;
+			rs2_addr = current_instruction[24:20];
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = current_instruction[31:25];
+			rd_addr = current_instruction[11:7];
+			//set alu_op
+			case (funct7)
+				7'h00: begin
+					case (funct3)
+						3'h0: alu_op = ADD; //add
+						3'h1:	alu_op = SLL; //sll
+						3'h2:	alu_op = SLT; //slt
+						3'h3: alu_op = SLTU; //sltu
+						3'h4: alu_op = XOR; //xor
+						3'h5: alu_op = SRL; //srl
+						3'h6: alu_op = OR; //or
+						3'h7: alu_op = AND; //and
+						default: alu_op = ERR;
+					endcase
+				end
+				7'h20: begin
+					case (funct3)
+						3'd0: alu_op = SUB; //sub
+						3'd5: alu_op = SRA; //sra
+						default: alu_op = ERR;
+					endcase
+				end
+				default: alu_op = ERR;
+			endcase
+		end
 		
-		//instruction type decoding
-		opcode = current_instruction[6:0];
-		case (opcode)
+		//integer register-immediate instructions
+		OP_IMM: begin
+			//sign extending immediate
+			immediate = {{20{current_instruction[31]}}, current_instruction[31:20]};
+			//decode instruction
+			rs2_addr = 5'd0;
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = 7'd0;
+			rd_addr = current_instruction[11:7];
+			case (immediate[11:5])
+				7'h20: begin
+					case (funct3)
+						3'h5: alu_op = SRA; //srai
+						default: alu_op = ERR;
+					endcase
+				end
+				7'h00: begin
+					case (funct3)
+						3'h1: alu_op = SLL; //slli
+						3'h5: alu_op = SRL; //srli
+						default: alu_op = ERR;
+					endcase
+				end
+				default: begin
+					case (funct3)
+						3'h0: alu_op = ADD; //addi
+						3'h2:	alu_op = SLT; //slti
+						3'h3: alu_op = SLTU; //sltui
+						3'h4: alu_op = XOR; //xori
+						3'h6: alu_op = OR; //ori
+						3'h7: alu_op = AND; //andi
+						default: alu_op = ERR;
+					endcase
+				end
+			endcase
+		end
 		
-			//integer register-register instructions
-			OP: begin
-				//decode instruction
-				funct7 = current_instruction[31:25];
-				rs2_addr = current_instruction[24:20];
-				rs1_addr = current_instruction[19:15];
-				funct3 = current_instruction[14:12];
-				rd_addr = current_instruction[11:7];
-				//set alu_op
-				case (funct7)
-					7'h00: begin
-						case (funct3)
-							3'h0: alu_op = ADD; //add
-							3'h1:	alu_op = SLL; //sll
-							3'h2:	alu_op = SLT; //slt
-							3'h3: alu_op = SLTU; //sltu
-							3'h4: alu_op = XOR; //xor
-							3'h5: alu_op = SRL; //srl
-							3'h6: alu_op = OR; //or
-							3'h7: alu_op = AND; //and
-							default: exception = DECODE_ERROR;
-						endcase
-					end
-					7'h20: begin
-						case (funct3)
-							3'd0: alu_op = SUB; //sub
-							3'd5: alu_op = SRA; //sra
-							default: exception = DECODE_ERROR;
-						endcase
-					end
-					default: exception = DECODE_ERROR;
-				endcase
-			end
-			
-			//integer register-immediate instructions
-			OP_IMM: begin
-				//sign extending immediate
-				immediate = {{20{current_instruction[31]}}, current_instruction[31:20]};
-				//decode instruction
-				rs1_addr = current_instruction[19:15];
-				funct3 = current_instruction[14:12];
-				rd_addr = current_instruction[11:7];
-				case (immediate[11:5])
-					7'h20: begin
-						case (funct3)
-							3'h5: alu_op = SRA; //srai
-							default: exception = DECODE_ERROR;
-						endcase
-					end
-					7'h00: begin
-						case (funct3)
-							3'h1: alu_op = SLL; //slli
-							3'h5: alu_op = SRL; //srli
-							default: exception = DECODE_ERROR;
-						endcase
-					end
-					default: begin
-						case (funct3)
-							3'h0: alu_op = ADD; //addi
-							3'h2:	alu_op = SLT; //slti
-							3'h3: alu_op = SLTU; //sltui
-							3'h4: alu_op = XOR; //xori
-							3'h6: alu_op = OR; //ori
-							3'h7: alu_op = AND; //andi
-							default: exception = DECODE_ERROR;
-						endcase
-					end
-				endcase
-			end
-			
-			//jump and link instruction
-			JAL: begin
-				//immediate decoding and sign extension
-				immediate = {{11{current_instruction[31]}}, current_instruction[31], current_instruction[19:12], current_instruction[20], current_instruction[30:21], 1'b0};
-				//decode instruction
-				rd_addr = current_instruction[11:7];
-				alu_op = ADD;
-			end
-			
-			PROG_END:begin
-			
-			end
-			default: begin
-				exception = OPCODE_DECODE_ERROR;
-			end
-		endcase
-	end
+		//jump and link instruction
+		JAL: begin
+			//immediate decoding and sign extension
+			immediate = {{11{current_instruction[31]}}, current_instruction[31], current_instruction[19:12], current_instruction[20], current_instruction[30:21], 1'b0};
+			//decode instruction
+			rs2_addr = 5'd0;
+			rs1_addr = 5'd0;
+			funct3 = 3'd0;
+			funct7 = 7'd0;
+			rd_addr = current_instruction[11:7];
+			alu_op = ADD;
+		end
+		
+		default: begin
+			immediate = 32'd0;
+			rs2_addr = 5'd0;
+			rs1_addr = 5'd0;
+			funct3 = 3'd0;
+			funct7 = 7'd0;
+			rd_addr = 5'd0;
+			alu_op = ERR;
+		end
+	endcase
 end
 
 //register control
@@ -397,7 +391,7 @@ always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		//zeroing registers
 		registers[0] <= 32'd0;
-		registers[1] <= 32'd2002;
+		registers[1] <= 32'd0;
 		registers[2] <= 32'd0;
 		registers[3] <= 32'd0;
 		registers[4] <= 32'd0;
@@ -433,14 +427,12 @@ always @ (posedge clk or negedge rst) begin
 		registers[rd_addr] <= rd_data;
 	end
 end
-system_ram system_ram1 (
-	.clock(clk),
-	.wren(sys_wren),
-	.byteena(sys_byte_en),
-	.rden(sys_rden),
-	.data(sys_data_in),
-	.q(sys_data_out),
-	.address(sys_addr)
+memory memory1 (
+	.clk(clk),
+	.mem_addr(mem_addr),
+	.mem_op(mem_op),
+	.mem_data_in(mem_data_in),
+	.mem_data_out(mem_data_out)
 );
 
 ALU alu1 (

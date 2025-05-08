@@ -22,7 +22,9 @@ ADDRESS_RADIX=UNS;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-	0 : 03300513;
-	[1..65535]  :   0;
-
+	0      :   03300513;
+	1      :   00900493;
+	2      :   409505B3;
+	3      :   FFDFF7EF;
+	[4..65535]  :   00000000;
 END;

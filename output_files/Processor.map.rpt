@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Wed May  7 17:03:36 2025
+Thu May  8 12:15:33 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -29,49 +29,51 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  21. General Register Statistics
  22. Inverted Register Statistics
  23. Multiplexer Restructuring Statistics (Restructuring Performed)
- 24. Source assignments for system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated
+ 24. Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated
  25. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component|altsyncram_o6o1:auto_generated
  26. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component|altsyncram_6op1:auto_generated
  27. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component|altsyncram_0dj1:auto_generated
  28. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component|altsyncram_3p22:auto_generated
  29. Parameter Settings for User Entity Instance: Top-level Entity: |Processor
- 30. Parameter Settings for User Entity Instance: system_ram:system_ram1|altsyncram:altsyncram_component
- 31. Parameter Settings for User Entity Instance: ALU:alu1
- 32. Parameter Settings for User Entity Instance: debug:debug1
- 33. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1
- 34. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller
- 35. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver
- 36. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer
- 37. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component
- 38. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component
- 39. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component
- 40. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component
- 41. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod9
- 42. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div8
- 43. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod8
- 44. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div7
- 45. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod7
- 46. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div6
- 47. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod6
- 48. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div5
- 49. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod5
- 50. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div4
- 51. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod4
- 52. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div3
- 53. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod3
- 54. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div2
- 55. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod2
- 56. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div1
- 57. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod1
- 58. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div0
- 59. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod0
- 60. altsyncram Parameter Settings by Entity Instance
- 61. Port Connectivity Checks: "debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer"
- 62. Port Connectivity Checks: "debug:debug1|ascii_master_controller:ascii_master_controller1"
- 63. Post-Synthesis Netlist Statistics for Top Partition
- 64. Elapsed Time Per Partition
- 65. Analysis & Synthesis Messages
- 66. Analysis & Synthesis Suppressed Messages
+ 30. Parameter Settings for User Entity Instance: memory:memory1
+ 31. Parameter Settings for User Entity Instance: memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component
+ 32. Parameter Settings for User Entity Instance: ALU:alu1
+ 33. Parameter Settings for User Entity Instance: debug:debug1
+ 34. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1
+ 35. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller
+ 36. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver
+ 37. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer
+ 38. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component
+ 39. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component
+ 40. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component
+ 41. Parameter Settings for User Entity Instance: debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component
+ 42. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod9
+ 43. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div8
+ 44. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod8
+ 45. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div7
+ 46. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod7
+ 47. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div6
+ 48. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod6
+ 49. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div5
+ 50. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod5
+ 51. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div4
+ 52. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod4
+ 53. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div3
+ 54. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod3
+ 55. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div2
+ 56. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod2
+ 57. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div1
+ 58. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod1
+ 59. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Div0
+ 60. Parameter Settings for Inferred Entity Instance: debug:debug1|lpm_divide:Mod0
+ 61. altsyncram Parameter Settings by Entity Instance
+ 62. Port Connectivity Checks: "debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer"
+ 63. Port Connectivity Checks: "debug:debug1|ascii_master_controller:ascii_master_controller1"
+ 64. Port Connectivity Checks: "memory:memory1|system_ram:system_ram1"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
+ 68. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -98,14 +100,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May  7 17:03:35 2025          ;
+; Analysis & Synthesis Status     ; Successful - Thu May  8 12:15:33 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Processor                                      ;
 ; Top-level Entity Name           ; Processor                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1543                                           ;
-; Total pins                      ; 96                                             ;
+; Total registers                 ; 1542                                           ;
+; Total pins                      ; 54                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 2,867,200                                      ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -213,20 +215,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 28          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.2%      ;
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.2%      ;
-;     Processor 9            ;   0.2%      ;
-;     Processors 10-16       ;   0.2%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -249,6 +250,7 @@ https://fpgasoftware.intel.com/eula.
 ; memory/program.mif                               ; yes             ; User Memory Initialization File        ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.mif                               ;         ;
 ; debug.v                                          ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v                                          ;         ;
 ; ALU.v                                            ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v                                            ;         ;
+; memory/memory.v                                  ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v                                  ;         ;
 ; altsyncram.tdf                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
 ; stratix_ram_block.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
 ; lpm_mux.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
@@ -308,27 +310,27 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 5431           ;
+; Estimate of Logic utilization (ALMs needed) ; 5339           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 9082           ;
-;     -- 7 input functions                    ; 26             ;
-;     -- 6 input functions                    ; 1577           ;
-;     -- 5 input functions                    ; 410            ;
-;     -- 4 input functions                    ; 1441           ;
-;     -- <=3 input functions                  ; 5628           ;
+; Combinational ALUT usage for logic          ; 8891           ;
+;     -- 7 input functions                    ; 31             ;
+;     -- 6 input functions                    ; 1583           ;
+;     -- 5 input functions                    ; 456            ;
+;     -- 4 input functions                    ; 1382           ;
+;     -- <=3 input functions                  ; 5439           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 1543           ;
+; Dedicated logic registers                   ; 1542           ;
 ;                                             ;                ;
-; I/O pins                                    ; 96             ;
+; I/O pins                                    ; 54             ;
 ; Total MLAB memory bits                      ; 0              ;
 ; Total block memory bits                     ; 2867200        ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1867           ;
-; Total fan-out                               ; 45186          ;
-; Average fan-out                             ; 4.04           ;
+; Maximum fan-out                             ; 1866           ;
+; Total fan-out                               ; 44621          ;
+; Average fan-out                             ; 4.09           ;
 +---------------------------------------------+----------------+
 
 
@@ -337,10 +339,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                           ; Entity Name             ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; |Processor                                               ; 9082 (1051)         ; 1543 (1212)               ; 2867200           ; 0          ; 96   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
-;    |ALU:alu1|                                            ; 400 (400)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
-;    |debug:debug1|                                        ; 7527 (1282)         ; 325 (135)                 ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1                                                                                                                                                                                       ; debug                   ; work         ;
-;       |ascii_master_controller:ascii_master_controller1| ; 161 (45)            ; 190 (24)                  ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1                                                                                                                                      ; ascii_master_controller ; work         ;
+; |Processor                                               ; 8891 (865)          ; 1542 (1211)               ; 2867200           ; 0          ; 54   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
+;    |ALU:alu1|                                            ; 388 (388)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
+;    |debug:debug1|                                        ; 7534 (1290)         ; 325 (135)                 ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1                                                                                                                                                                                       ; debug                   ; work         ;
+;       |ascii_master_controller:ascii_master_controller1| ; 160 (44)            ; 190 (24)                  ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1                                                                                                                                      ; ascii_master_controller ; work         ;
 ;          |ascii_master:master|                           ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master                                                                                                                  ; ascii_master            ; work         ;
 ;             |altsyncram:altsyncram_component|            ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component                                                                                  ; altsyncram              ; work         ;
 ;                |altsyncram_3p22:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component|altsyncram_3p22:auto_generated                                                   ; altsyncram_3p22         ; work         ;
@@ -433,11 +435,12 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_l3m:auto_generated|                 ; 315 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated                                                                                                                                         ; lpm_divide_l3m          ; work         ;
 ;             |sign_div_unsign_olh:divider|                ; 315 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated|sign_div_unsign_olh:divider                                                                                                             ; sign_div_unsign_olh     ; work         ;
 ;                |alt_u_div_mve:divider|                   ; 315 (315)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider                                                                                       ; alt_u_div_mve           ; work         ;
-;    |system_ram:system_ram1|                              ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|system_ram:system_ram1                                                                                                                                                                             ; system_ram              ; work         ;
-;       |altsyncram:altsyncram_component|                  ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                                                             ; altsyncram              ; work         ;
-;          |altsyncram_ahr1:auto_generated|                ; 104 (0)             ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated                                                                                                              ; altsyncram_ahr1         ; work         ;
-;             |decode_dla:rden_decode|                     ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode                                                                                       ; decode_dla              ; work         ;
-;             |mux_ahb:mux2|                               ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2                                                                                                 ; mux_ahb                 ; work         ;
+;    |memory:memory1|                                      ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1                                                                                                                                                                                     ; memory                  ; work         ;
+;       |system_ram:system_ram1|                           ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1                                                                                                                                                              ; system_ram              ; work         ;
+;          |altsyncram:altsyncram_component|               ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                                              ; altsyncram              ; work         ;
+;             |altsyncram_ahr1:auto_generated|             ; 104 (0)             ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated                                                                                               ; altsyncram_ahr1         ; work         ;
+;                |decode_dla:rden_decode|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode                                                                        ; decode_dla              ; work         ;
+;                |mux_ahb:mux2|                            ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2                                                                                  ; mux_ahb                 ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -451,7 +454,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component|altsyncram_0dj1:auto_generated|ALTSYNCRAM                               ; AUTO ; ROM              ; 1024         ; 8            ; --           ; --           ; 8192    ; ./vga_controller/ascii_rom/ASCII_Encode.mif ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component|altsyncram_o6o1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 8192         ; 32           ; --           ; --           ; 262144  ; ascii_buffer_1.mif                          ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component|altsyncram_6op1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 8192         ; 32           ; --           ; --           ; 262144  ; ../ascii_buffer_2/ascii_buffer_2.mif        ;
-; system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|ALTSYNCRAM                                                                                                              ; AUTO ; Single Port      ; 65536        ; 32           ; --           ; --           ; 2097152 ; ../memory/program.mif                       ;
+; memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|ALTSYNCRAM                                                                                               ; AUTO ; Single Port      ; 65536        ; 32           ; --           ; --           ; 2097152 ; ../memory/program.mif                       ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+---------------------------------------------+
 
 
@@ -464,7 +467,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; RAM: 1-PORT  ; 24.1    ; N/A          ; N/A          ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2 ; vga_controller/ascii_buffer_2/ascii_buffer_2.v ;
 ; Altera ; ROM: 1-PORT  ; 24.1    ; N/A          ; N/A          ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1                               ; vga_controller/ascii_rom/Char_ROM.v            ;
 ; Altera ; RAM: 2-PORT  ; 24.1    ; N/A          ; N/A          ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master                                                   ; vga_controller/ascii_master/ascii_master.v     ;
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |Processor|system_ram:system_ram1                                                                                                              ; memory/system_ram.v                            ;
+; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |Processor|memory:memory1|system_ram:system_ram1                                                                                               ; memory/system_ram.v                            ;
 +--------+--------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 
@@ -573,114 +576,49 @@ Encoding Type:  One-Hot
 +-----------+----------+----------+-----------+-------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                   ;
-+------------------------------------------------------+-----------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal   ; Free of Timing Hazards ;
-+------------------------------------------------------+-----------------------+------------------------+
-; debug:debug1|current_digit[0]                        ; debug:debug1|WideNor2 ; yes                    ;
-; debug:debug1|current_reg[0]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_digit[1]                        ; debug:debug1|WideNor2 ; yes                    ;
-; debug:debug1|current_reg[1]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_digit[2]                        ; debug:debug1|WideNor2 ; yes                    ;
-; debug:debug1|current_reg[2]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_digit[3]                        ; debug:debug1|WideNor2 ; yes                    ;
-; debug:debug1|current_reg[3]                          ; debug:debug1|WideNor1 ; yes                    ;
-; ALU:alu1|out[0]                                      ; ALU:alu1|Mux32        ; yes                    ;
-; opcode[0]                                            ; KEY[0]                ; yes                    ;
-; opcode[1]                                            ; KEY[0]                ; yes                    ;
-; opcode[2]                                            ; KEY[0]                ; yes                    ;
-; opcode[3]                                            ; KEY[0]                ; yes                    ;
-; opcode[4]                                            ; KEY[0]                ; yes                    ;
-; opcode[5]                                            ; KEY[0]                ; yes                    ;
-; opcode[6]                                            ; KEY[0]                ; yes                    ;
-; rd_addr[1]                                           ; rd_addr[1]            ; yes                    ;
-; rd_addr[2]                                           ; rd_addr[1]            ; yes                    ;
-; rd_addr[3]                                           ; rd_addr[1]            ; yes                    ;
-; rd_addr[4]                                           ; rd_addr[1]            ; yes                    ;
-; rd_addr[0]                                           ; rd_addr[1]            ; yes                    ;
-; ALU:alu1|out[1]                                      ; ALU:alu1|Mux32        ; yes                    ;
-; ALU:alu1|out[2]                                      ; ALU:alu1|Mux32        ; yes                    ;
-; ALU:alu1|out[3]                                      ; ALU:alu1|Mux32        ; yes                    ;
-; alu_op[2]                                            ; alu_op[0]             ; yes                    ;
-; alu_op[3]                                            ; alu_op[0]             ; yes                    ;
-; alu_op[0]                                            ; alu_op[0]             ; yes                    ;
-; alu_op[1]                                            ; alu_op[0]             ; yes                    ;
-; exception.00000000000000000000000000000000_16517     ; Selector209           ; yes                    ;
-; exception.DECODE_ERROR_16500                         ; Selector209           ; yes                    ;
-; ALU:alu1|out[31]                                     ; ALU:alu1|Mux32        ; yes                    ;
-; debug:debug1|current_reg[4]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[7]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[10]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[14]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[17]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[20]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[24]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[27]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[30]                         ; debug:debug1|WideNor1 ; yes                    ;
-; exception.OPCODE_DECODE_ERROR_16483                  ; Selector209           ; yes                    ;
-; debug:debug1|current_reg[5]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[8]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[11]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[15]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[18]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[21]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[25]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[28]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[6]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[9]                          ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[12]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[16]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[19]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[22]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[26]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[29]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[13]                         ; debug:debug1|WideNor1 ; yes                    ;
-; debug:debug1|current_reg[23]                         ; debug:debug1|WideNor1 ; yes                    ;
-; rs1_data[0]                                          ; KEY[0]                ; yes                    ;
-; rs2_data[0]                                          ; KEY[0]                ; yes                    ;
-; immediate[0]                                         ; immediate[0]          ; yes                    ;
-; rs2_data[31]                                         ; KEY[0]                ; yes                    ;
-; immediate[31]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[30]                                         ; KEY[0]                ; yes                    ;
-; immediate[30]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[29]                                         ; KEY[0]                ; yes                    ;
-; immediate[29]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[28]                                         ; KEY[0]                ; yes                    ;
-; immediate[28]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[27]                                         ; KEY[0]                ; yes                    ;
-; immediate[27]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[26]                                         ; KEY[0]                ; yes                    ;
-; immediate[26]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[25]                                         ; KEY[0]                ; yes                    ;
-; immediate[25]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[24]                                         ; KEY[0]                ; yes                    ;
-; immediate[24]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[23]                                         ; KEY[0]                ; yes                    ;
-; immediate[23]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[22]                                         ; KEY[0]                ; yes                    ;
-; immediate[22]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[21]                                         ; KEY[0]                ; yes                    ;
-; immediate[21]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[20]                                         ; KEY[0]                ; yes                    ;
-; immediate[20]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[19]                                         ; KEY[0]                ; yes                    ;
-; immediate[19]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[18]                                         ; KEY[0]                ; yes                    ;
-; immediate[18]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[17]                                         ; KEY[0]                ; yes                    ;
-; immediate[17]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[16]                                         ; KEY[0]                ; yes                    ;
-; immediate[16]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[15]                                         ; KEY[0]                ; yes                    ;
-; immediate[15]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[14]                                         ; KEY[0]                ; yes                    ;
-; immediate[14]                                        ; immediate[0]          ; yes                    ;
-; rs2_data[13]                                         ; KEY[0]                ; yes                    ;
-; immediate[13]                                        ; immediate[0]          ; yes                    ;
-; Number of user-specified and inferred latches = 192  ;                       ;                        ;
-+------------------------------------------------------+-----------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++-----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------+------------------------+
+; debug:debug1|current_digit[0]                       ; debug:debug1|WideNor2 ; yes                    ;
+; debug:debug1|current_reg[0]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_digit[1]                       ; debug:debug1|WideNor2 ; yes                    ;
+; debug:debug1|current_reg[1]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_digit[2]                       ; debug:debug1|WideNor2 ; yes                    ;
+; debug:debug1|current_reg[2]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_digit[3]                       ; debug:debug1|WideNor2 ; yes                    ;
+; debug:debug1|current_reg[3]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[4]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[7]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[10]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[14]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[17]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[20]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[24]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[27]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[30]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[5]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[8]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[11]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[15]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[18]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[21]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[25]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[28]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[6]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[9]                         ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[12]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[16]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[19]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[22]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[26]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[29]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[13]                        ; debug:debug1|WideNor1 ; yes                    ;
+; debug:debug1|current_reg[23]                        ; debug:debug1|WideNor1 ; yes                    ;
+; Number of user-specified and inferred latches = 35  ;                       ;                        ;
++-----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------------+
@@ -706,8 +644,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|data_in_2[31] ; Lost fanout                                 ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|data_in_1[31] ; Lost fanout                                 ;
-; sys_byte_en[0..3]                                                                                                          ; Stuck at VCC due to stuck port data_in      ;
-; sys_rden                                                                                                                   ; Stuck at VCC due to stuck port data_in      ;
+; mem_op[1..7]                                                                                                               ; Stuck at GND due to stuck port data_in      ;
+; mem_op[0]                                                                                                                  ; Stuck at VCC due to stuck port data_in      ;
 ; registers[0][30]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
 ; registers[0][29]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
 ; registers[0][28]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
@@ -790,7 +728,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; debug:debug1|S.START                                                                                                       ; Merged with S.START                         ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|WRITE_S.START                                                ; Merged with S.START                         ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|S.START       ; Merged with S.START                         ;
-; Total Number of Removed Registers = 89                                                                                     ;                                             ;
+; S.ERROR                                                                                                                    ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 93                                                                                     ;                                             ;
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
@@ -808,12 +747,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1543  ;
-; Number of registers using Synchronous Clear  ; 52    ;
-; Number of registers using Synchronous Load   ; 126   ;
-; Number of registers using Asynchronous Clear ; 1172  ;
+; Total registers                              ; 1542  ;
+; Number of registers using Synchronous Clear  ; 61    ;
+; Number of registers using Synchronous Load   ; 120   ;
+; Number of registers using Asynchronous Clear ; 1171  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1398  ;
+; Number of registers using Clock Enable       ; 1397  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -827,14 +766,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vblank ; 18      ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vga_hs ; 1       ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vga_vs ; 1       ;
-; registers[1][1]                                                                                                  ; 3       ;
-; registers[1][9]                                                                                                  ; 3       ;
-; registers[1][6]                                                                                                  ; 3       ;
-; registers[1][4]                                                                                                  ; 3       ;
-; registers[1][10]                                                                                                 ; 3       ;
-; registers[1][7]                                                                                                  ; 3       ;
-; registers[1][8]                                                                                                  ; 3       ;
-; Total number of inverted registers = 11                                                                          ;         ;
+; Total number of inverted registers = 4                                                                           ;         ;
 +------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -843,42 +775,42 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|read_data[14] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Processor|rd_data[18]                                                                                                                ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |Processor|current_instruction[16]                                                                                                    ;
-; 128:1              ; 2 bits    ; 170 LEs       ; 2 LEs                ; 168 LEs                ; Yes        ; |Processor|alu_in_1[0]                                                                                                                ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 32 LEs               ; 2688 LEs               ; Yes        ; |Processor|alu_in_2[29]                                                                                                               ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|hcount[5]        ;
-; 65:1               ; 60 bits   ; 2580 LEs      ; 0 LEs                ; 2580 LEs               ; Yes        ; |Processor|pc[21]                                                                                                                     ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vcount[7]        ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Processor|wait_count[11]                                                                                                             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
+; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|read_data[18] ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |Processor|current_instruction[10]                                                                                                    ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|hcount[2]        ;
+; 65:1               ; 30 bits   ; 1290 LEs      ; 0 LEs                ; 1290 LEs               ; Yes        ; |Processor|pc[20]                                                                                                                     ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vcount[2]        ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Processor|wait_count[22]                                                                                                             ;
+; 158:1              ; 2 bits    ; 210 LEs       ; 44 LEs               ; 166 LEs                ; Yes        ; |Processor|alu_in_1[1]                                                                                                                ;
+; 159:1              ; 10 bits   ; 1060 LEs      ; 220 LEs              ; 840 LEs                ; Yes        ; |Processor|alu_in_2[9]                                                                                                                ;
+; 96:1               ; 12 bits   ; 768 LEs       ; 264 LEs              ; 504 LEs                ; Yes        ; |Processor|alu_in_2[20]                                                                                                               ;
+; 96:1               ; 30 bits   ; 1920 LEs      ; 660 LEs              ; 1260 LEs               ; Yes        ; |Processor|alu_in_1[25]                                                                                                               ;
+; 166:1              ; 9 bits    ; 990 LEs       ; 198 LEs              ; 792 LEs                ; Yes        ; |Processor|alu_in_2[16]                                                                                                               ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |Processor|debug:debug1|Mux4                                                                                                          ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |Processor|Mux14                                                                                                                      ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |Processor|Mux49                                                                                                                      ;
-; 16:1               ; 12 bits   ; 120 LEs       ; 108 LEs              ; 12 LEs                 ; No         ; |Processor|ALU:alu1|Mux26                                                                                                             ;
-; 16:1               ; 12 bits   ; 120 LEs       ; 108 LEs              ; 12 LEs                 ; No         ; |Processor|ALU:alu1|Mux14                                                                                                             ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 44 LEs               ; 4 LEs                  ; No         ; |Processor|ALU:alu1|Mux28                                                                                                             ;
-; 19:1               ; 3 bits    ; 36 LEs        ; 33 LEs               ; 3 LEs                  ; No         ; |Processor|ALU:alu1|Mux3                                                                                                              ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 24 LEs               ; -3 LEs                 ; No         ; |Processor|debug:debug1|Selector127                                                                                                   ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector123                                                                                                   ;
-; 33:1               ; 31 bits   ; 682 LEs       ; 682 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector77                                                                                                    ;
-; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector88                                                                                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |Processor|debug:debug1|Mux3                                                                                                          ;
+; 22:1               ; 12 bits   ; 168 LEs       ; 120 LEs              ; 48 LEs                 ; No         ; |Processor|ALU:alu1|Mux12                                                                                                             ;
+; 22:1               ; 12 bits   ; 168 LEs       ; 120 LEs              ; 48 LEs                 ; No         ; |Processor|ALU:alu1|Mux21                                                                                                             ;
+; 25:1               ; 4 bits    ; 64 LEs        ; 44 LEs               ; 20 LEs                 ; No         ; |Processor|ALU:alu1|Mux0                                                                                                              ;
+; 25:1               ; 3 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |Processor|ALU:alu1|Mux29                                                                                                             ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 24 LEs               ; -3 LEs                 ; No         ; |Processor|debug:debug1|Selector122                                                                                                   ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector125                                                                                                   ;
+; 33:1               ; 31 bits   ; 682 LEs       ; 682 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector129                                                                                                   ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector108                                                                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Source assignments for system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                             ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
-+---------------------------------+--------------------+------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -937,10 +869,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; UNKNOWN_ERROR       ; 00000000000000000000000000000000 ; Unsigned Binary  ;
 ; DECODE_ERROR        ; 00000000000001010000010100101001 ; Unsigned Binary  ;
 ; OPCODE_DECODE_ERROR ; 00000000000001010000010100101010 ; Unsigned Binary  ;
+; MEM_FETCH           ; 00000001                         ; Unsigned Binary  ;
 ; OP                  ; 0110011                          ; Unsigned Binary  ;
 ; OP_IMM              ; 0010011                          ; Unsigned Binary  ;
 ; JAL                 ; 1101111                          ; Unsigned Binary  ;
-; PROG_END            ; 0000000                          ; Unsigned Binary  ;
 ; ADD                 ; 0000                             ; Unsigned Binary  ;
 ; SUB                 ; 0001                             ; Unsigned Binary  ;
 ; XOR                 ; 0010                             ; Unsigned Binary  ;
@@ -951,68 +883,79 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; SRA                 ; 0111                             ; Unsigned Binary  ;
 ; SLT                 ; 1000                             ; Unsigned Binary  ;
 ; SLTU                ; 1001                             ; Unsigned Binary  ;
+; ERR                 ; 1010                             ; Unsigned Binary  ;
 +---------------------+----------------------------------+------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: system_ram:system_ram1|altsyncram:altsyncram_component ;
-+------------------------------------+-----------------------+----------------------------------------+
-; Parameter Name                     ; Value                 ; Type                                   ;
-+------------------------------------+-----------------------+----------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped                                ;
-; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE                         ;
-; WIDTH_BYTEENA                      ; 1                     ; Untyped                                ;
-; OPERATION_MODE                     ; SINGLE_PORT           ; Untyped                                ;
-; WIDTH_A                            ; 32                    ; Signed Integer                         ;
-; WIDTHAD_A                          ; 16                    ; Signed Integer                         ;
-; NUMWORDS_A                         ; 65536                 ; Signed Integer                         ;
-; OUTDATA_REG_A                      ; CLOCK0                ; Untyped                                ;
-; ADDRESS_ACLR_A                     ; NONE                  ; Untyped                                ;
-; OUTDATA_ACLR_A                     ; NONE                  ; Untyped                                ;
-; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped                                ;
-; INDATA_ACLR_A                      ; NONE                  ; Untyped                                ;
-; BYTEENA_ACLR_A                     ; NONE                  ; Untyped                                ;
-; WIDTH_B                            ; 1                     ; Untyped                                ;
-; WIDTHAD_B                          ; 1                     ; Untyped                                ;
-; NUMWORDS_B                         ; 1                     ; Untyped                                ;
-; INDATA_REG_B                       ; CLOCK1                ; Untyped                                ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped                                ;
-; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped                                ;
-; ADDRESS_REG_B                      ; CLOCK1                ; Untyped                                ;
-; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped                                ;
-; BYTEENA_REG_B                      ; CLOCK1                ; Untyped                                ;
-; INDATA_ACLR_B                      ; NONE                  ; Untyped                                ;
-; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped                                ;
-; ADDRESS_ACLR_B                     ; NONE                  ; Untyped                                ;
-; OUTDATA_ACLR_B                     ; NONE                  ; Untyped                                ;
-; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped                                ;
-; BYTEENA_ACLR_B                     ; NONE                  ; Untyped                                ;
-; WIDTH_BYTEENA_A                    ; 4                     ; Signed Integer                         ;
-; WIDTH_BYTEENA_B                    ; 1                     ; Untyped                                ;
-; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped                                ;
-; BYTE_SIZE                          ; 8                     ; Signed Integer                         ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped                                ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped                                ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped                                ;
-; INIT_FILE                          ; ../memory/program.mif ; Untyped                                ;
-; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped                                ;
-; MAXIMUM_DEPTH                      ; 0                     ; Untyped                                ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                ; Untyped                                ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped                                ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                ; Untyped                                ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped                                ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped                                ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped                                ;
-; ENABLE_ECC                         ; FALSE                 ; Untyped                                ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped                                ;
-; WIDTH_ECCSTATUS                    ; 3                     ; Untyped                                ;
-; DEVICE_FAMILY                      ; Cyclone V             ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_ahr1       ; Untyped                                ;
-+------------------------------------+-----------------------+----------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory:memory1 ;
++----------------+----------+---------------------------------+
+; Parameter Name ; Value    ; Type                            ;
++----------------+----------+---------------------------------+
+; MEM_FETCH      ; 00000001 ; Unsigned Binary                 ;
++----------------+----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component ;
++------------------------------------+-----------------------+-------------------------------------------------------+
+; Parameter Name                     ; Value                 ; Type                                                  ;
++------------------------------------+-----------------------+-------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped                                               ;
+; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE                                        ;
+; WIDTH_BYTEENA                      ; 1                     ; Untyped                                               ;
+; OPERATION_MODE                     ; SINGLE_PORT           ; Untyped                                               ;
+; WIDTH_A                            ; 32                    ; Signed Integer                                        ;
+; WIDTHAD_A                          ; 16                    ; Signed Integer                                        ;
+; NUMWORDS_A                         ; 65536                 ; Signed Integer                                        ;
+; OUTDATA_REG_A                      ; CLOCK0                ; Untyped                                               ;
+; ADDRESS_ACLR_A                     ; NONE                  ; Untyped                                               ;
+; OUTDATA_ACLR_A                     ; NONE                  ; Untyped                                               ;
+; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped                                               ;
+; INDATA_ACLR_A                      ; NONE                  ; Untyped                                               ;
+; BYTEENA_ACLR_A                     ; NONE                  ; Untyped                                               ;
+; WIDTH_B                            ; 1                     ; Untyped                                               ;
+; WIDTHAD_B                          ; 1                     ; Untyped                                               ;
+; NUMWORDS_B                         ; 1                     ; Untyped                                               ;
+; INDATA_REG_B                       ; CLOCK1                ; Untyped                                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped                                               ;
+; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped                                               ;
+; ADDRESS_REG_B                      ; CLOCK1                ; Untyped                                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped                                               ;
+; BYTEENA_REG_B                      ; CLOCK1                ; Untyped                                               ;
+; INDATA_ACLR_B                      ; NONE                  ; Untyped                                               ;
+; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped                                               ;
+; ADDRESS_ACLR_B                     ; NONE                  ; Untyped                                               ;
+; OUTDATA_ACLR_B                     ; NONE                  ; Untyped                                               ;
+; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped                                               ;
+; BYTEENA_ACLR_B                     ; NONE                  ; Untyped                                               ;
+; WIDTH_BYTEENA_A                    ; 4                     ; Signed Integer                                        ;
+; WIDTH_BYTEENA_B                    ; 1                     ; Untyped                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped                                               ;
+; BYTE_SIZE                          ; 8                     ; Signed Integer                                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped                                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped                                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped                                               ;
+; INIT_FILE                          ; ../memory/program.mif ; Untyped                                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped                                               ;
+; MAXIMUM_DEPTH                      ; 0                     ; Untyped                                               ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                ; Untyped                                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped                                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                ; Untyped                                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped                                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped                                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped                                               ;
+; ENABLE_ECC                         ; FALSE                 ; Untyped                                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped                                               ;
+; WIDTH_ECCSTATUS                    ; 3                     ; Untyped                                               ;
+; DEVICE_FAMILY                      ; Cyclone V             ; Untyped                                               ;
+; CBXI_PARAMETER                     ; altsyncram_ahr1       ; Untyped                                               ;
++------------------------------------+-----------------------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1031,6 +974,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SRA            ; 0111  ; Unsigned Binary              ;
 ; SLT            ; 1000  ; Unsigned Binary              ;
 ; SLTU           ; 1001  ; Unsigned Binary              ;
+; ERR            ; 1010  ; Unsigned Binary              ;
 +----------------+-------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1809,7 +1753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                                                                                                                                                               ;
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Number of entity instances                ; 5                                                                                                                                                                   ;
-; Entity Instance                           ; system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                              ;
+; Entity Instance                           ; memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                               ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                                                                                                         ;
 ;     -- WIDTH_A                            ; 32                                                                                                                                                                  ;
 ;     -- NUMWORDS_A                         ; 65536                                                                                                                                                               ;
@@ -1890,49 +1834,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "memory:memory1|system_ram:system_ram1" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; wren ; Input ; Info     ; Stuck at GND                            ;
+; data ; Input ; Info     ; Stuck at GND                            ;
++------+-------+----------+-----------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1543                        ;
-;     CLR               ; 127                         ;
+; arriav_ff             ; 1542                        ;
+;     CLR               ; 126                         ;
 ;     CLR SCLR          ; 10                          ;
 ;     CLR SLD           ; 1                           ;
-;     ENA               ; 237                         ;
+;     ENA               ; 233                         ;
 ;     ENA CLR           ; 994                         ;
 ;     ENA CLR SCLR      ; 10                          ;
 ;     ENA CLR SLD       ; 30                          ;
-;     ENA SCLR          ; 32                          ;
-;     ENA SLD           ; 95                          ;
-;     plain             ; 7                           ;
-; arriav_lcell_comb     ; 9086                        ;
+;     ENA SCLR          ; 41                          ;
+;     ENA SLD           ; 89                          ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 8895                        ;
 ;     arith             ; 3602                        ;
 ;         0 data inputs ; 599                         ;
-;         1 data inputs ; 385                         ;
+;         1 data inputs ; 384                         ;
 ;         2 data inputs ; 114                         ;
-;         3 data inputs ; 1708                        ;
+;         3 data inputs ; 1677                        ;
 ;         4 data inputs ; 796                         ;
-;     extend            ; 26                          ;
-;         7 data inputs ; 26                          ;
-;     normal            ; 5404                        ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 31                          ;
+;         7 data inputs ; 31                          ;
+;     normal            ; 5208                        ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 1770                        ;
-;         3 data inputs ; 988                         ;
-;         4 data inputs ; 645                         ;
-;         5 data inputs ; 410                         ;
-;         6 data inputs ; 1577                        ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 1802                        ;
+;         3 data inputs ; 807                         ;
+;         4 data inputs ; 586                         ;
+;         5 data inputs ; 424                         ;
+;         6 data inputs ; 1583                        ;
 ;     shared            ; 54                          ;
 ;         0 data inputs ; 27                          ;
 ;         1 data inputs ; 18                          ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 7                           ;
-; boundary_port         ; 96                          ;
+; boundary_port         ; 54                          ;
 ; stratixv_ram_block    ; 357                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 59.10                       ;
-; Average LUT depth     ; 40.63                       ;
+; Average LUT depth     ; 41.64                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1951,7 +1906,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed May  7 17:03:23 2025
+    Info: Processing started: Thu May  8 12:15:20 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
@@ -1981,156 +1936,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file debug.v
     Info (12023): Found entity 1: debug File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memory/memory.v
+    Info (12023): Found entity 1: memory File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 1
 Info (12127): Elaborating entity "Processor" for the top level hierarchy
-Info (10264): Verilog HDL Case Statement information at Processor.v(176): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 176
-Info (10264): Verilog HDL Case Statement information at Processor.v(209): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "exception", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "rs1_data", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "rs2_data", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "opcode", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "immediate", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "rd_addr", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "alu_op", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "funct7", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "rs2_addr", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "rs1_addr", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10240): Verilog HDL Always Construct warning at Processor.v(294): inferring latch(es) for variable "funct3", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 294
-Warning (10034): Output port "HEX0" at Processor.v(41) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-Warning (10034): Output port "HEX1" at Processor.v(42) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-Warning (10034): Output port "HEX2" at Processor.v(43) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-Warning (10034): Output port "HEX3" at Processor.v(44) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-Warning (10034): Output port "HEX4" at Processor.v(45) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-Warning (10034): Output port "HEX5" at Processor.v(46) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
+Info (10264): Verilog HDL Case Statement information at Processor.v(172): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 172
+Info (10264): Verilog HDL Case Statement information at Processor.v(204): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 204
 Warning (10034): Output port "LEDR" at Processor.v(56) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
-Info (10041): Inferred latch for "rs1_addr[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_addr[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_addr[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_addr[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_addr[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_addr[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_addr[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_addr[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_addr[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_addr[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "alu_op[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "alu_op[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "alu_op[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "alu_op[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rd_addr[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rd_addr[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rd_addr[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rd_addr[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rd_addr[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[5]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[6]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[7]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[8]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[9]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[10]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[11]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[12]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[13]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[14]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[15]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[16]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[17]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[18]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[19]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[20]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[21]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[22]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[23]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[24]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[25]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[26]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[27]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[28]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[29]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[30]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "immediate[31]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[5]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "opcode[6]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[5]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[6]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[7]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[8]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[9]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[10]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[11]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[12]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[13]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[14]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[15]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[16]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[17]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[18]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[19]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[20]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[21]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[22]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[23]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[24]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[25]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[26]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[27]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[28]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[29]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[30]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs2_data[31]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[0]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[1]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[2]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[3]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[4]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[5]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[6]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[7]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[8]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[9]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[10]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[11]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[12]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[13]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[14]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[15]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[16]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[17]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[18]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[19]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[20]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[21]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[22]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[23]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[24]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[25]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[26]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[27]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[28]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[29]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[30]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "rs1_data[31]" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "exception.OPCODE_DECODE_ERROR" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "exception.DECODE_ERROR" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (10041): Inferred latch for "exception.00000000000000000000000000000000" at Processor.v(299) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Info (12128): Elaborating entity "system_ram" for hierarchy "system_ram:system_ram1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 444
-Info (12128): Elaborating entity "altsyncram" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
-Info (12130): Elaborated megafunction instantiation "system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
-Info (12133): Instantiated megafunction "system_ram:system_ram1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 436
+Warning (10230): Verilog HDL assignment warning at memory.v(24): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 24
+Info (12128): Elaborating entity "system_ram" for hierarchy "memory:memory1|system_ram:system_ram1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 47
+Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
+Info (12130): Elaborated megafunction instantiation "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
+Info (12133): Instantiated megafunction "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
     Info (12134): Parameter "byte_size" = "8"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -2149,49 +1966,15 @@ Info (12133): Instantiated megafunction "system_ram:system_ram1|altsyncram:altsy
     Info (12134): Parameter "width_byteena_a" = "4"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ahr1.tdf
     Info (12023): Found entity 1: altsyncram_ahr1 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 32
-Info (12128): Elaborating entity "altsyncram_ahr1" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "altsyncram_ahr1" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
     Info (12023): Found entity 1: decode_dla File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/decode_dla.tdf Line: 23
-Info (12128): Elaborating entity "decode_dla" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:decode3" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 45
+Info (12128): Elaborating entity "decode_dla" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:decode3" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
     Info (12023): Found entity 1: mux_ahb File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/mux_ahb.tdf Line: 23
-Info (12128): Elaborating entity "mux_ahb" for hierarchy "system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 47
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 451
-Warning (10270): Verilog HDL Case Statement warning at ALU.v(28): incomplete case statement has no default case item File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 28
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(26): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[0]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[1]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[2]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[3]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[4]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[5]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[6]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[7]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[8]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[9]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[10]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[11]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[12]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[13]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[14]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[15]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[16]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[17]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[18]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[19]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[20]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[21]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[22]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[23]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[24]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[25]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[26]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[27]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[28]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[29]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[30]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (10041): Inferred latch for "out[31]" at ALU.v(26) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 573
+Info (12128): Elaborating entity "mux_ahb" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 47
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 443
+Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 565
 Info (10264): Verilog HDL Case Statement information at debug.v(113): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (10230): Verilog HDL assignment warning at debug.v(129): truncated value with size 32 to match size of target (13) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
 Warning (10762): Verilog HDL Case Statement warning at debug.v(132): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 132
@@ -2496,18 +2279,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
     Info (12023): Found entity 1: alt_u_div_k2f File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/alt_u_div_k2f.tdf Line: 23
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "immediate[20]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[21]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[22]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[23]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[24]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[25]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[26]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[27]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[28]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[29]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Info (13026): Duplicate LATCH primitive "immediate[30]" merged with LATCH primitive "immediate[31]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
 Warning (13012): Latch debug:debug1|current_digit[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|X_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
@@ -2524,26 +2295,6 @@ Warning (13012): Latch debug:debug1|current_digit[3] has unsafe behavior File: C
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|X_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[3] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
-Warning (13012): Latch ALU:alu1|out[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[2] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[1] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[2] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[3] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch alu_op[2] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch alu_op[3] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch alu_op[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch alu_op[1] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch exception.DECODE_ERROR_16500 has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch ALU:alu1|out[31] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
 Warning (13012): Latch debug:debug1|current_reg[4] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[7] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
@@ -2562,8 +2313,6 @@ Warning (13012): Latch debug:debug1|current_reg[27] has unsafe behavior File: C:
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[30] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
-Warning (13012): Latch exception.OPCODE_DECODE_ERROR_16483 has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
 Warning (13012): Latch debug:debug1|current_reg[5] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[8] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
@@ -2600,123 +2349,7 @@ Warning (13012): Latch debug:debug1|current_reg[13] has unsafe behavior File: C:
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (13012): Latch debug:debug1|current_reg[23] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
     Warning (13013): Ports D and ENA on the latch are fed by the same signal debug:debug1|Y_coord[31] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
-Warning (13012): Latch immediate[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[19] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[18] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[17] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[16] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[15] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[14] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[13] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[12] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch immediate[11] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_instruction[6] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 209
-Warning (13012): Latch ALU:alu1|out[4] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[7] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[10] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[14] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[17] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[20] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[24] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[27] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[30] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[5] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[8] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[11] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[15] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[18] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[21] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[25] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[28] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[6] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[9] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[12] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[16] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[19] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[22] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[26] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[29] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[13] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
-Warning (13012): Latch ALU:alu1|out[23] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v Line: 26
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal alu_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 299
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 41
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 42
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 43
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 44
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 45
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 46
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
@@ -2747,16 +2380,16 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
-Info (21057): Implemented 10774 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10544 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 10321 logic cells
+    Info (21059): Implemented 39 output pins
+    Info (21061): Implemented 10133 logic cells
     Info (21064): Implemented 357 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 287 warnings
-    Info: Peak virtual memory: 5127 megabytes
-    Info: Processing ended: Wed May  7 17:03:36 2025
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 5115 megabytes
+    Info: Processing ended: Thu May  8 12:15:33 2025
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +------------------------------------------+

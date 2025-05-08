@@ -1,47 +1,5 @@
 |Processor
 CLOCK_50 => clk.IN2
-HEX0[0] <= <GND>
-HEX0[1] <= <GND>
-HEX0[2] <= <GND>
-HEX0[3] <= <GND>
-HEX0[4] <= <GND>
-HEX0[5] <= <GND>
-HEX0[6] <= <GND>
-HEX1[0] <= <GND>
-HEX1[1] <= <GND>
-HEX1[2] <= <GND>
-HEX1[3] <= <GND>
-HEX1[4] <= <GND>
-HEX1[5] <= <GND>
-HEX1[6] <= <GND>
-HEX2[0] <= <GND>
-HEX2[1] <= <GND>
-HEX2[2] <= <GND>
-HEX2[3] <= <GND>
-HEX2[4] <= <GND>
-HEX2[5] <= <GND>
-HEX2[6] <= <GND>
-HEX3[0] <= <GND>
-HEX3[1] <= <GND>
-HEX3[2] <= <GND>
-HEX3[3] <= <GND>
-HEX3[4] <= <GND>
-HEX3[5] <= <GND>
-HEX3[6] <= <GND>
-HEX4[0] <= <GND>
-HEX4[1] <= <GND>
-HEX4[2] <= <GND>
-HEX4[3] <= <GND>
-HEX4[4] <= <GND>
-HEX4[5] <= <GND>
-HEX4[6] <= <GND>
-HEX5[0] <= <GND>
-HEX5[1] <= <GND>
-HEX5[2] <= <GND>
-HEX5[3] <= <GND>
-HEX5[4] <= <GND>
-HEX5[5] <= <GND>
-HEX5[6] <= <GND>
 KEY[0] => rst.IN1
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
@@ -97,7 +55,115 @@ VGA_SYNC_N <= debug:debug1.vga_sync
 VGA_VS <= debug:debug1.vga_vs
 
 
-|Processor|system_ram:system_ram1
+|Processor|memory:memory1
+clk => clk.IN1
+mem_addr[0] => ~NO_FANOUT~
+mem_addr[1] => ~NO_FANOUT~
+mem_addr[2] => sys_addr.DATAB
+mem_addr[3] => sys_addr.DATAB
+mem_addr[4] => sys_addr.DATAB
+mem_addr[5] => sys_addr.DATAB
+mem_addr[6] => sys_addr.DATAB
+mem_addr[7] => sys_addr.DATAB
+mem_addr[8] => sys_addr.DATAB
+mem_addr[9] => sys_addr.DATAB
+mem_addr[10] => sys_addr.DATAB
+mem_addr[11] => sys_addr.DATAB
+mem_addr[12] => sys_addr.DATAB
+mem_addr[13] => sys_addr.DATAB
+mem_addr[14] => sys_addr.DATAB
+mem_addr[15] => sys_addr.DATAB
+mem_addr[16] => sys_addr.DATAB
+mem_addr[17] => sys_addr.DATAB
+mem_addr[18] => ~NO_FANOUT~
+mem_addr[19] => ~NO_FANOUT~
+mem_addr[20] => ~NO_FANOUT~
+mem_addr[21] => ~NO_FANOUT~
+mem_addr[22] => ~NO_FANOUT~
+mem_addr[23] => ~NO_FANOUT~
+mem_addr[24] => ~NO_FANOUT~
+mem_addr[25] => ~NO_FANOUT~
+mem_addr[26] => ~NO_FANOUT~
+mem_addr[27] => ~NO_FANOUT~
+mem_addr[28] => ~NO_FANOUT~
+mem_addr[29] => ~NO_FANOUT~
+mem_addr[30] => ~NO_FANOUT~
+mem_addr[31] => ~NO_FANOUT~
+mem_op[0] => Equal0.IN15
+mem_op[1] => Equal0.IN14
+mem_op[2] => Equal0.IN13
+mem_op[3] => Equal0.IN12
+mem_op[4] => Equal0.IN11
+mem_op[5] => Equal0.IN10
+mem_op[6] => Equal0.IN9
+mem_op[7] => Equal0.IN8
+mem_data_in[0] => ~NO_FANOUT~
+mem_data_in[1] => ~NO_FANOUT~
+mem_data_in[2] => ~NO_FANOUT~
+mem_data_in[3] => ~NO_FANOUT~
+mem_data_in[4] => ~NO_FANOUT~
+mem_data_in[5] => ~NO_FANOUT~
+mem_data_in[6] => ~NO_FANOUT~
+mem_data_in[7] => ~NO_FANOUT~
+mem_data_in[8] => ~NO_FANOUT~
+mem_data_in[9] => ~NO_FANOUT~
+mem_data_in[10] => ~NO_FANOUT~
+mem_data_in[11] => ~NO_FANOUT~
+mem_data_in[12] => ~NO_FANOUT~
+mem_data_in[13] => ~NO_FANOUT~
+mem_data_in[14] => ~NO_FANOUT~
+mem_data_in[15] => ~NO_FANOUT~
+mem_data_in[16] => ~NO_FANOUT~
+mem_data_in[17] => ~NO_FANOUT~
+mem_data_in[18] => ~NO_FANOUT~
+mem_data_in[19] => ~NO_FANOUT~
+mem_data_in[20] => ~NO_FANOUT~
+mem_data_in[21] => ~NO_FANOUT~
+mem_data_in[22] => ~NO_FANOUT~
+mem_data_in[23] => ~NO_FANOUT~
+mem_data_in[24] => ~NO_FANOUT~
+mem_data_in[25] => ~NO_FANOUT~
+mem_data_in[26] => ~NO_FANOUT~
+mem_data_in[27] => ~NO_FANOUT~
+mem_data_in[28] => ~NO_FANOUT~
+mem_data_in[29] => ~NO_FANOUT~
+mem_data_in[30] => ~NO_FANOUT~
+mem_data_in[31] => ~NO_FANOUT~
+mem_data_out[0] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[1] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[2] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[3] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[4] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[5] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[6] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[7] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[8] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[9] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[10] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[11] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[12] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[13] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[14] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[15] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[16] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[17] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[18] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[19] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[20] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[21] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[22] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[23] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[24] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[25] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[26] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[27] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[28] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[29] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[30] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+mem_data_out[31] <= mem_data_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|memory:memory1|system_ram:system_ram1
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -187,7 +253,7 @@ q[30] <= altsyncram:altsyncram_component.q_a
 q[31] <= altsyncram:altsyncram_component.q_a
 
 
-|Processor|system_ram:system_ram1|altsyncram:altsyncram_component
+|Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component
 wren_a => altsyncram_ahr1:auto_generated.wren_a
 rden_a => altsyncram_ahr1:auto_generated.rden_a
 wren_b => ~NO_FANOUT~
@@ -295,7 +361,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated
+|Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -4703,7 +4769,7 @@ wren_a => decode_dla:decode3.enable
 wren_a => _.IN0
 
 
-|Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:decode3
+|Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:decode3
 data[0] => w_anode432w[1].IN0
 data[0] => w_anode449w[1].IN1
 data[0] => w_anode459w[1].IN0
@@ -4746,7 +4812,7 @@ eq[6] <= w_anode499w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode509w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode
+|Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode
 data[0] => w_anode432w[1].IN0
 data[0] => w_anode449w[1].IN1
 data[0] => w_anode459w[1].IN0
@@ -4789,7 +4855,7 @@ eq[6] <= w_anode499w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode509w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Processor|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2
+|Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -6137,7 +6203,6 @@ operation[0] => Mux28.IN19
 operation[0] => Mux29.IN19
 operation[0] => Mux30.IN19
 operation[0] => Mux31.IN19
-operation[0] => Mux32.IN19
 operation[1] => Mux0.IN18
 operation[1] => Mux1.IN18
 operation[1] => Mux2.IN18
@@ -6170,7 +6235,6 @@ operation[1] => Mux28.IN18
 operation[1] => Mux29.IN18
 operation[1] => Mux30.IN18
 operation[1] => Mux31.IN18
-operation[1] => Mux32.IN18
 operation[2] => Mux0.IN17
 operation[2] => Mux1.IN17
 operation[2] => Mux2.IN17
@@ -6203,7 +6267,6 @@ operation[2] => Mux28.IN17
 operation[2] => Mux29.IN17
 operation[2] => Mux30.IN17
 operation[2] => Mux31.IN17
-operation[2] => Mux32.IN17
 operation[3] => Mux0.IN16
 operation[3] => Mux1.IN16
 operation[3] => Mux2.IN16
@@ -6236,39 +6299,38 @@ operation[3] => Mux28.IN16
 operation[3] => Mux29.IN16
 operation[3] => Mux30.IN16
 operation[3] => Mux31.IN16
-operation[3] => Mux32.IN16
-out[0] <= out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[16] <= out[16]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[17] <= out[17]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[18] <= out[18]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[19] <= out[19]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[20] <= out[20]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[21] <= out[21]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[22] <= out[22]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[23] <= out[23]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[24] <= out[24]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[25] <= out[25]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[26] <= out[26]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[27] <= out[27]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[28] <= out[28]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[29] <= out[29]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[30] <= out[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
-out[31] <= out[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= Mux31.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Mux30.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Mux29.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Mux28.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= Mux27.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= Mux26.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= Mux25.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= Mux24.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= Mux23.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= Mux22.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= Mux21.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= Mux20.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= Mux19.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= Mux18.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= Mux17.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+out[17] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+out[18] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+out[19] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+out[20] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+out[21] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+out[22] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+out[23] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+out[24] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+out[25] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+out[26] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+out[27] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+out[28] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+out[29] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+out[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+out[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Processor|debug:debug1

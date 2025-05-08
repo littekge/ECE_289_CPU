@@ -1,0 +1,17 @@
+module memory (
+
+
+
+);
+
+
+system_ram system_ram1 (
+	.clock(clk),
+	.wren(sys_wren),
+	.byteena(sys_byte_en),
+	.rden(sys_rden),
+	.data(sys_data_in),
+	.q(sys_data_out),
+	.address(sys_addr)
+);
+endmodule
