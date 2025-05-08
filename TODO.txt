@@ -23,4 +23,4 @@ todo:
 	
 
 testing needed:
-	1. test currently implemented instructions (reg-reg and jal)
+	1. test currently implemented instructions (reg-reg, jal, jalr)

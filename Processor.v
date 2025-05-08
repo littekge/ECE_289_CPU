@@ -222,11 +222,23 @@ always @ (posedge clk or negedge rst) begin
 					end
 					OP_IMM: begin
 						alu_in_1 <= rs1_data;
-						alu_in_2 <= immediate;
+						case (funct3)
+							3'h1: alu_in_2 <= immediate[4:0];
+							3'h5: alu_in_2 <= immediate[4:0];
+							default: alu_in_2 <= immediate;
+						endcase
 					end
 					JAL: begin
 						alu_in_1 <= pc;
 						alu_in_2 <= immediate;
+					end
+					JALR: begin
+						alu_in_1 <= rs1_data;
+						alu_in_2 <= immediate;
+					end
+					BRANCH: begin
+						alu_in_1 <= rs1_data;
+						alu_in_2 <= rs2_data;
 					end
 				endcase
 			end
@@ -234,18 +246,28 @@ always @ (posedge clk or negedge rst) begin
 			WRITEBACK: begin
 				case (opcode)
 					OP: begin
+						reg_wren <= 1'b1;
 						pc <= pc + 32'd4;
 						rd_data <= alu_out;
-						reg_wren <= 1'b1;
 					end
 					OP_IMM: begin
+						reg_wren <= 1'b1;
 						pc <= pc + 32'd4;
 						rd_data <= alu_out;
-						reg_wren <= 1'b1;
 					end
 					JAL: begin
+						reg_wren <= 1'b1;
 						pc <= alu_out;
+						rd_data <= pc + 32'd4;
+					end
+					JALR: begin
+						reg_wren <= 1'b1;
+						pc <= {alu_out[31:1], 1'b0};
+						rd_data <= pc + 32'd4;
+					end
+					BRANCH: begin
 						reg_wren <= 1'b0;
+						pc <= (alu_out == 32'b1)?(pc + immediate):(pc + 32'd4);
 					end
 				endcase
 			end
@@ -263,7 +285,9 @@ end
 //OPCODE parameters
 parameter OP = 7'b0110011,
 			OP_IMM = 7'b0010011,
-			JAL = 7'b1101111;
+			JAL = 7'b1101111,
+			JALR = 7'b1100111,
+			BRANCH = 7'b1100011;
 			
 //ALU parameters
 parameter ADD = 4'd0,
@@ -276,7 +300,11 @@ parameter ADD = 4'd0,
 			SRA = 4'd7,
 			SLT = 4'd8,
 			SLTU = 4'd9,
-			ERR = 4'd10;
+			EQL = 4'd10,
+			NEQ = 4'd11
+			GTE = 4'd12,
+			GTEU = 4'd13,
+			ERR = 4'd15;
 
 //Instruction Decoding
 always @ (*) begin
@@ -302,8 +330,8 @@ always @ (*) begin
 				7'h00: begin
 					case (funct3)
 						3'h0: alu_op = ADD; //add
-						3'h1:	alu_op = SLL; //sll
-						3'h2:	alu_op = SLT; //slt
+						3'h1: alu_op = SLL; //sll
+						3'h2: alu_op = SLT; //slt
 						3'h3: alu_op = SLTU; //sltu
 						3'h4: alu_op = XOR; //xor
 						3'h5: alu_op = SRL; //srl
@@ -333,31 +361,22 @@ always @ (*) begin
 			funct3 = current_instruction[14:12];
 			funct7 = 7'd0;
 			rd_addr = current_instruction[11:7];
-			case (immediate[11:5])
-				7'h20: begin
-					case (funct3)
-						3'h5: alu_op = SRA; //srai
+			case (funct3)
+				3'h0: alu_op = ADD; //addi
+				3'h1: alu_op = SLL; //slli
+				3'h2: alu_op = SLT; //slti
+				3'h3: alu_op = SLTU; //sltui
+				3'h4: alu_op = XOR; //xori
+				3'h6: alu_op = OR; //ori
+				3'h7: alu_op = AND; //andi
+				3'h5: begin
+					case (immediate[11:5]) 
+						7'h00: alu_op = SRL; //srli
+						7'h20: alu_op = SRA; //srai
 						default: alu_op = ERR;
 					endcase
 				end
-				7'h00: begin
-					case (funct3)
-						3'h1: alu_op = SLL; //slli
-						3'h5: alu_op = SRL; //srli
-						default: alu_op = ERR;
-					endcase
-				end
-				default: begin
-					case (funct3)
-						3'h0: alu_op = ADD; //addi
-						3'h2:	alu_op = SLT; //slti
-						3'h3: alu_op = SLTU; //sltui
-						3'h4: alu_op = XOR; //xori
-						3'h6: alu_op = OR; //ori
-						3'h7: alu_op = AND; //andi
-						default: alu_op = ERR;
-					endcase
-				end
+				default: alu_op = ERR;
 			endcase
 		end
 		
@@ -374,6 +393,38 @@ always @ (*) begin
 			alu_op = ADD;
 		end
 		
+		//jump and link register instruction
+		JALR: begin
+			//sign extending immediate
+			immediate = {{20{current_instruction[31]}}, current_instruction[31:20]};
+			//decode instruction
+			rs2_addr = 5'd0;
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = 7'd0;
+			rd_addr = current_instruction[11:7];
+			alu_op = JALRADD;
+		end
+
+		//branch instructions
+		BRANCH: begin
+			immediate = {{19{current_instruction[31]}}, current_instruction[31], current_instruction[7], current_instruction[30:25], current_instruction[11:8], 1'b0};
+			rs2_addr = current_instruction[24:20];
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = 7'd0;
+			rd_addr = 5'd0;
+			case (funct3) 
+				3'd0: alu_op = EQL;
+				3'd1: alu_op = NEQ;
+				3'd4: alu_op = SLT;
+				3'd5: alu_op = GTE;
+				3'd6: alu_op = SLTU;
+				3'd7: alu_op = GTEU;
+				default: alu_op = ERR;
+			endcase
+		end
+
 		default: begin
 			immediate = 32'd0;
 			rs2_addr = 5'd0;
