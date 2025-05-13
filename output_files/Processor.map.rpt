@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Thu May  8 12:15:33 2025
+Tue May 13 15:00:00 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -100,13 +100,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May  8 12:15:33 2025          ;
+; Analysis & Synthesis Status     ; Successful - Tue May 13 15:00:00 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Processor                                      ;
 ; Top-level Entity Name           ; Processor                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1542                                           ;
+; Total registers                 ; 1548                                           ;
 ; Total pins                      ; 54                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 2,867,200                                      ;
@@ -226,7 +226,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.1%      ;
+;     Processor 8            ;   0.2%      ;
 ;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -310,16 +310,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 5339           ;
+; Estimate of Logic utilization (ALMs needed) ; 5498           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 8891           ;
-;     -- 7 input functions                    ; 31             ;
-;     -- 6 input functions                    ; 1583           ;
-;     -- 5 input functions                    ; 456            ;
-;     -- 4 input functions                    ; 1382           ;
-;     -- <=3 input functions                  ; 5439           ;
+; Combinational ALUT usage for logic          ; 9143           ;
+;     -- 7 input functions                    ; 35             ;
+;     -- 6 input functions                    ; 1630           ;
+;     -- 5 input functions                    ; 529            ;
+;     -- 4 input functions                    ; 1466           ;
+;     -- <=3 input functions                  ; 5483           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 1542           ;
+; Dedicated logic registers                   ; 1548           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 54             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -328,9 +328,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1866           ;
-; Total fan-out                               ; 44621          ;
-; Average fan-out                             ; 4.09           ;
+; Maximum fan-out                             ; 1872           ;
+; Total fan-out                               ; 46413          ;
+; Average fan-out                             ; 4.16           ;
 +---------------------------------------------+----------------+
 
 
@@ -339,9 +339,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                           ; Entity Name             ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; |Processor                                               ; 8891 (865)          ; 1542 (1211)               ; 2867200           ; 0          ; 54   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
-;    |ALU:alu1|                                            ; 388 (388)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
-;    |debug:debug1|                                        ; 7534 (1290)         ; 325 (135)                 ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1                                                                                                                                                                                       ; debug                   ; work         ;
+; |Processor                                               ; 9143 (1082)         ; 1548 (1217)               ; 2867200           ; 0          ; 54   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
+;    |ALU:alu1|                                            ; 353 (353)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
+;    |debug:debug1|                                        ; 7519 (1275)         ; 325 (135)                 ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1                                                                                                                                                                                       ; debug                   ; work         ;
 ;       |ascii_master_controller:ascii_master_controller1| ; 160 (44)            ; 190 (24)                  ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1                                                                                                                                      ; ascii_master_controller ; work         ;
 ;          |ascii_master:master|                           ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master                                                                                                                  ; ascii_master            ; work         ;
 ;             |altsyncram:altsyncram_component|            ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master|altsyncram:altsyncram_component                                                                                  ; altsyncram              ; work         ;
@@ -435,12 +435,12 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_l3m:auto_generated|                 ; 315 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated                                                                                                                                         ; lpm_divide_l3m          ; work         ;
 ;             |sign_div_unsign_olh:divider|                ; 315 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated|sign_div_unsign_olh:divider                                                                                                             ; sign_div_unsign_olh     ; work         ;
 ;                |alt_u_div_mve:divider|                   ; 315 (315)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|debug:debug1|lpm_divide:Mod9|lpm_divide_l3m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider                                                                                       ; alt_u_div_mve           ; work         ;
-;    |memory:memory1|                                      ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1                                                                                                                                                                                     ; memory                  ; work         ;
-;       |system_ram:system_ram1|                           ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1                                                                                                                                                              ; system_ram              ; work         ;
-;          |altsyncram:altsyncram_component|               ; 104 (0)             ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                                              ; altsyncram              ; work         ;
-;             |altsyncram_ahr1:auto_generated|             ; 104 (0)             ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated                                                                                               ; altsyncram_ahr1         ; work         ;
+;    |memory:memory1|                                      ; 189 (97)            ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1                                                                                                                                                                                     ; memory                  ; work         ;
+;       |system_ram:system_ram1|                           ; 92 (0)              ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1                                                                                                                                                              ; system_ram              ; work         ;
+;          |altsyncram:altsyncram_component|               ; 92 (0)              ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                                              ; altsyncram              ; work         ;
+;             |altsyncram_ahr1:auto_generated|             ; 92 (0)              ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated                                                                                               ; altsyncram_ahr1         ; work         ;
 ;                |decode_dla:rden_decode|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode                                                                        ; decode_dla              ; work         ;
-;                |mux_ahb:mux2|                            ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2                                                                                  ; mux_ahb                 ; work         ;
+;                |mux_ahb:mux2|                            ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2                                                                                  ; mux_ahb                 ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -472,23 +472,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Processor|S                                                                                                                                          ;
-+------------------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
-; Name             ; S.WAIT_WRITEBACK ; S.WRITEBACK ; S.WAIT_EXECUTE ; S.EXECUTE ; S.WAIT_DECODE ; S.DECODE ; S.WAIT_FETCH ; S.FETCH ; S.WAIT_START ; S.ERROR ; S.START ;
-+------------------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
-; S.START          ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 0       ;
-; S.ERROR          ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 1       ; 1       ;
-; S.WAIT_START     ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 1            ; 0       ; 1       ;
-; S.FETCH          ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 1       ; 0            ; 0       ; 1       ;
-; S.WAIT_FETCH     ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 1            ; 0       ; 0            ; 0       ; 1       ;
-; S.DECODE         ; 0                ; 0           ; 0              ; 0         ; 0             ; 1        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-; S.WAIT_DECODE    ; 0                ; 0           ; 0              ; 0         ; 1             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-; S.EXECUTE        ; 0                ; 0           ; 0              ; 1         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-; S.WAIT_EXECUTE   ; 0                ; 0           ; 1              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-; S.WRITEBACK      ; 0                ; 1           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-; S.WAIT_WRITEBACK ; 1                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
-+------------------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Processor|S                                                                                                                                                    ;
++------------------+---------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
+; Name             ; S.DEBUG ; S.WAIT_WRITEBACK ; S.WRITEBACK ; S.WAIT_EXECUTE ; S.EXECUTE ; S.WAIT_DECODE ; S.DECODE ; S.WAIT_FETCH ; S.FETCH ; S.WAIT_START ; S.ERROR ; S.START ;
++------------------+---------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
+; S.START          ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 0       ;
+; S.ERROR          ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 1       ; 1       ;
+; S.WAIT_START     ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 1            ; 0       ; 1       ;
+; S.FETCH          ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 1       ; 0            ; 0       ; 1       ;
+; S.WAIT_FETCH     ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 1            ; 0       ; 0            ; 0       ; 1       ;
+; S.DECODE         ; 0       ; 0                ; 0           ; 0              ; 0         ; 0             ; 1        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.WAIT_DECODE    ; 0       ; 0                ; 0           ; 0              ; 0         ; 1             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.EXECUTE        ; 0       ; 0                ; 0           ; 0              ; 1         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.WAIT_EXECUTE   ; 0       ; 0                ; 0           ; 1              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.WRITEBACK      ; 0       ; 0                ; 1           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.WAIT_WRITEBACK ; 0       ; 1                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
+; S.DEBUG          ; 1       ; 0                ; 0           ; 0              ; 0         ; 0             ; 0        ; 0            ; 0       ; 0            ; 0       ; 1       ;
++------------------+---------+------------------+-------------+----------------+-----------+---------------+----------+--------------+---------+--------------+---------+---------+
 
 
 Encoding Type:  One-Hot
@@ -616,7 +617,10 @@ Encoding Type:  One-Hot
 ; debug:debug1|current_reg[29]                        ; debug:debug1|WideNor1 ; yes                    ;
 ; debug:debug1|current_reg[13]                        ; debug:debug1|WideNor1 ; yes                    ;
 ; debug:debug1|current_reg[23]                        ; debug:debug1|WideNor1 ; yes                    ;
-; Number of user-specified and inferred latches = 35  ;                       ;                        ;
+; decoded_mem_op[2]                                   ; Decoder0              ; yes                    ;
+; decoded_mem_op[0]                                   ; Decoder0              ; yes                    ;
+; decoded_mem_op[1]                                   ; Decoder0              ; yes                    ;
+; Number of user-specified and inferred latches = 38  ;                       ;                        ;
 +-----------------------------------------------------+-----------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -644,8 +648,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|data_in_2[31] ; Lost fanout                                 ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|data_in_1[31] ; Lost fanout                                 ;
-; mem_op[1..7]                                                                                                               ; Stuck at GND due to stuck port data_in      ;
-; mem_op[0]                                                                                                                  ; Stuck at VCC due to stuck port data_in      ;
+; mem_op[4..7]                                                                                                               ; Merged with mem_op[3]                       ;
+; mem_op[3]                                                                                                                  ; Stuck at GND due to stuck port data_in      ;
 ; registers[0][30]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
 ; registers[0][29]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
 ; registers[0][28]                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
@@ -729,7 +733,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|WRITE_S.START                                                ; Merged with S.START                         ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|S.START       ; Merged with S.START                         ;
 ; S.ERROR                                                                                                                    ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 93                                                                                     ;                                             ;
+; Total Number of Removed Registers = 90                                                                                     ;                                             ;
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
@@ -747,12 +751,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1542  ;
-; Number of registers using Synchronous Clear  ; 61    ;
-; Number of registers using Synchronous Load   ; 120   ;
-; Number of registers using Asynchronous Clear ; 1171  ;
+; Total registers                              ; 1548  ;
+; Number of registers using Synchronous Clear  ; 67    ;
+; Number of registers using Synchronous Load   ; 138   ;
+; Number of registers using Asynchronous Clear ; 1172  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1397  ;
+; Number of registers using Clock Enable       ; 1406  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -770,38 +774,54 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|read_data[18] ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |Processor|current_instruction[10]                                                                                                    ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|hcount[2]        ;
-; 65:1               ; 30 bits   ; 1290 LEs      ; 0 LEs                ; 1290 LEs               ; Yes        ; |Processor|pc[20]                                                                                                                     ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vcount[2]        ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Processor|wait_count[22]                                                                                                             ;
-; 158:1              ; 2 bits    ; 210 LEs       ; 44 LEs               ; 166 LEs                ; Yes        ; |Processor|alu_in_1[1]                                                                                                                ;
-; 159:1              ; 10 bits   ; 1060 LEs      ; 220 LEs              ; 840 LEs                ; Yes        ; |Processor|alu_in_2[9]                                                                                                                ;
-; 96:1               ; 12 bits   ; 768 LEs       ; 264 LEs              ; 504 LEs                ; Yes        ; |Processor|alu_in_2[20]                                                                                                               ;
-; 96:1               ; 30 bits   ; 1920 LEs      ; 660 LEs              ; 1260 LEs               ; Yes        ; |Processor|alu_in_1[25]                                                                                                               ;
-; 166:1              ; 9 bits    ; 990 LEs       ; 198 LEs              ; 792 LEs                ; Yes        ; |Processor|alu_in_2[16]                                                                                                               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                        ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |Processor|debug:debug1|Mux3                                                                                                          ;
-; 22:1               ; 12 bits   ; 168 LEs       ; 120 LEs              ; 48 LEs                 ; No         ; |Processor|ALU:alu1|Mux12                                                                                                             ;
-; 22:1               ; 12 bits   ; 168 LEs       ; 120 LEs              ; 48 LEs                 ; No         ; |Processor|ALU:alu1|Mux21                                                                                                             ;
-; 25:1               ; 4 bits    ; 64 LEs        ; 44 LEs               ; 20 LEs                 ; No         ; |Processor|ALU:alu1|Mux0                                                                                                              ;
-; 25:1               ; 3 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |Processor|ALU:alu1|Mux29                                                                                                             ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 24 LEs               ; -3 LEs                 ; No         ; |Processor|debug:debug1|Selector122                                                                                                   ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector125                                                                                                   ;
-; 33:1               ; 31 bits   ; 682 LEs       ; 682 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector129                                                                                                   ;
-; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector108                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|read_data[15]              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Processor|mem_op[0]                                                                                                                               ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |Processor|mem_addr[1]                                                                                                                             ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|hcount[4]                     ;
+; 63:1               ; 16 bits   ; 672 LEs       ; 0 LEs                ; 672 LEs                ; Yes        ; |Processor|alu_in_1[3]                                                                                                                             ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 2 LEs                ; 82 LEs                 ; Yes        ; |Processor|alu_in_1[1]                                                                                                                             ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|vga_driver:driver|vcount[0]                     ;
+; 65:1               ; 30 bits   ; 1290 LEs      ; 60 LEs               ; 1230 LEs               ; Yes        ; |Processor|rd_data[8]                                                                                                                              ;
+; 65:1               ; 30 bits   ; 1290 LEs      ; 60 LEs               ; 1230 LEs               ; Yes        ; |Processor|pc[2]                                                                                                                                   ;
+; 36:1               ; 2 bits    ; 48 LEs        ; 4 LEs                ; 44 LEs                 ; Yes        ; |Processor|rd_data[1]                                                                                                                              ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Processor|wait_count[3]                                                                                                                           ;
+; 158:1              ; 5 bits    ; 525 LEs       ; 110 LEs              ; 415 LEs                ; Yes        ; |Processor|alu_in_2[0]                                                                                                                             ;
+; 94:1               ; 14 bits   ; 868 LEs       ; 308 LEs              ; 560 LEs                ; Yes        ; |Processor|alu_in_1[18]                                                                                                                            ;
+; 159:1              ; 15 bits   ; 1590 LEs      ; 330 LEs              ; 1260 LEs               ; Yes        ; |Processor|alu_in_2[12]                                                                                                                            ;
+; 67:1               ; 12 bits   ; 528 LEs       ; 264 LEs              ; 264 LEs                ; Yes        ; |Processor|alu_in_2[23]                                                                                                                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Processor|memory:memory1|Selector20                                                                                                               ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |Processor|debug:debug1|Mux2                                                                                                                       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Processor|memory:memory1|Selector35                                                                                                               ;
+; 7:1                ; 14 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector32                                                                                                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector21                                                                                                               ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2|l3_w25_n0_mux_dataout ;
+; 32:1               ; 18 bits   ; 378 LEs       ; 378 LEs              ; 0 LEs                  ; No         ; |Processor|Mux16                                                                                                                                   ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 15 LEs               ; 21 LEs                 ; No         ; |Processor|memory:memory1|Selector48                                                                                                               ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |Processor|memory:memory1|Selector44                                                                                                               ;
+; 128:1              ; 4 bits    ; 340 LEs       ; 60 LEs               ; 280 LEs                ; No         ; |Processor|Selector221                                                                                                                             ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Processor|Selector217                                                                                                                             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |Processor|memory:memory1|Selector45                                                                                                               ;
+; 22:1               ; 12 bits   ; 168 LEs       ; 144 LEs              ; 24 LEs                 ; No         ; |Processor|ALU:alu1|Mux26                                                                                                                          ;
+; 22:1               ; 12 bits   ; 168 LEs       ; 144 LEs              ; 24 LEs                 ; No         ; |Processor|ALU:alu1|Mux5                                                                                                                           ;
+; 25:1               ; 3 bits    ; 48 LEs        ; 42 LEs               ; 6 LEs                  ; No         ; |Processor|ALU:alu1|Mux28                                                                                                                          ;
+; 25:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |Processor|ALU:alu1|Mux3                                                                                                                           ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 24 LEs               ; -3 LEs                 ; No         ; |Processor|debug:debug1|Selector127                                                                                                                ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector125                                                                                                                ;
+; 24:1               ; 3 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |Processor|memory:memory1|Selector52                                                                                                               ;
+; 33:1               ; 31 bits   ; 682 LEs       ; 682 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector37                                                                                                                 ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |Processor|debug:debug1|Selector89                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -851,40 +871,50 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 
 +---------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |Processor ;
-+---------------------+----------------------------------+------------------+
-; Parameter Name      ; Value                            ; Type             ;
-+---------------------+----------------------------------+------------------+
-; WAIT_TIME           ; 00000010111110101111000010000000 ; Unsigned Binary  ;
-; ERROR               ; 00000000000000000000000000000000 ; Unsigned Binary  ;
-; START               ; 00000000000000000000000000000001 ; Unsigned Binary  ;
-; WAIT_START          ; 00000000000000000000000000000010 ; Unsigned Binary  ;
-; FETCH               ; 00000000000000000000000000000011 ; Unsigned Binary  ;
-; WAIT_FETCH          ; 00000000000000000000000000000100 ; Unsigned Binary  ;
-; DECODE              ; 00000000000000000000000000000101 ; Unsigned Binary  ;
-; WAIT_DECODE         ; 00000000000000000000000000000110 ; Unsigned Binary  ;
-; EXECUTE             ; 00000000000000000000000000000111 ; Unsigned Binary  ;
-; WAIT_EXECUTE        ; 00000000000000000000000000001000 ; Unsigned Binary  ;
-; WRITEBACK           ; 00000000000000000000000000001001 ; Unsigned Binary  ;
-; WAIT_WRITEBACK      ; 00000000000000000000000000001010 ; Unsigned Binary  ;
-; UNKNOWN_ERROR       ; 00000000000000000000000000000000 ; Unsigned Binary  ;
-; DECODE_ERROR        ; 00000000000001010000010100101001 ; Unsigned Binary  ;
-; OPCODE_DECODE_ERROR ; 00000000000001010000010100101010 ; Unsigned Binary  ;
-; MEM_FETCH           ; 00000001                         ; Unsigned Binary  ;
-; OP                  ; 0110011                          ; Unsigned Binary  ;
-; OP_IMM              ; 0010011                          ; Unsigned Binary  ;
-; JAL                 ; 1101111                          ; Unsigned Binary  ;
-; ADD                 ; 0000                             ; Unsigned Binary  ;
-; SUB                 ; 0001                             ; Unsigned Binary  ;
-; XOR                 ; 0010                             ; Unsigned Binary  ;
-; OR                  ; 0011                             ; Unsigned Binary  ;
-; AND                 ; 0100                             ; Unsigned Binary  ;
-; SLL                 ; 0101                             ; Unsigned Binary  ;
-; SRL                 ; 0110                             ; Unsigned Binary  ;
-; SRA                 ; 0111                             ; Unsigned Binary  ;
-; SLT                 ; 1000                             ; Unsigned Binary  ;
-; SLTU                ; 1001                             ; Unsigned Binary  ;
-; ERR                 ; 1010                             ; Unsigned Binary  ;
-+---------------------+----------------------------------+------------------+
++----------------+----------------------------------+-----------------------+
+; Parameter Name ; Value                            ; Type                  ;
++----------------+----------------------------------+-----------------------+
+; ERROR          ; 00000000000000000000000000000000 ; Unsigned Binary       ;
+; START          ; 00000000000000000000000000000001 ; Unsigned Binary       ;
+; WAIT_START     ; 00000000000000000000000000000010 ; Unsigned Binary       ;
+; FETCH          ; 00000000000000000000000000000011 ; Unsigned Binary       ;
+; WAIT_FETCH     ; 00000000000000000000000000000100 ; Unsigned Binary       ;
+; DECODE         ; 00000000000000000000000000000101 ; Unsigned Binary       ;
+; WAIT_DECODE    ; 00000000000000000000000000000110 ; Unsigned Binary       ;
+; EXECUTE        ; 00000000000000000000000000000111 ; Unsigned Binary       ;
+; WAIT_EXECUTE   ; 00000000000000000000000000001000 ; Unsigned Binary       ;
+; WRITEBACK      ; 00000000000000000000000000001001 ; Unsigned Binary       ;
+; WAIT_WRITEBACK ; 00000000000000000000000000001010 ; Unsigned Binary       ;
+; DEBUG          ; 00000000000000000000000000001011 ; Unsigned Binary       ;
+; OP             ; 0110011                          ; Unsigned Binary       ;
+; OP_IMM         ; 0010011                          ; Unsigned Binary       ;
+; JAL            ; 1101111                          ; Unsigned Binary       ;
+; JALR           ; 1100111                          ; Unsigned Binary       ;
+; BRANCH         ; 1100011                          ; Unsigned Binary       ;
+; LOAD           ; 0000011                          ; Unsigned Binary       ;
+; ADD            ; 0000                             ; Unsigned Binary       ;
+; SUB            ; 0001                             ; Unsigned Binary       ;
+; XOR            ; 0010                             ; Unsigned Binary       ;
+; OR             ; 0011                             ; Unsigned Binary       ;
+; AND            ; 0100                             ; Unsigned Binary       ;
+; SLL            ; 0101                             ; Unsigned Binary       ;
+; SRL            ; 0110                             ; Unsigned Binary       ;
+; SRA            ; 0111                             ; Unsigned Binary       ;
+; SLT            ; 1000                             ; Unsigned Binary       ;
+; SLTU           ; 1001                             ; Unsigned Binary       ;
+; EQL            ; 1010                             ; Unsigned Binary       ;
+; NEQ            ; 1011                             ; Unsigned Binary       ;
+; GTE            ; 1100                             ; Unsigned Binary       ;
+; GTEU           ; 1101                             ; Unsigned Binary       ;
+; NOP            ; 1110                             ; Unsigned Binary       ;
+; ERR            ; 1111                             ; Unsigned Binary       ;
+; MEM_ERROR      ; 00000000                         ; Unsigned Binary       ;
+; LOAD_BYTE      ; 00000001                         ; Unsigned Binary       ;
+; LOAD_HALF      ; 00000010                         ; Unsigned Binary       ;
+; LOAD_WORD      ; 00000011                         ; Unsigned Binary       ;
+; LOAD_BYTE_U    ; 00000100                         ; Unsigned Binary       ;
+; LOAD_HALF_U    ; 00000101                         ; Unsigned Binary       ;
++----------------+----------------------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -893,7 +923,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------+---------------------------------+
 ; Parameter Name ; Value    ; Type                            ;
 +----------------+----------+---------------------------------+
-; MEM_FETCH      ; 00000001 ; Unsigned Binary                 ;
+; MEM_ERROR      ; 00000000 ; Unsigned Binary                 ;
+; LOAD_BYTE      ; 00000001 ; Unsigned Binary                 ;
+; LOAD_HALF      ; 00000010 ; Unsigned Binary                 ;
+; LOAD_WORD      ; 00000011 ; Unsigned Binary                 ;
+; LOAD_BYTE_U    ; 00000100 ; Unsigned Binary                 ;
+; LOAD_HALF_U    ; 00000101 ; Unsigned Binary                 ;
 +----------------+----------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -974,7 +1009,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SRA            ; 0111  ; Unsigned Binary              ;
 ; SLT            ; 1000  ; Unsigned Binary              ;
 ; SLTU           ; 1001  ; Unsigned Binary              ;
-; ERR            ; 1010  ; Unsigned Binary              ;
+; EQL            ; 1010  ; Unsigned Binary              ;
+; NEQ            ; 1011  ; Unsigned Binary              ;
+; GTE            ; 1100  ; Unsigned Binary              ;
+; GTEU           ; 1101  ; Unsigned Binary              ;
+; NOP            ; 1110  ; Unsigned Binary              ;
+; ERR            ; 1111  ; Unsigned Binary              ;
 +----------------+-------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1849,45 +1889,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1542                        ;
-;     CLR               ; 126                         ;
+; arriav_ff             ; 1548                        ;
+;     CLR               ; 127                         ;
 ;     CLR SCLR          ; 10                          ;
 ;     CLR SLD           ; 1                           ;
-;     ENA               ; 233                         ;
-;     ENA CLR           ; 994                         ;
+;     ENA               ; 188                         ;
+;     ENA CLR           ; 1024                        ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA CLR SLD       ; 30                          ;
-;     ENA SCLR          ; 41                          ;
-;     ENA SLD           ; 89                          ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 8895                        ;
-;     arith             ; 3602                        ;
+;     ENA SCLR          ; 47                          ;
+;     ENA SLD           ; 137                         ;
+;     plain             ; 4                           ;
+; arriav_lcell_comb     ; 9147                        ;
+;     arith             ; 3589                        ;
 ;         0 data inputs ; 599                         ;
-;         1 data inputs ; 384                         ;
-;         2 data inputs ; 114                         ;
-;         3 data inputs ; 1677                        ;
-;         4 data inputs ; 796                         ;
-;         5 data inputs ; 32                          ;
-;     extend            ; 31                          ;
-;         7 data inputs ; 31                          ;
-;     normal            ; 5208                        ;
+;         1 data inputs ; 324                         ;
+;         2 data inputs ; 152                         ;
+;         3 data inputs ; 1676                        ;
+;         4 data inputs ; 808                         ;
+;         5 data inputs ; 30                          ;
+;     extend            ; 35                          ;
+;         7 data inputs ; 35                          ;
+;     normal            ; 5437                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 1802                        ;
-;         3 data inputs ; 807                         ;
-;         4 data inputs ; 586                         ;
-;         5 data inputs ; 424                         ;
-;         6 data inputs ; 1583                        ;
-;     shared            ; 54                          ;
+;         2 data inputs ; 1797                        ;
+;         3 data inputs ; 847                         ;
+;         4 data inputs ; 658                         ;
+;         5 data inputs ; 499                         ;
+;         6 data inputs ; 1630                        ;
+;     shared            ; 86                          ;
 ;         0 data inputs ; 27                          ;
 ;         1 data inputs ; 18                          ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 7                           ;
 ; boundary_port         ; 54                          ;
 ; stratixv_ram_block    ; 357                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 59.10                       ;
-; Average LUT depth     ; 41.64                       ;
+; Average LUT depth     ; 41.02                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1906,7 +1945,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu May  8 12:15:20 2025
+    Info: Processing started: Tue May 13 14:59:47 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
@@ -1939,12 +1978,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
 Info (12021): Found 1 design units, including 1 entities, in source file memory/memory.v
     Info (12023): Found entity 1: memory File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 1
 Info (12127): Elaborating entity "Processor" for the top level hierarchy
-Info (10264): Verilog HDL Case Statement information at Processor.v(172): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 172
-Info (10264): Verilog HDL Case Statement information at Processor.v(204): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 204
+Info (10264): Verilog HDL Case Statement information at Processor.v(168): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 168
+Info (10264): Verilog HDL Case Statement information at Processor.v(203): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (10240): Verilog HDL Always Construct warning at Processor.v(330): inferring latch(es) for variable "decoded_mem_op", which holds its previous value in one or more paths through the always construct File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
 Warning (10034): Output port "LEDR" at Processor.v(56) has no driver File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
-Info (12128): Elaborating entity "memory" for hierarchy "memory:memory1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 436
-Warning (10230): Verilog HDL assignment warning at memory.v(24): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 24
-Info (12128): Elaborating entity "system_ram" for hierarchy "memory:memory1|system_ram:system_ram1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 47
+Info (10041): Inferred latch for "decoded_mem_op[0]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[1]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[2]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[3]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[4]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[5]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[6]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (10041): Inferred latch for "decoded_mem_op[7]" at Processor.v(330) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 330
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 526
+Warning (10230): Verilog HDL assignment warning at memory.v(30): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 30
+Warning (10230): Verilog HDL assignment warning at memory.v(55): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 55
+Warning (10230): Verilog HDL assignment warning at memory.v(76): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 76
+Warning (10230): Verilog HDL assignment warning at memory.v(85): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 85
+Warning (10230): Verilog HDL assignment warning at memory.v(110): truncated value with size 32 to match size of target (16) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 110
+Info (12128): Elaborating entity "system_ram" for hierarchy "memory:memory1|system_ram:system_ram1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 146
 Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
 Info (12130): Elaborated megafunction instantiation "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
 Info (12133): Instantiated megafunction "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
@@ -1973,8 +2025,8 @@ Info (12128): Elaborating entity "decode_dla" for hierarchy "memory:memory1|syst
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
     Info (12023): Found entity 1: mux_ahb File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/mux_ahb.tdf Line: 23
 Info (12128): Elaborating entity "mux_ahb" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 47
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 443
-Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 565
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 533
+Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 672
 Info (10264): Verilog HDL Case Statement information at debug.v(113): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
 Warning (10230): Verilog HDL assignment warning at debug.v(129): truncated value with size 32 to match size of target (13) File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 129
 Warning (10762): Verilog HDL Case Statement warning at debug.v(132): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 132
@@ -2366,12 +2418,9 @@ Info (17049): 49 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/output_files/Processor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 53
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 53
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 53
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
@@ -2379,15 +2428,14 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 65
-Info (21057): Implemented 10544 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10791 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 10133 logic cells
+    Info (21061): Implemented 10380 logic cells
     Info (21064): Implemented 357 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 131 warnings
-    Info: Peak virtual memory: 5115 megabytes
-    Info: Processing ended: Thu May  8 12:15:33 2025
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 132 warnings
+    Info: Peak virtual memory: 5113 megabytes
+    Info: Processing ended: Tue May 13 15:00:00 2025
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:08
 

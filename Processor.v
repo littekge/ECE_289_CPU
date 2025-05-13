@@ -96,6 +96,7 @@ assign rst = KEY[0];
 //memory variables
 reg [31:0]mem_addr;
 reg [7:0]mem_op;
+reg [7:0]decoded_mem_op;
 reg [31:0]mem_data_in;
 wire [31:0]mem_data_out;
 
@@ -131,7 +132,7 @@ reg [3:0]alu_op;
 reg [31:0]S, NS;
 
 //count variables
-parameter WAIT_TIME = 32'd50000000;
+reg [31:0] wait_time;
 reg [31:0] wait_count;
 
 //fsm state parameters
@@ -145,15 +146,10 @@ parameter ERROR = 32'd0,
 			EXECUTE = 32'd7,
 			WAIT_EXECUTE = 32'd8,
 			WRITEBACK = 32'd9,
-			WAIT_WRITEBACK = 32'd10;
+			WAIT_WRITEBACK = 32'd10,
+			DEBUG = 32'd11;
 			
 //error parameters
-parameter UNKNOWN_ERROR = 32'd0,
-			DECODE_ERROR = 32'd329001,
-			OPCODE_DECODE_ERROR = 32'd329002;
-
-//memory parameters
-parameter MEM_FETCH = 8'd1;
 
 //finite state machine
 always @ (posedge clk or negedge rst) begin
@@ -172,23 +168,26 @@ always @ (*) begin
 	case (S)	
 		//start
 		START: NS = WAIT_START;
-		WAIT_START: NS = (wait_count < WAIT_TIME)?WAIT_START:FETCH;
+		WAIT_START: NS = (wait_count < wait_time)?WAIT_START:FETCH;
 		
 		//fetch
 		FETCH: NS = WAIT_FETCH;
-		WAIT_FETCH: NS = (wait_count < WAIT_TIME)?WAIT_FETCH:DECODE;
+		WAIT_FETCH: NS = (wait_count < wait_time)?WAIT_FETCH:DECODE;
 		
 		//decode
 		DECODE: NS = WAIT_DECODE;
-		WAIT_DECODE: NS = (wait_count < WAIT_TIME)?WAIT_DECODE:EXECUTE;
+		WAIT_DECODE: NS = (wait_count < wait_time)?WAIT_DECODE:EXECUTE;
 		
 		//execute
 		EXECUTE: NS = WAIT_EXECUTE;
-		WAIT_EXECUTE: NS = (wait_count < WAIT_TIME)?WAIT_EXECUTE:WRITEBACK;
+		WAIT_EXECUTE: NS = (wait_count < wait_time)?WAIT_EXECUTE:WRITEBACK;
 		
 		//writeback
 		WRITEBACK: NS = WAIT_WRITEBACK;
-		WAIT_WRITEBACK: NS = (wait_count < WAIT_TIME)?WAIT_WRITEBACK:FETCH;
+		WAIT_WRITEBACK: NS = (wait_count < wait_time)?WAIT_WRITEBACK:((SW[9]== 1'b1)?DEBUG:FETCH);
+		
+		//debug states
+		DEBUG: NS = (KEY[3] == 1'b1)?DEBUG:FETCH;
 		
 		//error
 		default: NS = ERROR;
@@ -206,7 +205,7 @@ always @ (posedge clk or negedge rst) begin
 				reg_wren <= 1'b0;
 				//getting instruction from value of pc
 				mem_addr <= pc;
-				mem_op <= MEM_FETCH;
+				mem_op <= LOAD_WORD;
 			end
 			
 			DECODE: begin
@@ -240,6 +239,10 @@ always @ (posedge clk or negedge rst) begin
 						alu_in_1 <= rs1_data;
 						alu_in_2 <= rs2_data;
 					end
+					LOAD: begin
+						mem_addr <= rs1_data + immediate;
+						mem_op <= decoded_mem_op;
+					end
 				endcase
 			end
 			
@@ -269,6 +272,11 @@ always @ (posedge clk or negedge rst) begin
 						reg_wren <= 1'b0;
 						pc <= (alu_out == 32'b1)?(pc + immediate):(pc + 32'd4);
 					end
+					LOAD: begin
+						reg_wren <= 1'b1;
+						pc <= pc + 32'd4;
+						rd_data <= mem_data_out;
+					end
 				endcase
 			end
 
@@ -287,7 +295,8 @@ parameter OP = 7'b0110011,
 			OP_IMM = 7'b0010011,
 			JAL = 7'b1101111,
 			JALR = 7'b1100111,
-			BRANCH = 7'b1100011;
+			BRANCH = 7'b1100011,
+			LOAD = 7'b0000011;
 			
 //ALU parameters
 parameter ADD = 4'd0,
@@ -301,10 +310,19 @@ parameter ADD = 4'd0,
 			SLT = 4'd8,
 			SLTU = 4'd9,
 			EQL = 4'd10,
-			NEQ = 4'd11
+			NEQ = 4'd11,
 			GTE = 4'd12,
 			GTEU = 4'd13,
+			NOP = 4'd14,
 			ERR = 4'd15;
+			
+//memory parameters
+parameter MEM_ERROR = 8'd0,
+		LOAD_BYTE = 8'd1,
+		LOAD_HALF = 8'd2,
+		LOAD_WORD = 8'd3,
+		LOAD_BYTE_U = 8'd4,
+		LOAD_HALF_U = 8'd5;
 
 //Instruction Decoding
 always @ (*) begin
@@ -403,7 +421,7 @@ always @ (*) begin
 			funct3 = current_instruction[14:12];
 			funct7 = 7'd0;
 			rd_addr = current_instruction[11:7];
-			alu_op = JALRADD;
+			alu_op = ADD;
 		end
 
 		//branch instructions
@@ -424,7 +442,28 @@ always @ (*) begin
 				default: alu_op = ERR;
 			endcase
 		end
-
+		
+		//load instructions
+		LOAD: begin
+			//sign extending immediate
+			immediate = {{20{current_instruction[31]}}, current_instruction[31:20]};
+			//decode instruction
+			rs2_addr = 5'd0;
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = 7'd0;
+			rd_addr = current_instruction[11:7];
+			alu_op = NOP;
+			case (funct3) 
+				3'h0: decoded_mem_op = LOAD_BYTE;
+				3'h1: decoded_mem_op = LOAD_HALF;
+				3'h2: decoded_mem_op = LOAD_WORD;
+				3'h4: decoded_mem_op = LOAD_BYTE_U;
+				3'h5: decoded_mem_op = LOAD_HALF_U;
+				default: decoded_mem_op = MEM_ERROR;
+			endcase
+		end
+		
 		default: begin
 			immediate = 32'd0;
 			rs2_addr = 5'd0;
@@ -495,6 +534,23 @@ ALU alu1 (
 
 
 // --------------- DEBUG CODE ---------------
+
+//debug controller
+always @ (*) begin
+	if (SW[9] == 1'b1) begin
+		case (SW[1:0]) 
+			4'd0: wait_time = 32'd20;
+			4'd1: wait_time = 32'd3125000;
+			4'd2: wait_time = 32'd12500000;
+			4'd3: wait_time = 32'd50000000;
+		endcase
+	end 
+	else begin
+		wait_time = 32'd20;
+	end
+end
+
+//register display to vga
 reg [31:0]x0;
 reg [31:0]x1;
 reg [31:0]x2;

@@ -122,6 +122,22 @@
 				{
 					"name" : "CLOCK_50",
 					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
 				}
 			]
 		}

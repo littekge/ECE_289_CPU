@@ -22,9 +22,10 @@ parameter ADD = 4'd0,
 			SLT = 4'd8,
 			SLTU = 4'd9,
 			EQL = 4'd10,
-			NEQ = 4'd11
+			NEQ = 4'd11,
 			GTE = 4'd12,
 			GTEU = 4'd13,
+			NOP = 4'd14,
 			ERR = 4'd15;
 			
 always @ (*) begin
@@ -44,7 +45,8 @@ always @ (*) begin
 		EQL: out = (in_1 == in_2)?32'd1:32'd0;
 		NEQ: out = (in_1 != in_2)?32'd1:32'd0;
 		GTE: out = (signed_in_1 >= signed_in_2)?32'd1:32'd0;
-		GTEU: out = out = (in_1 >= in_2)?32'd1:32'd0;
+		GTEU: out = (in_1 >= in_2)?32'd1:32'd0;
+		NOP: out = 32'd0;
 		ERR: out = 32'd329010;
 		default: out = 32'd329011;
 	endcase
