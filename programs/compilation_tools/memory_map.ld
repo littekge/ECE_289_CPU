@@ -1,14 +1,13 @@
-ENTRY(_start)
+ENTRY(main)
 
 MEMORY
 {
     /*
         program counter (PC) is initally set to 0x1000
     */
-    rom (rx ): ORIGIN = 0x00001000, LENGTH = 16M
+    rom (rx): ORIGIN = 0x1000, LENGTH = 0x1000
 
-
-    ram (rw): ORIGIN = 0x10000000, LENGTH = 32M
+    ram (rw): ORIGIN = 0x2000, LENGTH = 0x1000
 }
 
 SECTIONS
@@ -23,7 +22,9 @@ SECTIONS
         /*
             all other code follows
         */
-        *(.text*)
+        . = ALIGN(4);
+        *(.text)
+        
     } > rom
 
     .rodata : { *(.rodata*) } > rom
