@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Tue May 13 15:00:00 2025
+Tue May 13 19:42:28 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -29,7 +29,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  21. General Register Statistics
  22. Inverted Register Statistics
  23. Multiplexer Restructuring Statistics (Restructuring Performed)
- 24. Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated
+ 24. Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated
  25. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component|altsyncram_o6o1:auto_generated
  26. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component|altsyncram_6op1:auto_generated
  27. Source assignments for debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component|altsyncram_0dj1:auto_generated
@@ -100,7 +100,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 13 15:00:00 2025          ;
+; Analysis & Synthesis Status     ; Successful - Tue May 13 19:42:28 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Processor                                      ;
 ; Top-level Entity Name           ; Processor                                      ;
@@ -226,7 +226,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.2%      ;
+;     Processor 8            ;   0.1%      ;
 ;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -247,7 +247,6 @@ https://fpgasoftware.intel.com/eula.
 ; vga_controller/ascii_master_controller.v         ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_master_controller.v         ;         ;
 ; Processor.v                                      ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v                                      ;         ;
 ; memory/system_ram.v                              ; yes             ; User Wizard-Generated File             ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v                              ;         ;
-; memory/program.mif                               ; yes             ; User Memory Initialization File        ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.mif                               ;         ;
 ; debug.v                                          ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v                                          ;         ;
 ; ALU.v                                            ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/ALU.v                                            ;         ;
 ; memory/memory.v                                  ; yes             ; User Verilog HDL File                  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v                                  ;         ;
@@ -260,7 +259,8 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                           ;         ;
 ; altram.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                           ;         ;
 ; altdpram.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
-; db/altsyncram_ahr1.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf                           ;         ;
+; db/altsyncram_5gr1.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_5gr1.tdf                           ;         ;
+; ./memory/program.hex                             ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex                               ;         ;
 ; db/decode_dla.tdf                                ; yes             ; Auto-Generated Megafunction            ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/decode_dla.tdf                                ;         ;
 ; db/mux_ahb.tdf                                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/mux_ahb.tdf                                   ;         ;
 ; db/altsyncram_o6o1.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_o6o1.tdf                           ;         ;
@@ -438,9 +438,9 @@ https://fpgasoftware.intel.com/eula.
 ;    |memory:memory1|                                      ; 189 (97)            ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1                                                                                                                                                                                     ; memory                  ; work         ;
 ;       |system_ram:system_ram1|                           ; 92 (0)              ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1                                                                                                                                                              ; system_ram              ; work         ;
 ;          |altsyncram:altsyncram_component|               ; 92 (0)              ; 6 (0)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component                                                                                                                              ; altsyncram              ; work         ;
-;             |altsyncram_ahr1:auto_generated|             ; 92 (0)              ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated                                                                                               ; altsyncram_ahr1         ; work         ;
-;                |decode_dla:rden_decode|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:rden_decode                                                                        ; decode_dla              ; work         ;
-;                |mux_ahb:mux2|                            ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2                                                                                  ; mux_ahb                 ; work         ;
+;             |altsyncram_5gr1:auto_generated|             ; 92 (0)              ; 6 (6)                     ; 2097152           ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated                                                                                               ; altsyncram_5gr1         ; work         ;
+;                |decode_dla:rden_decode|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|decode_dla:rden_decode                                                                        ; decode_dla              ; work         ;
+;                |mux_ahb:mux2|                            ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|mux_ahb:mux2                                                                                  ; mux_ahb                 ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -454,7 +454,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|Char_ROM:rom1|altsyncram:altsyncram_component|altsyncram_0dj1:auto_generated|ALTSYNCRAM                               ; AUTO ; ROM              ; 1024         ; 8            ; --           ; --           ; 8192    ; ./vga_controller/ascii_rom/ASCII_Encode.mif ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_1:buffer1|altsyncram:altsyncram_component|altsyncram_o6o1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 8192         ; 32           ; --           ; --           ; 262144  ; ascii_buffer_1.mif                          ;
 ; debug:debug1|ascii_master_controller:ascii_master_controller1|vga_controller:controller|double_buffer:buffer|ascii_buffer_2:buffer2|altsyncram:altsyncram_component|altsyncram_6op1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 8192         ; 32           ; --           ; --           ; 262144  ; ../ascii_buffer_2/ascii_buffer_2.mif        ;
-; memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|ALTSYNCRAM                                                                                               ; AUTO ; Single Port      ; 65536        ; 32           ; --           ; --           ; 2097152 ; ../memory/program.mif                       ;
+; memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|ALTSYNCRAM                                                                                               ; AUTO ; Single Port      ; 65536        ; 32           ; --           ; --           ; 2097152 ; ./memory/program.hex                        ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+---------------------------------------------+
 
 
@@ -805,7 +805,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Processor|memory:memory1|Selector35                                                                                                               ;
 ; 7:1                ; 14 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector32                                                                                                               ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector21                                                                                                               ;
-; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2|l3_w25_n0_mux_dataout ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|mux_ahb:mux2|l3_w25_n0_mux_dataout ;
 ; 32:1               ; 18 bits   ; 378 LEs       ; 378 LEs              ; 0 LEs                  ; No         ; |Processor|Mux16                                                                                                                                   ;
 ; 18:1               ; 3 bits    ; 36 LEs        ; 15 LEs               ; 21 LEs                 ; No         ; |Processor|memory:memory1|Selector48                                                                                                               ;
 ; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |Processor|memory:memory1|Selector44                                                                                                               ;
@@ -825,7 +825,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated ;
+; Source assignments for memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                            ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------+
@@ -935,62 +935,62 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component ;
-+------------------------------------+-----------------------+-------------------------------------------------------+
-; Parameter Name                     ; Value                 ; Type                                                  ;
-+------------------------------------+-----------------------+-------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped                                               ;
-; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY                                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY                                          ;
-; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE                                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE                                        ;
-; WIDTH_BYTEENA                      ; 1                     ; Untyped                                               ;
-; OPERATION_MODE                     ; SINGLE_PORT           ; Untyped                                               ;
-; WIDTH_A                            ; 32                    ; Signed Integer                                        ;
-; WIDTHAD_A                          ; 16                    ; Signed Integer                                        ;
-; NUMWORDS_A                         ; 65536                 ; Signed Integer                                        ;
-; OUTDATA_REG_A                      ; CLOCK0                ; Untyped                                               ;
-; ADDRESS_ACLR_A                     ; NONE                  ; Untyped                                               ;
-; OUTDATA_ACLR_A                     ; NONE                  ; Untyped                                               ;
-; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped                                               ;
-; INDATA_ACLR_A                      ; NONE                  ; Untyped                                               ;
-; BYTEENA_ACLR_A                     ; NONE                  ; Untyped                                               ;
-; WIDTH_B                            ; 1                     ; Untyped                                               ;
-; WIDTHAD_B                          ; 1                     ; Untyped                                               ;
-; NUMWORDS_B                         ; 1                     ; Untyped                                               ;
-; INDATA_REG_B                       ; CLOCK1                ; Untyped                                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped                                               ;
-; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped                                               ;
-; ADDRESS_REG_B                      ; CLOCK1                ; Untyped                                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped                                               ;
-; BYTEENA_REG_B                      ; CLOCK1                ; Untyped                                               ;
-; INDATA_ACLR_B                      ; NONE                  ; Untyped                                               ;
-; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped                                               ;
-; ADDRESS_ACLR_B                     ; NONE                  ; Untyped                                               ;
-; OUTDATA_ACLR_B                     ; NONE                  ; Untyped                                               ;
-; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped                                               ;
-; BYTEENA_ACLR_B                     ; NONE                  ; Untyped                                               ;
-; WIDTH_BYTEENA_A                    ; 4                     ; Signed Integer                                        ;
-; WIDTH_BYTEENA_B                    ; 1                     ; Untyped                                               ;
-; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped                                               ;
-; BYTE_SIZE                          ; 8                     ; Signed Integer                                        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped                                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped                                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped                                               ;
-; INIT_FILE                          ; ../memory/program.mif ; Untyped                                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped                                               ;
-; MAXIMUM_DEPTH                      ; 0                     ; Untyped                                               ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                ; Untyped                                               ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped                                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                ; Untyped                                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped                                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped                                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped                                               ;
-; ENABLE_ECC                         ; FALSE                 ; Untyped                                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped                                               ;
-; WIDTH_ECCSTATUS                    ; 3                     ; Untyped                                               ;
-; DEVICE_FAMILY                      ; Cyclone V             ; Untyped                                               ;
-; CBXI_PARAMETER                     ; altsyncram_ahr1       ; Untyped                                               ;
-+------------------------------------+-----------------------+-------------------------------------------------------+
++------------------------------------+----------------------+--------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                   ;
++------------------------------------+----------------------+--------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                         ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                         ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer                                         ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer                                         ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; WIDTH_B                            ; 1                    ; Untyped                                                ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; WIDTH_BYTEENA_A                    ; 4                    ; Signed Integer                                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
+; INIT_FILE                          ; ./memory/program.hex ; Untyped                                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                ;
+; CBXI_PARAMETER                     ; altsyncram_5gr1      ; Untyped                                                ;
++------------------------------------+----------------------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1935,7 +1935,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -1945,7 +1945,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue May 13 14:59:47 2025
+    Info: Processing started: Tue May 13 19:42:15 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
@@ -2003,7 +2003,7 @@ Info (12133): Instantiated megafunction "memory:memory1|system_ram:system_ram1|a
     Info (12134): Parameter "byte_size" = "8"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "../memory/program.mif"
+    Info (12134): Parameter "init_file" = "./memory/program.hex"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -2016,15 +2016,29 @@ Info (12133): Instantiated megafunction "memory:memory1|system_ram:system_ram1|a
     Info (12134): Parameter "widthad_a" = "16"
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "4"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ahr1.tdf
-    Info (12023): Found entity 1: altsyncram_ahr1 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 32
-Info (12128): Elaborating entity "altsyncram_ahr1" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5gr1.tdf
+    Info (12023): Found entity 1: altsyncram_5gr1 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_5gr1.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_5gr1" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113007): Byte addressed memory initialization file "program.hex" was read in the word-addressed format File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 1
+Warning (113015): Width of data items in "program.hex" is greater than the memory width. Wrapping data items to subsequent addresses. Found 10 warnings, reporting 10 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 1
+    Warning (113009): Data at line (1) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 1
+    Warning (113009): Data at line (2) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 2
+    Warning (113009): Data at line (3) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 3
+    Warning (113009): Data at line (4) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 4
+    Warning (113009): Data at line (5) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 5
+    Warning (113009): Data at line (6) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 6
+    Warning (113009): Data at line (7) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 7
+    Warning (113009): Data at line (8) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 8
+    Warning (113009): Data at line (9) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 9
+    Warning (113009): Data at line (10) of memory initialization file "program.hex" is too wide to fit in one memory word. Wrapping data to subsequent addresses. File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 10
+Warning (12311): Hexadecimal (Intel-Format) File contains an unsupported record type at "program.hex" line 12. Saving the file will discard the unsupported record File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex Line: 12
+Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (4257) in the Memory Initialization File "C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.hex" -- setting initial value for remaining addresses to 0 File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/system_ram.v Line: 92
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
     Info (12023): Found entity 1: decode_dla File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/decode_dla.tdf Line: 23
-Info (12128): Elaborating entity "decode_dla" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|decode_dla:decode3" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 45
+Info (12128): Elaborating entity "decode_dla" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|decode_dla:decode3" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_5gr1.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
     Info (12023): Found entity 1: mux_ahb File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/mux_ahb.tdf Line: 23
-Info (12128): Elaborating entity "mux_ahb" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_ahr1:auto_generated|mux_ahb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_ahr1.tdf Line: 47
+Info (12128): Elaborating entity "mux_ahb" for hierarchy "memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_5gr1:auto_generated|mux_ahb:mux2" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/db/altsyncram_5gr1.tdf Line: 47
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 533
 Info (12128): Elaborating entity "debug" for hierarchy "debug:debug1" File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 672
 Info (10264): Verilog HDL Case Statement information at debug.v(113): all case item expressions in this case statement are onehot File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/debug.v Line: 113
@@ -2433,11 +2447,11 @@ Info (21057): Implemented 10791 device resources after synthesis - the final res
     Info (21059): Implemented 39 output pins
     Info (21061): Implemented 10380 logic cells
     Info (21064): Implemented 357 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 132 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 146 warnings
     Info: Peak virtual memory: 5113 megabytes
-    Info: Processing ended: Tue May 13 15:00:00 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Processing ended: Tue May 13 19:42:29 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
