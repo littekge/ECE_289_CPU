@@ -197,7 +197,7 @@ end
 always @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		//zeroing pc
-		pc <= 32'd0;
+		pc <= 32'd4000;
 	end
 	else begin
 		case (S)
@@ -243,6 +243,11 @@ always @ (posedge clk or negedge rst) begin
 						mem_addr <= rs1_data + immediate;
 						mem_op <= decoded_mem_op;
 					end
+					STORE: begin
+						mem_addr <= rs1_data + immediate;
+						mem_data_in <= rs2_data;
+						mem_op <= decoded_mem_op;
+					end
 				endcase
 			end
 			
@@ -277,6 +282,10 @@ always @ (posedge clk or negedge rst) begin
 						pc <= pc + 32'd4;
 						rd_data <= mem_data_out;
 					end
+					STORE: begin
+						reg_wren <= 1'b0;
+						pc <= pc + 32'd4;
+					end
 				endcase
 			end
 
@@ -296,7 +305,8 @@ parameter OP = 7'b0110011,
 			JAL = 7'b1101111,
 			JALR = 7'b1100111,
 			BRANCH = 7'b1100011,
-			LOAD = 7'b0000011;
+			LOAD = 7'b0000011,
+			STORE = 7'b0100011;
 			
 //ALU parameters
 parameter ADD = 4'd0,
@@ -322,7 +332,10 @@ parameter MEM_ERROR = 8'd0,
 		LOAD_HALF = 8'd2,
 		LOAD_WORD = 8'd3,
 		LOAD_BYTE_U = 8'd4,
-		LOAD_HALF_U = 8'd5;
+		LOAD_HALF_U = 8'd5,
+		STORE_BYTE = 8'd6,
+		STORE_HALF = 8'd7,
+		STORE_WORD = 8'd8;
 
 //Instruction Decoding
 always @ (*) begin
@@ -464,6 +477,23 @@ always @ (*) begin
 			endcase
 		end
 		
+		//store instructions
+		STORE: begin
+			immediate = {{20{current_instruction[31]}}, current_instruction[31:25], current_instruction[11:7]};
+			rs2_addr = current_instruction[24:20];
+			rs1_addr = current_instruction[19:15];
+			funct3 = current_instruction[14:12];
+			funct7 = 7'd0;
+			rd_addr = 5'd0;
+			alu_op = NOP;
+			case (funct3) 
+				3'h0: decoded_mem_op = STORE_BYTE;
+				3'h1: decoded_mem_op = STORE_HALF;
+				3'h2: decoded_mem_op = STORE_WORD;
+				default: decoded_mem_op = MEM_ERROR;
+			endcase
+		end
+		
 		default: begin
 			immediate = 32'd0;
 			rs2_addr = 5'd0;
@@ -472,6 +502,7 @@ always @ (*) begin
 			funct7 = 7'd0;
 			rd_addr = 5'd0;
 			alu_op = ERR;
+			decoded_mem_op = MEM_ERROR;
 		end
 	endcase
 end
@@ -482,7 +513,7 @@ always @ (posedge clk or negedge rst) begin
 		//zeroing registers
 		registers[0] <= 32'd0;
 		registers[1] <= 32'd0;
-		registers[2] <= 32'd0;
+		registers[2] <= 32'h0000F000;
 		registers[3] <= 32'd0;
 		registers[4] <= 32'd0;
 		registers[5] <= 32'd0;

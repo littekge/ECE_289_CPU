@@ -18,8 +18,11 @@ parameter MEM_ERROR = 8'd0,
 		LOAD_HALF = 8'd2,
 		LOAD_WORD = 8'd3,
 		LOAD_BYTE_U = 8'd4,
-		LOAD_HALF_U = 8'd5;
-
+		LOAD_HALF_U = 8'd5,
+		STORE_BYTE = 8'd6,
+		STORE_HALF = 8'd7,
+		STORE_WORD = 8'd8;
+		
 always @ (*) begin
 	case (mem_op)
 	
@@ -122,6 +125,61 @@ always @ (*) begin
 					mem_data_out = 32'd329031;
 				end
 			endcase
+		end
+		
+		STORE_BYTE: begin
+			sys_wren = 1'b1;
+			sys_rden = 1'b0;
+			sys_addr = mem_addr >> 16'd2;
+			mem_data_out = 32'd0;
+			case (mem_addr % 4)
+				2'd0:	begin
+					sys_byte_en = 4'b1000;
+					sys_data_in[31:24] = mem_data_in[7:0];
+				end
+				2'd1:	begin
+					sys_byte_en = 4'b0100;
+					sys_data_in[23:16] = mem_data_in[7:0];
+				end
+				2'd2:	begin
+					sys_byte_en = 4'b0010;
+					sys_data_in[15:8] = mem_data_in[7:0];
+				end
+				2'd3:	begin
+					sys_byte_en = 4'b0001;
+					sys_data_in[7:0] = mem_data_in[7:0];
+				end
+			endcase
+		end
+		
+		STORE_HALF: begin
+			sys_wren = 1'b1;
+			sys_rden = 1'b0;
+			sys_addr = mem_addr >> 16'd2;
+			mem_data_out = 32'd0;
+			case (mem_addr % 4)
+				2'd0:	begin
+					sys_byte_en = 4'b1100;
+					sys_data_in[31:15] = mem_data_in[15:0];
+				end
+				2'd2:	begin
+					sys_byte_en = 4'b0011;
+					sys_data_in[15:0] = mem_data_in[15:0];
+				end
+				default: begin
+					sys_byte_en = 4'b0000;
+					sys_data_in = 32'd0;
+				end
+			endcase
+		end
+		
+		STORE_WORD: begin
+			sys_wren = 1'b1;
+			sys_rden = 1'b0;
+			sys_addr = mem_addr >> 16'd2;
+			mem_data_out = 32'd0;
+			sys_byte_en = 4'b1111;
+			sys_data_in = mem_data_in;
 		end
 		
 		default: begin
