@@ -13,6 +13,7 @@ changelog:
 	12. debugging for 3 hours (5/7/25)
 	13. implemented memory controller module (5/8/25)
 	14. implemented load instructions, implemented single instruction debugging and debugging framework, updated memory controller module (5/13/2025)
+	15. TOOLCHAIN TROUBLESHOOTING (5/13/2025)
 
 todo:
 	1. make debug display output more functional (add labels to registers, add current instruction display, etc.) (IF TIME ALLOWS)
@@ -20,6 +21,7 @@ todo:
 		a. continue to implement alu
 		b. implement store instructions
 	3. implement error framework
+	4. finalize conversion program
 	
 
 testing needed:
