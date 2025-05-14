@@ -23,7 +23,8 @@ SECTIONS
             all other code follows
         */
         . = ALIGN(4);
-        *(.text)
+        *(.text.main)
+        *(.text*)
         
     } > rom
 
