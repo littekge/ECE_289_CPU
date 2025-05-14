@@ -1,5 +1,5 @@
 Fitter report for Processor
-Tue May 13 22:56:36 2025
+Tue May 13 23:36:30 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Tue May 13 22:56:36 2025          ;
+; Fitter Status                   ; Successful - Tue May 13 23:36:30 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Processor                                      ;
 ; Top-level Entity Name           ; Processor                                      ;
@@ -2725,7 +2725,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:02:13
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:02:09
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:16
@@ -2735,8 +2735,8 @@ Info (170195): Router estimated average interconnect usage is 8% of the availabl
     Info (170196): Router estimated peak interconnect usage is 62% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:02:50
-Info (11888): Total time spent on timing analysis during the Fitter is 20.81 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:02:52
+Info (11888): Total time spent on timing analysis during the Fitter is 20.17 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2745,10 +2745,10 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:09
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/output_files/Processor.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 8282 megabytes
-    Info: Processing ended: Tue May 13 22:56:38 2025
-    Info: Elapsed time: 00:08:39
-    Info: Total CPU time (on all processors): 00:08:29
+    Info: Peak virtual memory: 8168 megabytes
+    Info: Processing ended: Tue May 13 23:36:31 2025
+    Info: Elapsed time: 00:08:33
+    Info: Total CPU time (on all processors): 00:06:30
 
 
 +----------------------------+
