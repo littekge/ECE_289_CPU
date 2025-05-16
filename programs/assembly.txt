@@ -1,5 +1,5 @@
 
-recursive.rv32.elf:     file format elf32-littleriscv
+benchmark.rv32.elf:     file format elf32-littleriscv
 
 
 Disassembly of section .text:
@@ -9,40 +9,46 @@ Disassembly of section .text:
     1004:	00112623          	sw	ra,12(sp)
     1008:	00812423          	sw	s0,8(sp)
     100c:	01010413          	addi	s0,sp,16
-    1010:	00a00513          	li	a0,10
-    1014:	01c000ef          	jal	1030 <factorial>
-    1018:	00000793          	li	a5,0
-    101c:	00078513          	mv	a0,a5
-    1020:	00c12083          	lw	ra,12(sp)
-    1024:	00812403          	lw	s0,8(sp)
-    1028:	01010113          	addi	sp,sp,16
-    102c:	00008067          	ret
+    1010:	01c000ef          	jal	102c <while_loop>
+    1014:	00000793          	li	a5,0
+    1018:	00078513          	mv	a0,a5
+    101c:	00c12083          	lw	ra,12(sp)
+    1020:	00812403          	lw	s0,8(sp)
+    1024:	01010113          	addi	sp,sp,16
+    1028:	00008067          	ret
 
-00001030 <factorial>:
-    1030:	fd010113          	addi	sp,sp,-48
-    1034:	02112623          	sw	ra,44(sp)
-    1038:	02812423          	sw	s0,40(sp)
-    103c:	03010413          	addi	s0,sp,48
-    1040:	fca42e23          	sw	a0,-36(s0)
-    1044:	fdc42783          	lw	a5,-36(s0)
-    1048:	00079663          	bnez	a5,1054 <factorial+0x24>
-    104c:	00100793          	li	a5,1
-    1050:	02c0006f          	j	107c <factorial+0x4c>
-    1054:	fdc42783          	lw	a5,-36(s0)
-    1058:	fff78793          	addi	a5,a5,-1
-    105c:	00078513          	mv	a0,a5
-    1060:	fd1ff0ef          	jal	1030 <factorial>
-    1064:	fea42623          	sw	a0,-20(s0)
-    1068:	fdc42703          	lw	a4,-36(s0)
-    106c:	fec42783          	lw	a5,-20(s0)
-    1070:	00f707b3          	add	a5,a4,a5
-    1074:	fef42423          	sw	a5,-24(s0)
-    1078:	fe842783          	lw	a5,-24(s0)
-    107c:	00078513          	mv	a0,a5
-    1080:	02c12083          	lw	ra,44(sp)
-    1084:	02812403          	lw	s0,40(sp)
-    1088:	03010113          	addi	sp,sp,48
-    108c:	00008067          	ret
+0000102c <while_loop>:
+    102c:	fe010113          	addi	sp,sp,-32
+    1030:	00112e23          	sw	ra,28(sp)
+    1034:	00812c23          	sw	s0,24(sp)
+    1038:	02010413          	addi	s0,sp,32
+    103c:	12c00793          	li	a5,300
+    1040:	fef42623          	sw	a5,-20(s0)
+    1044:	0400006f          	j	1084 <while_loop+0x58>
+    1048:	fec42783          	lw	a5,-20(s0)
+    104c:	0017f793          	andi	a5,a5,1
+    1050:	00079e63          	bnez	a5,106c <while_loop+0x40>
+    1054:	fec42783          	lw	a5,-20(s0)
+    1058:	01f7d713          	srli	a4,a5,0x1f
+    105c:	00f707b3          	add	a5,a4,a5
+    1060:	4017d793          	srai	a5,a5,0x1
+    1064:	fef42623          	sw	a5,-20(s0)
+    1068:	01c0006f          	j	1084 <while_loop+0x58>
+    106c:	fec42703          	lw	a4,-20(s0)
+    1070:	00070793          	mv	a5,a4
+    1074:	00179793          	slli	a5,a5,0x1
+    1078:	00e787b3          	add	a5,a5,a4
+    107c:	00178793          	addi	a5,a5,1
+    1080:	fef42623          	sw	a5,-20(s0)
+    1084:	fec42703          	lw	a4,-20(s0)
+    1088:	00100793          	li	a5,1
+    108c:	faf71ee3          	bne	a4,a5,1048 <while_loop+0x1c>
+    1090:	00000013          	nop
+    1094:	00000013          	nop
+    1098:	01c12083          	lw	ra,28(sp)
+    109c:	01812403          	lw	s0,24(sp)
+    10a0:	02010113          	addi	sp,sp,32
+    10a4:	00008067          	ret
 
 Disassembly of section .comment:
 

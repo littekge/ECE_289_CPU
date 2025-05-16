@@ -6,12 +6,12 @@ int factorial(int n)
         return 1;
     else {
         temp = factorial(n - 1);
-        result = n + temp;
+        result = n * temp;
         return result;
     }
 }
 
 int main() {
-    factorial(10);
+    factorial(3);
     return 0;
 }
