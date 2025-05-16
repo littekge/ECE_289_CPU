@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Tue May 13 23:27:57 2025
+Fri May 16 12:18:50 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -99,7 +99,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 13 23:27:57 2025          ;
+; Analysis & Synthesis Status     ; Successful - Fri May 16 12:18:50 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Processor                                      ;
 ; Top-level Entity Name           ; Processor                                      ;
@@ -309,14 +309,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 5568           ;
+; Estimate of Logic utilization (ALMs needed) ; 5571           ;
 ;                                             ;                ;
 ; Combinational ALUT usage for logic          ; 9293           ;
-;     -- 7 input functions                    ; 40             ;
-;     -- 6 input functions                    ; 1623           ;
-;     -- 5 input functions                    ; 610            ;
-;     -- 4 input functions                    ; 1466           ;
-;     -- <=3 input functions                  ; 5554           ;
+;     -- 7 input functions                    ; 47             ;
+;     -- 6 input functions                    ; 1621           ;
+;     -- 5 input functions                    ; 628            ;
+;     -- 4 input functions                    ; 1457           ;
+;     -- <=3 input functions                  ; 5540           ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 1581           ;
 ;                                             ;                ;
@@ -328,7 +328,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1905           ;
-; Total fan-out                               ; 47363          ;
+; Total fan-out                               ; 47414          ;
 ; Average fan-out                             ; 4.18           ;
 +---------------------------------------------+----------------+
 
@@ -338,8 +338,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                           ; Entity Name             ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; |Processor                                               ; 9293 (1121)         ; 1581 (1250)               ; 2867200           ; 0          ; 54   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
-;    |ALU:alu1|                                            ; 356 (356)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
+; |Processor                                               ; 9293 (1118)         ; 1581 (1250)               ; 2867200           ; 0          ; 54   ; 0            ; |Processor                                                                                                                                                                                                    ; Processor               ; work         ;
+;    |ALU:alu1|                                            ; 359 (359)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Processor|ALU:alu1                                                                                                                                                                                           ; ALU                     ; work         ;
 ;    |debug:debug1|                                        ; 7519 (1275)         ; 325 (135)                 ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1                                                                                                                                                                                       ; debug                   ; work         ;
 ;       |ascii_master_controller:ascii_master_controller1| ; 160 (44)            ; 190 (24)                  ; 770048            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1                                                                                                                                      ; ascii_master_controller ; work         ;
 ;          |ascii_master:master|                           ; 0 (0)               ; 0 (0)                     ; 253952            ; 0          ; 0    ; 0            ; |Processor|debug:debug1|ascii_master_controller:ascii_master_controller1|ascii_master:master                                                                                                                  ; ascii_master            ; work         ;
@@ -637,22 +637,22 @@ Encoding Type:  One-Hot
 ; memory:memory1|sys_data_in[8]                       ; memory:memory1|Selector3   ; yes                    ;
 ; memory:memory1|sys_data_in[16]                      ; memory:memory1|Selector93  ; yes                    ;
 ; memory:memory1|sys_data_in[0]                       ; memory:memory1|Selector10  ; yes                    ;
+; memory:memory1|sys_data_in[5]                       ; memory:memory1|Selector10  ; yes                    ;
+; memory:memory1|sys_data_in[13]                      ; memory:memory1|Selector3   ; yes                    ;
+; memory:memory1|sys_data_in[29]                      ; memory:memory1|Selector124 ; yes                    ;
+; memory:memory1|sys_data_in[21]                      ; memory:memory1|Selector93  ; yes                    ;
+; memory:memory1|sys_data_in[22]                      ; memory:memory1|Selector93  ; yes                    ;
+; memory:memory1|sys_data_in[30]                      ; memory:memory1|Selector124 ; yes                    ;
+; memory:memory1|sys_data_in[14]                      ; memory:memory1|Selector3   ; yes                    ;
+; memory:memory1|sys_data_in[6]                       ; memory:memory1|Selector10  ; yes                    ;
 ; memory:memory1|sys_data_in[4]                       ; memory:memory1|Selector10  ; yes                    ;
 ; memory:memory1|sys_data_in[12]                      ; memory:memory1|Selector3   ; yes                    ;
 ; memory:memory1|sys_data_in[28]                      ; memory:memory1|Selector124 ; yes                    ;
 ; memory:memory1|sys_data_in[20]                      ; memory:memory1|Selector93  ; yes                    ;
-; memory:memory1|sys_data_in[13]                      ; memory:memory1|Selector3   ; yes                    ;
-; memory:memory1|sys_data_in[29]                      ; memory:memory1|Selector124 ; yes                    ;
 ; memory:memory1|sys_data_in[31]                      ; memory:memory1|Selector124 ; yes                    ;
 ; memory:memory1|sys_data_in[15]                      ; memory:memory1|Selector89  ; yes                    ;
 ; memory:memory1|sys_data_in[23]                      ; memory:memory1|Selector93  ; yes                    ;
 ; memory:memory1|sys_data_in[7]                       ; memory:memory1|Selector10  ; yes                    ;
-; memory:memory1|sys_data_in[14]                      ; memory:memory1|Selector3   ; yes                    ;
-; memory:memory1|sys_data_in[30]                      ; memory:memory1|Selector124 ; yes                    ;
-; memory:memory1|sys_data_in[5]                       ; memory:memory1|Selector10  ; yes                    ;
-; memory:memory1|sys_data_in[21]                      ; memory:memory1|Selector93  ; yes                    ;
-; memory:memory1|sys_data_in[22]                      ; memory:memory1|Selector93  ; yes                    ;
-; memory:memory1|sys_data_in[6]                       ; memory:memory1|Selector10  ; yes                    ;
 ; Number of user-specified and inferred latches = 71  ;                            ;                        ;
 +-----------------------------------------------------+----------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -841,16 +841,16 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Processor|Selector244                                                                                                                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftLeft0                                                                                                                     ;
 ; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |Processor|ALU:alu1|ShiftRight0                                                                                                                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector60                                                                                                               ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Processor|memory:memory1|Selector45                                                                                                               ;
 ; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |Processor|debug:debug1|Mux4                                                                                                                       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector34                                                                                                               ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector32                                                                                                               ;
 ; 5:1                ; 14 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector123                                                                                                              ;
-; 7:1                ; 21 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector118                                                                                                              ;
+; 7:1                ; 21 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector87                                                                                                               ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Processor|memory:memory1|Selector10                                                                                                               ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Processor|memory:memory1|Selector46                                                                                                               ;
 ; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |Processor|memory:memory1|system_ram:system_ram1|altsyncram:altsyncram_component|altsyncram_sfr1:auto_generated|mux_ahb:mux2|l3_w25_n0_mux_dataout ;
@@ -1957,16 +1957,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 1676                        ;
 ;         4 data inputs ; 802                         ;
 ;         5 data inputs ; 35                          ;
-;     extend            ; 40                          ;
-;         7 data inputs ; 40                          ;
-;     normal            ; 5582                        ;
+;     extend            ; 47                          ;
+;         7 data inputs ; 47                          ;
+;     normal            ; 5575                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 14                          ;
-;         2 data inputs ; 1822                        ;
-;         3 data inputs ; 882                         ;
-;         4 data inputs ; 664                         ;
-;         5 data inputs ; 575                         ;
-;         6 data inputs ; 1623                        ;
+;         2 data inputs ; 1820                        ;
+;         3 data inputs ; 870                         ;
+;         4 data inputs ; 655                         ;
+;         5 data inputs ; 593                         ;
+;         6 data inputs ; 1621                        ;
 ;     shared            ; 86                          ;
 ;         0 data inputs ; 27                          ;
 ;         1 data inputs ; 18                          ;
@@ -1995,7 +1995,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue May 13 23:27:44 2025
+    Info: Processing started: Fri May 16 12:18:37 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 20 processors detected
@@ -2527,6 +2527,22 @@ Warning (13012): Latch memory:memory1|sys_data_in[16] has unsafe behavior File: 
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[0] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[5] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[13] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[29] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[21] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[22] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[30] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[14] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
+Warning (13012): Latch memory:memory1|sys_data_in[6] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[4] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[12] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
@@ -2535,10 +2551,6 @@ Warning (13012): Latch memory:memory1|sys_data_in[28] has unsafe behavior File: 
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[20] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[13] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[29] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[31] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[15] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
@@ -2546,18 +2558,6 @@ Warning (13012): Latch memory:memory1|sys_data_in[15] has unsafe behavior File: 
 Warning (13012): Latch memory:memory1|sys_data_in[23] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13012): Latch memory:memory1|sys_data_in[7] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[14] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[30] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[5] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[21] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_op[3] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[22] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
-Warning (13012): Latch memory:memory1|sys_data_in[6] has unsafe behavior File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/memory.v Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_addr[0] File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 203
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/Processor.v Line: 56
@@ -2592,10 +2592,10 @@ Info (21057): Implemented 10978 device resources after synthesis - the final res
     Info (21061): Implemented 10567 logic cells
     Info (21064): Implemented 357 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 208 warnings
-    Info: Peak virtual memory: 5135 megabytes
-    Info: Processing ended: Tue May 13 23:27:57 2025
+    Info: Peak virtual memory: 5157 megabytes
+    Info: Processing ended: Fri May 16 12:18:50 2025
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +------------------------------------------+

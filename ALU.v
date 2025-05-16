@@ -39,7 +39,7 @@ always @ (*) begin
 		AND: out = in_1 & in_2;
 		SLL: out = in_1 << in_2;
 		SRL: out = in_1 >> in_2;
-		SRA: out = in_1 <<< in_2;
+		SRA: out = in_1 >>> in_2;
 		SLT: out = (signed_in_1 < signed_in_2)?32'd1:32'd0;
 		SLTU: out = (in_1 < in_2)?32'd1:32'd0;
 		EQL: out = (in_1 == in_2)?32'd1:32'd0;

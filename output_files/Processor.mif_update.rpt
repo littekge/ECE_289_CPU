@@ -1,5 +1,5 @@
 MIF/HEX Update report for Processor
-Tue May 13 13:19:20 2025
+Fri May 16 13:01:40 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Tue May 13 13:19:20 2025 ;
+; MIF/HEX Update Status ; Successful - Fri May 16 13:01:40 2025 ;
 ; Revision Name         ; Processor                             ;
 ; Top-level Entity Name ; Processor                             ;
 ; Family                ; Cyclone V                             ;
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue May 13 13:19:11 2025
+    Info: Processing started: Fri May 16 13:01:31 2025
 Info: Command: quartus_cdb Processor -c Processor --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (39023): Can't find Memory Initialization File ascii_buffer_1.mif -- skipped updates for this file
@@ -68,8 +68,8 @@ Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.mif File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/memory/program.mif Line: 0
     Info (39025): Processed Memory Initialization File C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_rom/ascii_encode.mif File: C:/Users/littekge/Desktop/ECE_289/ECE_289_CPU/vga_controller/ascii_rom/ascii_encode.mif Line: 0
 Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4958 megabytes
-    Info: Processing ended: Tue May 13 13:19:20 2025
+    Info: Peak virtual memory: 4961 megabytes
+    Info: Processing ended: Fri May 16 13:01:40 2025
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:07
 
