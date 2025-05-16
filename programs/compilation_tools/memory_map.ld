@@ -5,9 +5,9 @@ MEMORY
     /*
         program counter (PC) is initally set to 0x1000
     */
-    rom (rx): ORIGIN = 0x1000, LENGTH = 0x1000
+    rom (rx): ORIGIN = 0x1000, LENGTH = 0x7000
 
-    ram (rw): ORIGIN = 0x2000, LENGTH = 0x1000
+    ram (rw): ORIGIN = 0x8000, LENGTH = 0x7000
 }
 
 SECTIONS
