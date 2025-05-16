@@ -1,0 +1,1 @@
+c:; cd 'c:\Users\Gabe Litteken\Desktop\git\ECE_289_CPU'; & 'C:\Program Files\Java\jdk-24\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\Gabe Litteken\AppData\Roaming\Code\User\workspaceStorage\ff15a2db0e1d389d982420d568f9b020\redhat.java\jdt_ws\ECE_289_CPU_b590d3d5\bin' 'convert' 
